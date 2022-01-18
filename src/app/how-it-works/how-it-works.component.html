@@ -1,0 +1,139 @@
+<div class="stateLoading" *ngIf="stateLoading">
+  <div class="blur">
+    <span class="state-loader-icon">
+      <i class="fa fa-spinner fa-spin"></i
+    ></span>
+  </div>
+</div>
+
+<section class="how-it-works-steps-section">
+  <div class="container-fluid">
+    <div class="step-container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="col-md-6 visible-small">
+            <img
+              src="../.././assets/how-it-works-first-step-image.png"
+              alt="ecard how it works image"
+              class="img-fluid step-image"
+            />
+          </div>
+          <h2 class="step-heading text-blue">Add social links at one place</h2>
+
+          <a class="text-green step-button hvr-forward" (click)="goToStep(1)"
+            >next step</a
+          >
+        </div>
+        <div class="col-md-6 visible-large">
+          <img
+            src="../.././assets/how-it-works-first-step-image.png"
+            alt="ecard how it works image"
+            class="img-fluid step-image"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="step-container" id="step-1">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="col-md-6 visible-small">
+            <img
+              src="../.././assets/how-it-works-step-two-image.png"
+              alt="ecard how it works image"
+              class="img-fluid step-image"
+            />
+          </div>
+          <h2 class="step-heading text-blue">Customize your card</h2>
+
+          <a (click)="goToStep(2)" class="text-green step-button hvr-forward"
+            >next step</a
+          >
+        </div>
+        <div class="col-md-6 visible-large">
+          <img
+            src="../.././assets/how-it-works-step-two-image.png"
+            alt="ecard how it works image"
+            class="img-fluid step-image"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="step-container" id="step-2">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="col-md-6 visible-small">
+            <img
+              src="../.././assets/how-it-works-third-image.png"
+              alt="ecard how it works image"
+              class="img-fluid step-image"
+            />
+          </div>
+          <h2 class="step-heading text-blue">Share your card Globally</h2>
+
+          <a (click)="goToStep(3)" class="text-green step-button hvr-forward"
+            >next step</a
+          >
+        </div>
+        <div class="col-md-6 visible-large">
+          <img
+            src="../.././assets/how-it-works-third-image.png"
+            alt="ecard how it works image"
+            class="img-fluid step-image"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="step-container" id="step-3">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="col-md-6 visible-small">
+            <img
+              src="../.././assets/how-it-works-fourth-step-image.png"
+              style="max-width: 77%; margin-left: 10%"
+              alt="ecard how it works image"
+              class="img-fluid step-image"
+            />
+          </div>
+          <h2 class="step-heading text-blue">Save all the shared cards</h2>
+
+          <a (click)="goToStep(4)" class="text-green step-button hvr-forward"
+            >next step</a
+          >
+        </div>
+        <div class="col-md-6 visible-large">
+          <img
+            src="../.././assets/how-it-works-fourth-step-image.png"
+            style="max-width: 77%; margin-left: 10%"
+            alt="ecard how it works image"
+            class="img-fluid step-image"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="how-it-works-card-creation-action-block" id="step-4">
+      <div class="lets-build-heading">
+        <h2 class="how-it-works-footer-heading text-white">
+          Lets make something great together
+        </h2>
+      </div>
+
+      <div
+        class="how-it-works-footer-action-container hvr-bounce-to-right"
+        *ngIf="!cardCreated"
+      >
+        <button class="btn btn-lg text-green">Create card</button>
+      </div>
+
+      <div
+        class="how-it-works-footer-action-container hvr-bounce-to-right"
+        *ngIf="cardCreated"
+      >
+        <button class="btn btn-lg text-green">Go to your card</button>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,48 @@
+<!-- search sections starts here -->
+
+<div *ngIf="savedCards">
+  <section class="search-card-results-section">
+    <p class="results-sub-heading text-blue fw-600">Saved Cards:</p>
+
+    <div class="container-fluid">
+      <div class="row" *ngIf="savedCards.length > 0">
+        <div class="col-md-4" *ngFor="let card of savedCards">
+          <!-- -->
+          <div class="search-result-card">
+            <span class="delete-icon" (click)="deleteCard(card.id)"
+              ><i class="fa fa-trash" aria-hidden="true"></i
+            ></span>
+            <img
+              src="assets/{{ card.avatar }}.svg"
+              alt="{{ card.name }}"
+              class="img-fluid search-card-user-profile"
+              *ngIf="card.type === 'personal'"
+            />
+            <img
+              src="{{ card.avatar }}"
+              alt="{{ card.name }}"
+              class="img-fluid search-card-user-profile"
+              *ngIf="card.type === 'business'"
+            />
+            <p
+              class="search-card-user-name text-blud fw-600"
+              (click)="goToCard(card.id)"
+            >
+              {{ card.name }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="search-results-empty-container text-center"
+    *ngIf="savedCards.length === 0"
+  >
+    <p class="search-container-data">No saved cards found</p>
+  </section>
+</div>
+
+<!-- (click)="goToCard(card.cardId)" -->
+<!-- search sections ends here -->

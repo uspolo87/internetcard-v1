@@ -1,0 +1,21 @@
+a.redirect-btn.text-green {
+  position: absolute;
+  border: 1px solid #22c98b;
+  padding: 8px 26px;
+  font-weight: 600;
+  bottom: 43%;
+  right: 34%;
+  border-radius: 8px;
+}
+
+a.redirect-btn.text-green:hover {
+  color: #22c98b;
+}
+
+.image-container.notFoundImage {
+  padding-top: 10%;
+}
+
+img {
+  width: 79%;
+}

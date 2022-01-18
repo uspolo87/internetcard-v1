@@ -1,0 +1,306 @@
+<!-- login section starts here -->
+
+<div class="stateLoading" *ngIf="stateLoading">
+  <div class="blur">
+    <img src="../.././assets/loader.svg" alt="site main loader" />
+  </div>
+</div>
+
+<notifier-container></notifier-container>
+
+<section class="login-section">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 col-sm-12 col-xs-12">
+        <img
+          src="assets/login-illustration.svg"
+          alt="login page image"
+          class="img-fluid login-page-image"
+        />
+        <h3 class="login-adv">
+          Create your free account with
+          <span class="text-green">internetcard</span>
+        </h3>
+      </div>
+      <div class="col-md-6 pr-0 col-sm-12 col-xs-12">
+        <div class="login-action-container">
+          <div class="login-container">
+            <small class="text-danger" *ngIf="formError">{{ formError }}</small>
+
+            <!-- sign up block starts here -->
+
+            <div class="signUp-block form-login" *ngIf="showSignup">
+              <p class="login-heading">Signup</p>
+              <form
+                #signUpForm="ngForm"
+                (ngSubmit)="signUpWithCredentails(signUpForm)"
+              >
+                <div class="form-group mb-0">
+                  <label for="user-signup-email"> </label>
+                  <input
+                    type="email"
+                    class="form-control user-signup-email"
+                    id="user-signup-email"
+                    placeholder="your email"
+                    ngModel
+                    required
+                    autocomplete="off"
+                    name="userSignupName"
+                  />
+                </div>
+
+                <div class="form-group mb-0">
+                  <label for="user-signup-password"> </label>
+                  <input
+                    type="password"
+                    class="form-control user-signup-password"
+                    id="userSignupPassword"
+                    placeholder="your password"
+                    ngModel
+                    required
+                    name="userSignupPassword"
+                  />
+                </div>
+
+                <div class="form-group mb-0 text-left">
+                  <label for="userSignupConfirmPassword"> </label>
+                  <input
+                    type="password"
+                    class="form-control user-signup-password"
+                    id="userSignupConfirmPassword"
+                    placeholder="confirm password"
+                    ngModel
+                    required
+                    name="userSignupConfirmPassword"
+                  />
+                  <small
+                    class="text-danger pl-3 pt-3"
+                    *ngIf="signUpFormError"
+                    >{{ signUpFormError }}</small
+                  >
+                </div>
+
+                <div class="tos-div">
+                  <span style="font-size: 12px; line-height: 12px"
+                    >By continuing, you agree to Internetcard's
+                    <a class="text-green" routerLink="/terms">Terms of Use</a>
+                    and
+                    <a class="text-green" routerLink="/privacy"
+                      >Privacy Policy.</a
+                    >
+                  </span>
+                </div>
+
+                <button
+                  class="btn btn-md bg-green text-white mt-3 signup-button"
+                >
+                  <span>Signup</span>
+                </button>
+              </form>
+
+              <div class="signup-action-button-container">
+                <span class="signup-text">Already have an account?</span>
+
+                <a
+                  (click)="showAuthContainer('login')"
+                  class="text-blue fw-600 singup-button"
+                  >Login</a
+                >
+              </div>
+            </div>
+
+            <!-- sign up block ends here -->
+
+            <!-- login block starts here -->
+            <div class="form-login" *ngIf="showLogin">
+              <p class="login-heading">Log in</p>
+              <div class="login-main-container">
+                <form
+                  class="form"
+                  #loginFormData="ngForm"
+                  (ngSubmit)="loginWithCredentials(loginFormData)"
+                >
+                  <div class="form-group mb-0">
+                    <label for="user-email"> </label>
+                    <input
+                      type="email"
+                      class="form-control user-email"
+                      id="user-email"
+                      placeholder="E-mail"
+                      ngModel
+                      required
+                      name="userName"
+                    />
+                  </div>
+
+                  <div class="form-group mb-0">
+                    <div class="user-password-block" style="position: relative">
+                      <label for="user-password"> </label>
+                      <input
+                        type="password"
+                        class="form-control user-password"
+                        id="user-password"
+                        *ngIf="!showPassword"
+                        placeholder="password"
+                        [(ngModel)]="userPassword"
+                        required
+                        name="userPasssword"
+                      />
+                      <input
+                        type="text"
+                        class="form-control user-password"
+                        id="user-password"
+                        *ngIf="showPassword"
+                        placeholder="password"
+                        [(ngModel)]="userPassword"
+                        required
+                        name="userPasssword"
+                      />
+
+                      <img
+                        src="assets/eye-no-see.svg"
+                        alt="eye icon"
+                        *ngIf="!showPassword"
+                        class="img-fluid eye-close-icon"
+                        (click)="togglePassword()"
+                      />
+                      <img
+                        src="assets/eye-see.svg"
+                        alt="eye icon"
+                        *ngIf="showPassword"
+                        class="img-fluid eye-close-icon"
+                        (click)="togglePassword()"
+                      />
+                    </div>
+
+                    <div class="tos-div">
+                      <span style="font-size: 12px; line-height: 12px"
+                        >By continuing, you agree to Internetcard's
+                        <a class="text-green" routerLink="/terms"
+                          >Terms of Use</a
+                        >
+                        and
+                        <a class="text-green" routerLink="/privacy"
+                          >Privacy Policy.</a
+                        >
+                      </span>
+                    </div>
+                  </div>
+
+                  <a
+                    (click)="showAuthContainer('forgotBlock')"
+                    class="float-right forget-password-text"
+                    >forgot password ?</a
+                  >
+
+                  <div class="sign-in-container">
+                    <button
+                      class="
+                        sign-in-button
+                        bg-green
+                        btn btn-lg
+                        text-white
+                        btn-block
+                      "
+                      type="submit"
+                    >
+                      <span>Sign in </span>
+                    </button>
+                    <span class="fw-600">or</span>
+                  </div>
+                </form>
+              </div>
+
+              <div class="social-login-button-container">
+                <!-- <button
+                  class="login-facebook-button btn btn-lg mr-2"
+                  (click)="loginWithFacebook()"
+                >
+                  <img
+                    src="assets/Facebook-icon.svg"
+                    alt="facebook icon"
+                    class="login-facebook-icon"
+                  />
+                  Facebook
+                </button> -->
+                <button
+                  class="login-google-button btn btn-lg"
+                  (click)="loginWithGoogle()"
+                >
+                  <img
+                    src="assets/gmail-icon.svg"
+                    alt="gmail icon"
+                    class="login-gmail-icon"
+                  />
+                  Google
+                </button>
+              </div>
+
+              <div class="signup-action-button-container">
+                <span class="sifnup-text">Not a member yet?</span>
+
+                <a
+                  (click)="showAuthContainer('signup')"
+                  class="text-blue fw-600 singup-button"
+                  >Signup</a
+                >
+              </div>
+
+              <div class="clear"></div>
+            </div>
+            <!-- login block ends here -->
+
+            <!-- forgot block starts here -->
+            <div
+              class="forgot-password-block form-login"
+              *ngIf="showForgotBlock"
+            >
+              <p class="login-heading">Forgot password</p>
+              <form
+                #forgotPasswordForm="ngForm"
+                (ngSubmit)="sendPasswordResetLink(forgotPasswordForm)"
+              >
+                <div class="form-group mb-0">
+                  <label for="user-forgot-email"> </label>
+                  <input
+                    type="email"
+                    class="form-control user-email"
+                    id="user-forgot-email"
+                    placeholder="your e-mail"
+                    ngModel
+                    required
+                    name="userPasswordResetemail"
+                  />
+
+                  <small
+                    class="text-blue form-text mt-3"
+                    *ngIf="passwordMailSent"
+                    >password reset link has been sent to your email
+                    successfully</small
+                  >
+                  <button
+                    class="btn btn-md bg-green text-white mt-3 send-link-button"
+                  >
+                    Send link
+                  </button>
+                </div>
+              </form>
+
+              <div class="signup-action-button-container">
+                <span class="sifnup-text">Already have an account?</span>
+
+                <a
+                  (click)="showAuthContainer('login')"
+                  class="text-blue fw-600 singup-button"
+                  >Login</a
+                >
+              </div>
+            </div>
+            <!-- forgot block ends here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- login section ends here -->

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="162.862" height="160.372" viewBox="0 0 162.862 160.372">
+  <defs>
+    <filter id="Rectangle_Copy_11" x="81.831" y="80.427" width="50.011" height="50.011" filterUnits="userSpaceOnUse">
+      <feOffset dx="1" dy="7" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feFlood flood-color="#56ca45"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Icon_ionic-ios-share-alt">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.161" result="color"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur-2"/>
+      <feComposite operator="in" in="color"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_31530" data-name="Group 31530" transform="translate(-917 -3867.974)">
+    <g id="Group_31529" data-name="Group 31529" transform="translate(141 126.282)">
+      <path id="Stroke_5" data-name="Stroke 5" d="M109.3,11.649A10.061,10.061,0,0,0,97.8,1.692L10.6,14.336C4.786,15.988,0,22.372,0,28.55v5.522C0,27.827,5.472,22.8,12.242,22.8H109.3Z" transform="translate(778.5 3770.466)" fill="none" stroke="#20ce77" stroke-miterlimit="10" stroke-width="5"/>
+      <ellipse id="Oval" cx="47.792" cy="47.694" rx="47.792" ry="47.694" transform="translate(928.5 3829.834) rotate(155)" fill="#20ce77" stroke="#20ce77" stroke-miterlimit="10" stroke-width="2.545"/>
+      <path id="Stroke_3" data-name="Stroke 3" d="M125.24,12.968v80.44c0,7.186-5.46,12.968-12.142,12.968H12.209C5.454,106.377,0,100.594,0,93.409V12.968C0,5.783,5.454,0,12.209,0H113.1C119.78,0,125.24,5.783,125.24,12.968Z" transform="translate(778.5 3793.188)" fill="#fff8aa" stroke="#fff" stroke-miterlimit="10" stroke-width="1.272" style="mix-blend-mode: multiply;isolation: isolate"/>
+      <path id="Stroke_3-2" data-name="Stroke 3" d="M125.24,12.968v80.44c0,7.186-5.46,12.968-12.142,12.968H12.209C5.454,106.377,0,100.594,0,93.409V12.968C0,5.783,5.454,0,12.209,0H113.1C119.78,0,125.24,5.783,125.24,12.968Z" transform="translate(778.5 3793.188)" fill="#dccafa" stroke="#20ce77" stroke-miterlimit="10" stroke-width="5"/>
+      <g transform="matrix(1, 0, 0, 1, 776, 3741.69)" filter="url(#Rectangle_Copy_11)">
+        <rect id="Rectangle_Copy_11-2" data-name="Rectangle Copy 11" width="21.669" height="21.669" rx="10.835" transform="translate(95 87.6)" fill="#20ce77" stroke="#20ce77" stroke-miterlimit="10" stroke-width="7.342"/>
+      </g>
+    </g>
+    <g data-type="innerShadowGroup">
+      <path id="Icon_ionic-ios-share-alt-2" data-name="Icon ionic-ios-share-alt" d="M86.133,35.572,55.876,7.266a1.547,1.547,0,0,0-1.2-.515c-.944.043-2.144.708-2.144,1.716v14.2a.916.916,0,0,1-.772.879C21.673,28.152,9,50.668,4.518,74.042c-.172.922,1.072,1.78,1.651,1.051C17.148,61.261,30.508,52.234,51.63,52.062a1.061,1.061,0,0,1,.9,1.029V67.03a1.84,1.84,0,0,0,3.109,1.137l30.472-28.8a2.368,2.368,0,0,0,.751-1.8A2.873,2.873,0,0,0,86.133,35.572Z" transform="translate(989.998 3886.39)" fill="#fbff8d"/>
+      <g transform="matrix(1, 0, 0, 1, 917, 3867.97)" filter="url(#Icon_ionic-ios-share-alt)">
+        <path id="Icon_ionic-ios-share-alt-3" data-name="Icon ionic-ios-share-alt" d="M86.133,35.572,55.876,7.266a1.547,1.547,0,0,0-1.2-.515c-.944.043-2.144.708-2.144,1.716v14.2a.916.916,0,0,1-.772.879C21.673,28.152,9,50.668,4.518,74.042c-.172.922,1.072,1.78,1.651,1.051C17.148,61.261,30.508,52.234,51.63,52.062a1.061,1.061,0,0,1,.9,1.029V67.03a1.84,1.84,0,0,0,3.109,1.137l30.472-28.8a2.368,2.368,0,0,0,.751-1.8A2.873,2.873,0,0,0,86.133,35.572Z" transform="translate(73 18.42)" fill="#fff"/>
+      </g>
+      <path id="Icon_ionic-ios-share-alt-4" data-name="Icon ionic-ios-share-alt" d="M86.133,35.572,55.876,7.266a1.547,1.547,0,0,0-1.2-.515c-.944.043-2.144.708-2.144,1.716v14.2a.916.916,0,0,1-.772.879C21.673,28.152,9,50.668,4.518,74.042c-.172.922,1.072,1.78,1.651,1.051C17.148,61.261,30.508,52.234,51.63,52.062a1.061,1.061,0,0,1,.9,1.029V67.03a1.84,1.84,0,0,0,3.109,1.137l30.472-28.8a2.368,2.368,0,0,0,.751-1.8A2.873,2.873,0,0,0,86.133,35.572Z" transform="translate(989.998 3886.39)" fill="none" stroke="rgba(124,32,206,0.72)" stroke-width="6" stroke-dasharray="38"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="77.067" height="66.873" viewBox="0 0 77.067 66.873">
+  <g id="Group_26861" data-name="Group 26861" transform="translate(-1510.747 -549.059)">
+    <g id="Group_30638" data-name="Group 30638">
+      <path id="Path_3617" data-name="Path 3617" d="M24.711,0c13.647,0,4.043,12.319,4.043,24.92,0,8.833,4.719,15.46,2.819,18.669-.78,1.318-2.782,2.044-6.863,2.044C11.063,45.632,0,35.417,0,22.816S11.063,0,24.711,0Z" transform="translate(1535.288 604.607) rotate(-140)" fill="#21c98b"/>
+    </g>
+    <g id="paint-palette" transform="translate(1530.163 564.52)">
+      <g id="Group_26860" data-name="Group 26860" transform="translate(0 0)">
+        <g id="Ellipse_93" data-name="Ellipse 93" transform="translate(9.01 32.227)" fill="#303970" stroke="#707070" stroke-width="1">
+          <ellipse cx="5.763" cy="4.94" rx="5.763" ry="4.94" stroke="none"/>
+          <ellipse cx="5.763" cy="4.94" rx="5.263" ry="4.44" fill="none"/>
+        </g>
+        <g id="Ellipse_92" data-name="Ellipse 92" transform="translate(23.83 28.933)" fill="#f05fbb" stroke="#707070" stroke-width="1">
+          <ellipse cx="5.774" cy="4.94" rx="5.774" ry="4.94" stroke="none"/>
+          <ellipse cx="5.774" cy="4.94" rx="5.274" ry="4.44" fill="none"/>
+        </g>
+        <g id="Ellipse_91" data-name="Ellipse 91" transform="translate(17.243 5.859)" fill="#1f1f1f" stroke="#707070" stroke-width="1">
+          <circle cx="5.763" cy="5.763" r="5.763" stroke="none"/>
+          <circle cx="5.763" cy="5.763" r="5.263" fill="none"/>
+        </g>
+        <g id="Ellipse_90" data-name="Ellipse 90" transform="translate(32.063 7.505)" fill="#21c98b" stroke="#707070" stroke-width="1">
+          <ellipse cx="4.951" cy="4.94" rx="4.951" ry="4.94" stroke="none"/>
+          <ellipse cx="4.951" cy="4.94" rx="4.451" ry="4.44" fill="none"/>
+        </g>
+        <g id="Ellipse_89" data-name="Ellipse 89" transform="translate(35.378 20.679)" fill="#f1a036" stroke="#707070" stroke-width="1">
+          <ellipse cx="4.94" cy="4.951" rx="4.94" ry="4.951" stroke="none"/>
+          <ellipse cx="4.94" cy="4.951" rx="4.44" ry="4.451" fill="none"/>
+        </g>
+        <path id="Path_3616" data-name="Path 3616" d="M26.387,2.61a47.445,47.445,0,0,0-13.7,2.1c-1.331.4-5.38,1.625-6.859,5.631C4.368,14.3,6.468,17.574,8,19.965c.875,1.365,1.868,2.911,1.868,3.988,0,1.819-2.75,5.592-4.569,8.09C1.988,36.588-1.767,41.737.912,47.007c2.487,4.89,8.522,5.515,13.5,5.515,21.846,0,41.737-13.2,41.737-27.7C56.151,14.142,44.774,2.61,26.387,2.61Zm-6.67,37.64a4.283,4.283,0,1,1,0-.063C19.72,40.213,19.717,40.233,19.717,40.25Zm.609-22.736A4.757,4.757,0,1,1,23.457,18.7,4.765,4.765,0,0,1,20.326,17.513Zm9.106,23.892a4.75,4.75,0,1,1,4.8-4.8A4.785,4.785,0,0,1,29.432,41.405Zm3.413-26.088a4.989,4.989,0,0,1-.062-.617,4.785,4.785,0,0,1,9.078-2.123,4.71,4.71,0,0,1,.516,2.123,4.785,4.785,0,0,1-9.532.617Zm7.473,18.521a4.855,4.855,0,0,1-4.793-4.8,4.8,4.8,0,1,1,4.793,4.8Z" transform="translate(0 -2.61)" fill="none" stroke="#303970" stroke-width="3"/>
+      </g>
+    </g>
+  </g>
+</svg>

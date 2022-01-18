@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2000" height="887.164" viewBox="0 0 2000 887.164">
+  <defs>
+    <filter id="e" x="234.612" y="154.612" width="322" height="593" filterUnits="userSpaceOnUse">
+      <feOffset dx="6" dy="6" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="card" x="632.194" y="151.612" width="1132" height="592" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_26834" data-name="Group 26834" transform="translate(-118 -268)">
+    <g id="Group_26816" data-name="Group 26816" transform="translate(355.612 425.612)">
+      <g transform="matrix(1, 0, 0, 1, -237.61, -157.61)" filter="url(#e)">
+        <text id="e-2" data-name="e" transform="translate(237.61 614.61)" fill="#21c98b" font-size="472" font-family="Montserrat-ExtraBold, Montserrat" font-weight="800"><tspan x="0" y="0">e</tspan></text>
+      </g>
+    </g>
+    <g id="Group_26815" data-name="Group 26815" transform="translate(759.194 425.612)">
+      <g transform="matrix(1, 0, 0, 1, -641.19, -157.61)" filter="url(#card)">
+        <text id="card-2" data-name="card" transform="translate(641.19 613.61)" fill="#102754" font-size="471" font-family="Montserrat-ExtraBold, Montserrat" font-weight="800"><tspan x="0" y="0">card</tspan></text>
+      </g>
+    </g>
+    <g id="Group_26831" data-name="Group 26831" transform="translate(118 564.119)">
+      <rect id="Rectangle_1557" data-name="Rectangle 1557" width="111.045" height="483.582" transform="translate(0 0)" fill="#102754"/>
+      <path id="Rectangle_1558" data-name="Rectangle 1558" d="M0,0H112.239a0,0,0,0,1,0,0V440a40,40,0,0,1-40,40H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z" transform="translate(480 478.806) rotate(90)" fill="#102754"/>
+    </g>
+    <g id="Group_26832" data-name="Group 26832" transform="translate(1638 268)">
+      <rect id="Rectangle_1557-2" data-name="Rectangle 1557" width="111.045" height="481.194" transform="translate(368.955 109.851)" fill="#102754"/>
+      <path id="Rectangle_1558-2" data-name="Rectangle 1558" d="M0,0H111.045a0,0,0,0,1,0,0V430a50,50,0,0,1-50,50H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z" transform="translate(0 111.045) rotate(-90)" fill="#102754"/>
+    </g>
+    <g id="Group_26833" data-name="Group 26833" transform="translate(118 268)">
+      <rect id="Rectangle_1559" data-name="Rectangle 1559" width="111.045" height="1412.537" transform="translate(107.463 111.045) rotate(-90)" fill="#21c98b"/>
+      <path id="Rectangle_1560" data-name="Rectangle 1560" d="M40,0h71.045a0,0,0,0,1,0,0V296.119a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V40A40,40,0,0,1,40,0Z" transform="translate(0 0)" fill="#21c98b"/>
+    </g>
+  </g>
+</svg>

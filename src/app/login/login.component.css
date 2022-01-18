@@ -1,0 +1,206 @@
+/* login page css starts here */
+
+/* img.img-fluid.login-page-image {
+  margin-top: 30px;
+} */
+
+.login-container {
+  background: #e6e6e6;
+  max-width: 80%;
+  margin: 13% auto 2%;
+  text-align: center;
+  padding: 10% 5% 4%;
+  color: #112654;
+  border-radius: 12px;
+}
+
+.tos-div {
+  margin-top: 15px;
+}
+
+.tos-div a:hover {
+  color: #21c98b;
+  cursor: pointer;
+}
+
+h3.login-adv {
+  color: #141d46;
+  font-size: 34px;
+  margin-left: 65px;
+  line-height: 45px;
+  font-weight: 600;
+}
+img.img-fluid.login-page-image {
+  max-width: 80%;
+  margin-left: 57px;
+}
+
+.login-main-container {
+  max-width: 79%;
+  margin: auto;
+}
+
+.signup-action-button-container {
+  margin-top: 10%;
+}
+a.text-blue.fw-600.singup-button {
+  margin-left: 10px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+a.text-blue.fw-600.singup-button:hover {
+  color: #112554;
+}
+img.img-fluid.eye-close-icon {
+  width: 21px;
+  position: absolute;
+  top: 40px;
+  right: 19px;
+  cursor: pointer;
+}
+
+.form-login input {
+  padding: 22px;
+  border-radius: 24px;
+  font-size: 14px;
+  border: 1px solid #112554;
+}
+
+a.float-right.forget-password-text {
+  text-decoration: underline;
+  color: #112554;
+  font-size: 13px;
+  margin-right: 10px;
+  margin-top: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button.login-facebook-button.btn.btn-lg {
+  background: #fff;
+  color: #3c5997;
+  border: 1px solid #3c5997;
+  border-radius: 24px;
+  padding: 10px 29px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+img.login-facebook-icon,
+img.login-gmail-icon {
+  width: 12px;
+  margin-right: 11px;
+}
+
+.login-gmail-icon {
+  width: 20px !important;
+}
+
+button.login-google-button.btn.btn-lg {
+  padding: 10px 29px;
+  border-radius: 24px;
+  background: transparent;
+  border: 1px solid #f15c4f;
+  font-weight: 600;
+  color: #f15c4f;
+}
+
+p.login-heading {
+  font-size: 25px;
+}
+
+.social-login-button-container {
+  margin: 4% 0 4%;
+}
+
+button.sign-in-button.bg-green.btn.btn-lg.text-white.btn-block {
+  max-width: 95%;
+  margin: 13% auto 4%;
+  border-radius: 24px;
+  padding: 10px;
+}
+
+button.sign-in-button.bg-green.btn.btn-lg.text-white.btn-block:focus,
+.signup-button:focus {
+  box-shadow: none;
+}
+
+button.btn.btn-md.bg-green.text-white.mt-3.send-link-button,
+.signup-button {
+  padding: 5px 29px;
+  border-radius: 45px;
+  margin-top: 9% !important;
+}
+
+/* login page css ends here */
+
+@media screen and (max-width: 767px) {
+  img.img-fluid.login-page-image {
+    display: none;
+  }
+  .login-action-container {
+    left: 0;
+  }
+  .login-container {
+    margin: 7% auto 2%;
+  }
+
+  h3.login-adv {
+    margin-top: 40px;
+    color: #fff;
+  }
+  section.login-section {
+    background: #112654;
+    height: 100vh;
+  }
+  .login-container {
+    max-width: 74%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  h3.login-adv {
+    color: #fff;
+    font-size: 22px;
+    line-height: 31px;
+    font-weight: 600;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .login-container {
+    max-width: 89%;
+  }
+
+  .login-main-container {
+    max-width: 90%;
+    margin: auto;
+  }
+  button.sign-in-button.bg-green.btn.btn-lg.text-white.btn-block {
+    max-width: 57%;
+    padding: 4px;
+  }
+
+  button.login-facebook-button.btn.btn-lg {
+    padding: 3px 10px;
+    font-size: 13px;
+  }
+  img.login-facebook-icon,
+  img.login-gmail-icon {
+    width: 9px;
+    margin-right: 5px;
+  }
+
+  button.login-google-button.btn.btn-lg {
+    padding: 3px 10px;
+    color: #f15c4f;
+    font-size: 13px;
+  }
+
+  .login-gmail-icon {
+    width: 14px !important;
+  }
+  .login-container {
+    margin: 19% auto 2%;
+  }
+}

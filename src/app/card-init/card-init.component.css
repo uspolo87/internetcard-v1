@@ -1,0 +1,141 @@
+.card-init-content-box {
+    background: #ffffff;
+    padding: 29px;
+    border-radius: 30px;
+    box-shadow: 0px 2px 6px 2px #e7e7e7;
+    cursor: pointer;
+}
+
+.card-init-content-box.active {
+    background: rgb(4, 36, 87);
+    background: linear-gradient( 137deg, rgba(4, 36, 87, 1) 5%, rgba(25, 153, 102, 1) 32%);
+    color: #fff;
+}
+
+.box-heading.text-center {
+    padding: 28px;
+}
+
+.box-points-block {
+    padding-left: 34px;
+    height: 220px;
+}
+
+p.box-point {
+    margin-bottom: 20px;
+}
+
+p.box-point span {
+    margin-right: 11px;
+}
+
+h2.box-heading {
+    font-size: 21px;
+    font-weight: 700;
+}
+
+img.img-fluid.circle-icon {
+    max-width: inherit;
+}
+
+.card-type-section {
+    padding: 2% 2% 9% 4%;
+    background-image: url("../../assets/card-init-bg.svg");
+}
+
+.business-button,
+.personal-button {
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 11px;
+    color: #fff;
+    padding: 8px 22px;
+}
+
+.card-create-button {
+    margin-top: 35px;
+}
+
+.personal-button {
+    border: 1px solid #199966 !important;
+    color: #199966 !important;
+}
+
+@media only screen and (min-width:768px)and (max-width:1200px) {
+    .box-heading.text-center {
+        padding: 13px;
+    }
+    .box-points-block {
+        padding-left: 9px;
+        height: 276px;
+    }
+    img.img-fluid.circle-icon {
+        max-width: inherit;
+    }
+    a.nav-link.text-white {
+        font-size: 16px;
+    }
+    p.box-point {
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+    h2.box-heading {
+        font-size: 16px;
+        font-weight: 700;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    section.card-type-section {
+        padding: 20% 2% 10% 1%;
+    }
+    .container,
+    .container-sm {
+        max-width: 668px;
+    }
+    section.card-type-section {
+        height: 100vh;
+    }
+    .card-init-content-box.active {
+        padding: 19px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .card-init-content-box {
+        max-width: 77%;
+        margin: auto;
+    }
+    .card-init-content-box {
+        padding: 12px 25px;
+    }
+    .box-heading.text-center {
+        padding: 13px;
+    }
+    p.box-point {
+        margin-bottom: 12px;
+    }
+    .col-md-5.col-sm-6 {
+        margin-bottom: 28px;
+    }
+    section.card-type-section {
+        padding: 100px 2% 10% 1%;
+    }
+    h2.box-heading {
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .box-points-block {
+        padding-left: 10px;
+        height: 277px;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .card-init-content-box {
+        padding: 12px 0px;
+    }
+    .box-points-block {
+        padding-left: 10px;
+    }
+}

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="155.5" height="160.372" viewBox="0 0 155.5 160.372">
+  <defs>
+    <filter id="Rectangle_Copy_11" x="81.831" y="80.427" width="50.011" height="50.011" filterUnits="userSpaceOnUse">
+      <feOffset dx="1" dy="7" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feFlood flood-color="#56ca45"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_31522" data-name="Group 31522" transform="translate(-1450.645 -3867.974)">
+    <g id="Group_31521" data-name="Group 31521" transform="translate(674.645 126.282)">
+      <path id="Stroke_5" data-name="Stroke 5" d="M109.3,11.649A10.061,10.061,0,0,0,97.8,1.692L10.6,14.336C4.786,15.988,0,22.372,0,28.55v5.522C0,27.827,5.472,22.8,12.242,22.8H109.3Z" transform="translate(778.5 3770.466)" fill="none" stroke="#20ce77" stroke-miterlimit="10" stroke-width="5"/>
+      <ellipse id="Oval" cx="47.792" cy="47.694" rx="47.792" ry="47.694" transform="translate(928.5 3829.834) rotate(155)" fill="#20ce77" stroke="#20ce77" stroke-miterlimit="10" stroke-width="2.545"/>
+      <path id="Stroke_3" data-name="Stroke 3" d="M125.24,12.968v80.44c0,7.186-5.46,12.968-12.142,12.968H12.209C5.454,106.377,0,100.594,0,93.409V12.968C0,5.783,5.454,0,12.209,0H113.1C119.78,0,125.24,5.783,125.24,12.968Z" transform="translate(778.5 3793.188)" fill="#fff8aa" stroke="#fff" stroke-miterlimit="10" stroke-width="1.272" style="mix-blend-mode: multiply;isolation: isolate"/>
+      <path id="Stroke_3-2" data-name="Stroke 3" d="M125.24,12.968v80.44c0,7.186-5.46,12.968-12.142,12.968H12.209C5.454,106.377,0,100.594,0,93.409V12.968C0,5.783,5.454,0,12.209,0H113.1C119.78,0,125.24,5.783,125.24,12.968Z" transform="translate(778.5 3793.188)" fill="#dccafa" stroke="#20ce77" stroke-miterlimit="10" stroke-width="5"/>
+      <g transform="matrix(1, 0, 0, 1, 776, 3741.69)" filter="url(#Rectangle_Copy_11)">
+        <rect id="Rectangle_Copy_11-2" data-name="Rectangle Copy 11" width="21.669" height="21.669" rx="10.835" transform="translate(95 87.6)" fill="#20ce77" stroke="#20ce77" stroke-miterlimit="10" stroke-width="7.342"/>
+      </g>
+    </g>
+    <path id="Icon_feather-bookmark" data-name="Icon feather-bookmark" d="M54.373,64.765,30.937,48.025,7.5,64.765V11.2a6.7,6.7,0,0,1,6.7-6.7H47.677a6.7,6.7,0,0,1,6.7,6.7Z" transform="translate(1548.771 3888.99)" fill="#fbff8d" stroke="rgba(98,67,174,0.79)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6" stroke-dasharray="38"/>
+  </g>
+</svg>

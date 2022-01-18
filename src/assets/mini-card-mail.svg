@@ -1,0 +1,22 @@
+<svg id="Group_26746" data-name="Group 26746" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <linearGradient id="linear-gradient" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-opacity="0.102"/>
+      <stop offset="1" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+  <path id="Shape" d="M0,10A10,10,0,1,1,10,20,10,10,0,0,1,0,10Z" transform="translate(0 0)" fill="#fff"/>
+  <g id="Group_26745" data-name="Group 26745" transform="translate(5.833 6.667)">
+    <path id="Shape-2" data-name="Shape" d="M8.06,6.51H.537A.539.539,0,0,1,0,5.972V.537A.539.539,0,0,1,.537,0H8.06A.539.539,0,0,1,8.6.537V5.972A.534.534,0,0,1,8.06,6.51Z" transform="translate(0.013 0.031)" fill="#e3e3e3"/>
+    <path id="Shape-3" data-name="Shape" d="M1.075,6.333H.537A.532.532,0,0,1,0,5.8V.353C0,.042.272,0,.537,0s.537.043.537.353v5.98ZM.537.077c-.383,0-.46.106-.46.276V5.8a.461.461,0,0,0,.46.461H1V.353C1,.21.942.077.537.077Z" transform="translate(0.013 0.207)" fill="#30214f"/>
+    <path id="Shape-4" data-name="Shape" d="M.537,6.333H0v-6C0,.038.238,0,.537,0s.537.038.537.338V5.8A.532.532,0,0,1,.537,6.333Z" transform="translate(7.536 0.207)" fill="#30214f"/>
+    <path id="Shape-5" data-name="Shape" d="M.537,6.341H0v-6C0,.026.265,0,.537,0s.537.026.537.338V5.8A.532.532,0,0,1,.537,6.341Zm0-6.264C.189.077.077.14.077.338V6.264h.46A.461.461,0,0,0,1,5.8V.338C1,.145.877.077.537.077Z" transform="translate(7.536 0.207)" fill="#30214f"/>
+    <g id="Group_26744" data-name="Group 26744" transform="translate(0 0.017)">
+      <path id="Shape-6" data-name="Shape" d="M.084,5.112,3.3,2.526l.023-.138L.008,0,0,5Z" transform="translate(0.99 1.424)" fill="#231f20" opacity="0.1"/>
+      <path id="Shape-7" data-name="Shape" d="M.537,6.333A.534.534,0,0,1,0,5.8V.353C0,.054.238,0,.537,0s.537.061.537.353v5.98Z" transform="translate(0 0.204)" fill="#30214f"/>
+      <path id="Shape-8" data-name="Shape" d="M5.712,5.906,0,.15.3.272,4.277,3.135,8.553,0V5.377a.532.532,0,0,1-.537.53Z" transform="translate(0.001 0.63)" fill="url(#linear-gradient)"/>
+      <path id="Shape-9" data-name="Shape" d="M4.29,3.95.23,1A.542.542,0,0,1,.1.25.557.557,0,0,1,.867.134L4.3,2.629,7.752.1A.534.534,0,0,1,8.5.227a.534.534,0,0,1-.123.752Z" transform="translate(0.001 0)" fill="#30214f"/>
+    </g>
+    <path id="Shape-10" data-name="Shape" d="M4.292,3.961h0L.232,1.005A.55.55,0,0,1,.094.253.554.554,0,0,1,.539.031a.531.531,0,0,1,.322.1L4.292,2.625,7.747.1A.536.536,0,0,1,8.5.23a.547.547,0,0,1-.123.752L4.293,3.961ZM.546.108A.482.482,0,0,0,.163.3.466.466,0,0,0,.278.944L4.292,3.861,8.338.913a.47.47,0,0,0,.1-.645A.468.468,0,0,0,8.061.077a.512.512,0,0,0-.276.084L4.339,2.687l-.046.031-.046-.031L.823.2A.442.442,0,0,0,.546.108Z" transform="translate(0.012)" fill="#352060"/>
+  </g>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.667" y1="0.167" x2="0.417" y2="0.75" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#37aee2"/>
+      <stop offset="1" stop-color="#1e96c8"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_31414" data-name="Group 31414" transform="translate(-1358.828 -967.828)">
+    <path id="Path" d="M0,25A25,25,0,1,1,25,50,25,25,0,0,1,0,25Z" transform="translate(1358.828 967.828)" fill="#fff"/>
+    <g id="Telegram" transform="translate(1370.618 979.618)">
+      <g id="Telegram-2" data-name="Telegram">
+        <g id="Group_31411" data-name="Group 31411">
+          <path id="Shape" d="M13.21,26.421A13.21,13.21,0,1,0,0,13.21,13.21,13.21,0,0,0,13.21,26.421Z" fill="url(#linear-gradient)"/>
+          <path id="Shape-2" data-name="Shape" d="M.228,5.815C1.772,4.965,3.5,4.255,5.107,3.541,7.878,2.372,10.66,1.224,13.47.155,14.017-.028,15-.206,15.1.6c-.053,1.147-.27,2.287-.419,3.427-.378,2.507-.814,5.006-1.24,7.505a1.182,1.182,0,0,1-1.857.731c-1.6-1.083-3.219-2.156-4.8-3.264-.519-.527-.038-1.284.425-1.66,1.321-1.3,2.721-2.407,3.973-3.776.338-.815-.66-.128-.989.082C8.379,4.9,6.615,6.218,4.709,7.313c-.974.536-2.109.078-3.082-.221C.754,6.73-.525,6.366.228,5.815Z" transform="translate(4.692 8.042)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
