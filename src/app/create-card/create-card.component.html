@@ -1,153 +1,306 @@
 <div class="stateLoading" *ngIf="stateLoading">
-    <div class="blur">
-        <img src="../.././assets/loader.svg" alt="site main loader" />
-    </div>
+  <div class="blur">
+    <img src="../.././assets/loader.svg" alt="site main loader" />
+  </div>
 </div>
 
 <section class="card-creation-forms-section" *ngIf="cardType === 'personal'">
-    <div class="container">
-        <div class="form-inner-container">
-            <form action="#" class="form">
-                <div class="form-steps-blocks">
-                    <div class="form-step-container" [ngClass]="{ active: currentStep === 1 }">
-                        <p class="form-step fw-600" (click)="showStep(1)">Choose Avatar</p>
-                    </div>
-                    <div class="form-step-container" [ngClass]="{ active: currentStep === 2 }">
-                        <p class="form-step fw-600" (click)="showStep(2)">Edit Profile</p>
-                    </div>
+  <div class="container">
+    <div class="form-inner-container">
+      <form action="#" class="form">
+        <div class="form-steps-blocks">
+          <div
+            class="form-step-container"
+            [ngClass]="{ active: currentStep === 1 }"
+          >
+            <p class="form-step fw-600" (click)="showStep(1)">Choose Avatar</p>
+          </div>
+          <div
+            class="form-step-container"
+            [ngClass]="{ active: currentStep === 2 }"
+          >
+            <p class="form-step fw-600" (click)="showStep(2)">Edit Profile</p>
+          </div>
 
-                    <div class="form-step-container" [ngClass]="{ active: currentStep === 3 }">
-                        <p class="form-step fw-600" (click)="showStep(3)">Update Links</p>
-                    </div>
+          <div
+            class="form-step-container"
+            [ngClass]="{ active: currentStep === 3 }"
+          >
+            <p class="form-step fw-600" (click)="showStep(3)">Update Links</p>
+          </div>
 
-                    <div class="form-step-container" [ngClass]="{ active: currentStep === 4 }">
-                        <p class="form-step fw-600" (click)="showStep(4)">Perosnal info</p>
-                    </div>
+          <div
+            class="form-step-container"
+            [ngClass]="{ active: currentStep === 4 }"
+          >
+            <p class="form-step fw-600" (click)="showStep(4)">Perosnal info</p>
+          </div>
 
-                    <div class="form-step-container" [ngClass]="{ active: currentStep === 5 }">
-                        <p class="form-step fw-600" (click)="showStep(5)">Customize card</p>
-                    </div>
-                </div>
-                <div class="first-step-in-create" *ngIf="currentStep === 1">
-                    <div class="row">
-                        <div class="avatars-container">
-                            <div class="user-avatars-block">
-                                <img src="assets/avatar-male-1.svg" (click)="choseAvatar('avatar-male-1')" [ngClass]="{ active: selectedAvatar === 'avatar-male-1' }" alt="users avatar" class="img-fluid" />
-                            </div>
-                            <div class="user-avatars-block">
-                                <img src="assets/avatar-male-2.svg" (click)="choseAvatar('avatar-male-2')" [ngClass]="{ active: selectedAvatar === 'avatar-male-2' }" alt="users avatars" class="img-fluid" />
-                            </div>
-                            <div class="user-avatars-block">
-                                <img src="assets/avatar-male-3.svg" (click)="choseAvatar('avatar-male-3')" [ngClass]="{ active: selectedAvatar === 'avatar-male-3' }" alt="users avatars" class="img-fluid" />
-                            </div>
-                            <div class="user-avatars-block">
-                                <img src="assets/avatar-male-4.svg" (click)="choseAvatar('avatar-male-4')" [ngClass]="{ active: selectedAvatar === 'avatar-male-4' }" alt="users avatars" class="img-fluid" />
-                            </div>
-                            <div class="user-avatars-block">
-                                <img src="assets/avatar-male-5.svg" (click)="choseAvatar('avatar-male-5')" [ngClass]="{ active: selectedAvatar === 'avatar-male-5' }" alt="users avatars" class="img-fluid" />
-                            </div>
-                            <div class="user-avatars-block">
-                                <img src="assets/avatar-male-6.svg" (click)="choseAvatar('avatar-male-6')" [ngClass]="{ active: selectedAvatar === 'avatar-male-6' }" alt="users avatars" class="img-fluid" />
-                            </div>
-                            <div class="user-avatars-block">
-                                <img src="assets/avatar-male-7.svg" (click)="choseAvatar('avatar-male-7')" [ngClass]="{ active: selectedAvatar === 'avatar-male-7' }" alt="users avatars" class="img-fluid" />
-                            </div>
-                            <div class="user-avatars-block">
-                                <img src="assets/avatar-male-8.svg" (click)="choseAvatar('avatar-male-8')" [ngClass]="{ active: selectedAvatar === 'avatar-male-8' }" alt="users avatars" class="img-fluid" />
-                            </div>
-                        </div>
+          <div
+            class="form-step-container"
+            [ngClass]="{ active: currentStep === 5 }"
+          >
+            <p class="form-step fw-600" (click)="showStep(5)">Customize card</p>
+          </div>
+        </div>
+        <div class="first-step-in-create" *ngIf="currentStep === 1">
+          <div class="row">
+            <div class="avatars-container">
+              <div class="user-avatars-block">
+                <img
+                  src="assets/avatar-male-1.svg"
+                  (click)="choseAvatar('avatar-male-1')"
+                  [ngClass]="{ active: selectedAvatar === 'avatar-male-1' }"
+                  alt="users avatar"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="user-avatars-block">
+                <img
+                  src="assets/avatar-male-2.svg"
+                  (click)="choseAvatar('avatar-male-2')"
+                  [ngClass]="{ active: selectedAvatar === 'avatar-male-2' }"
+                  alt="users avatars"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="user-avatars-block">
+                <img
+                  src="assets/avatar-male-3.svg"
+                  (click)="choseAvatar('avatar-male-3')"
+                  [ngClass]="{ active: selectedAvatar === 'avatar-male-3' }"
+                  alt="users avatars"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="user-avatars-block">
+                <img
+                  src="assets/avatar-male-4.svg"
+                  (click)="choseAvatar('avatar-male-4')"
+                  [ngClass]="{ active: selectedAvatar === 'avatar-male-4' }"
+                  alt="users avatars"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="user-avatars-block">
+                <img
+                  src="assets/avatar-male-5.svg"
+                  (click)="choseAvatar('avatar-male-5')"
+                  [ngClass]="{ active: selectedAvatar === 'avatar-male-5' }"
+                  alt="users avatars"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="user-avatars-block">
+                <img
+                  src="assets/avatar-male-6.svg"
+                  (click)="choseAvatar('avatar-male-6')"
+                  [ngClass]="{ active: selectedAvatar === 'avatar-male-6' }"
+                  alt="users avatars"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="user-avatars-block">
+                <img
+                  src="assets/avatar-male-7.svg"
+                  (click)="choseAvatar('avatar-male-7')"
+                  [ngClass]="{ active: selectedAvatar === 'avatar-male-7' }"
+                  alt="users avatars"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="user-avatars-block">
+                <img
+                  src="assets/avatar-male-8.svg"
+                  (click)="choseAvatar('avatar-male-8')"
+                  [ngClass]="{ active: selectedAvatar === 'avatar-male-8' }"
+                  alt="users avatars"
+                  class="img-fluid"
+                />
+              </div>
+            </div>
 
-                        <div class="avatars-container">
-                            <div class="user-avatars-block">
-                                <img src="assets/avatar-female-1.svg" (click)="choseAvatar('avatar-female-1')" [ngClass]="{ active: selectedAvatar === 'avatar-female-1' }" alt="users avatar" class="img-fluid" />
-                            </div>
-                            <div class="user-avatars-block">
-                                <img src="assets/avatar-female-2.svg" (click)="choseAvatar('avatar-female-2')" [ngClass]="{ active: selectedAvatar === 'avatar-female-2' }" alt="users avatars" class="img-fluid" />
-                            </div>
-                            <div class="user-avatars-block">
-                                <img src="assets/avatar-female-3.svg" (click)="choseAvatar('avatar-female-3')" [ngClass]="{ active: selectedAvatar === 'avatar-female-3' }" alt="users avatars" class="img-fluid" />
-                            </div>
-                            <div class="user-avatars-block">
-                                <img src="assets/avatar-female-4.svg" (click)="choseAvatar('avatar-female-4')" [ngClass]="{ active: selectedAvatar === 'avatar-female-4' }" alt="users avatars" class="img-fluid" />
-                            </div>
-                            <div class="user-avatars-block">
-                                <img src="assets/avatar-female-5.svg" (click)="choseAvatar('avatar-female-5')" [ngClass]="{ active: selectedAvatar === 'avatar-female-5' }" alt="users avatars" class="img-fluid" />
-                            </div>
-                            <div class="user-avatars-block">
-                                <img src="assets/avatar-female-6.svg" (click)="choseAvatar('avatar-female-6')" [ngClass]="{ active: selectedAvatar === 'avatar-female-6' }" alt="users avatars" class="img-fluid" />
-                            </div>
-                            <div class="user-avatars-block">
-                                <img src="assets/avatar-female-7.svg" (click)="choseAvatar('avatar-female-7')" [ngClass]="{ active: selectedAvatar === 'avatar-female-7' }" alt="users avatars" class="img-fluid" />
-                            </div>
-                            <div class="user-avatars-block">
-                                <img src="assets/avatar-female-8.svg" (click)="choseAvatar('avatar-female-8')" [ngClass]="{ active: selectedAvatar === 'avatar-female-8' }" alt="users avatars" class="img-fluid" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="avatars-container">
+              <div class="user-avatars-block">
+                <img
+                  src="assets/avatar-female-1.svg"
+                  (click)="choseAvatar('avatar-female-1')"
+                  [ngClass]="{ active: selectedAvatar === 'avatar-female-1' }"
+                  alt="users avatar"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="user-avatars-block">
+                <img
+                  src="assets/avatar-female-2.svg"
+                  (click)="choseAvatar('avatar-female-2')"
+                  [ngClass]="{ active: selectedAvatar === 'avatar-female-2' }"
+                  alt="users avatars"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="user-avatars-block">
+                <img
+                  src="assets/avatar-female-3.svg"
+                  (click)="choseAvatar('avatar-female-3')"
+                  [ngClass]="{ active: selectedAvatar === 'avatar-female-3' }"
+                  alt="users avatars"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="user-avatars-block">
+                <img
+                  src="assets/avatar-female-4.svg"
+                  (click)="choseAvatar('avatar-female-4')"
+                  [ngClass]="{ active: selectedAvatar === 'avatar-female-4' }"
+                  alt="users avatars"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="user-avatars-block">
+                <img
+                  src="assets/avatar-female-5.svg"
+                  (click)="choseAvatar('avatar-female-5')"
+                  [ngClass]="{ active: selectedAvatar === 'avatar-female-5' }"
+                  alt="users avatars"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="user-avatars-block">
+                <img
+                  src="assets/avatar-female-6.svg"
+                  (click)="choseAvatar('avatar-female-6')"
+                  [ngClass]="{ active: selectedAvatar === 'avatar-female-6' }"
+                  alt="users avatars"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="user-avatars-block">
+                <img
+                  src="assets/avatar-female-7.svg"
+                  (click)="choseAvatar('avatar-female-7')"
+                  [ngClass]="{ active: selectedAvatar === 'avatar-female-7' }"
+                  alt="users avatars"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="user-avatars-block">
+                <img
+                  src="assets/avatar-female-8.svg"
+                  (click)="choseAvatar('avatar-female-8')"
+                  [ngClass]="{ active: selectedAvatar === 'avatar-female-8' }"
+                  alt="users avatars"
+                  class="img-fluid"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
 
-                <div class="first-step-in-create" *ngIf="currentStep === 2">
-                    <div class="row">
-                        <div class="col-md-8 offset-2">
-                            <div class="form-elements-container">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="user-name"></label>
+        <div class="first-step-in-create" *ngIf="currentStep === 2">
+          <div class="row">
+            <div class="col-md-8 offset-2">
+              <div class="form-elements-container">
+                <span class="form-indication-text text-warning"
+                  >Note : All the fields are mandatory*</span
+                >
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="user-name"></label>
 
-                                            <input type="text" class="form-control step-form-element" id="user-name" [(ngModel)]="card.userName" placeholder="Full Name" name="user name" minlength="6" maxlength="15" #userName="ngModel" required />
-                                            <div *ngIf="
+                      <input
+                        type="text"
+                        class="form-control step-form-element"
+                        id="user-name"
+                        [(ngModel)]="card.userName"
+                        placeholder="Full Name"
+                        name="user name"
+                        minlength="6"
+                        maxlength="20"
+                        #userName="ngModel"
+                        required
+                      />
+                      <div
+                        *ngIf="
                           userName.invalid &&
                           (userName.dirty || userName.touched)
-                        " class="validation-error">
-                                                <div *ngIf="userName.errors?.required">
-                                                    Name is required.
-                                                </div>
-                                                <div *ngIf="userName.errors?.minlength">
-                                                    Name must be at least 4 characters long.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                        "
+                        class="validation-error"
+                      >
+                        <div *ngIf="userName.errors?.required">
+                          Name is required.
+                        </div>
+                        <div *ngIf="userName.errors?.minlength">
+                          Name must be at least 4 characters long.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="user-contact"></label>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="user-contact"></label>
 
-                                            <input type="number" class="form-control step-form-element" id="user-contact" [(ngModel)]="card.userContact" placeholder="Phone No" name="user number" #userContact="ngModel" maxlength="10" required />
-                                            <div *ngIf="
+                      <input
+                        type="number"
+                        class="form-control step-form-element"
+                        id="user-contact"
+                        [(ngModel)]="card.userContact"
+                        placeholder="Phone No"
+                        name="user number"
+                        #userContact="ngModel"
+                        maxlength="10"
+                        required
+                      />
+                      <div
+                        *ngIf="
                           userContact.invalid &&
                           (userContact.dirty || userContact.touched)
-                        " class="validation-error">
-                                                <div *ngIf="userContact.errors?.required">
-                                                    contact is required.
-                                                </div>
-                                                <div *ngIf="userContact.errors?.maxlength">
-                                                    contact must be at least 10 characters long.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                        "
+                        class="validation-error"
+                      >
+                        <div *ngIf="userContact.errors?.required">
+                          contact is required.
+                        </div>
+                        <div *ngIf="userContact.errors?.maxlength">
+                          contact must be at least 10 characters long.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="user-email"></label>
-                                            <input type="email" class="form-control step-form-element" id="user-email" [(ngModel)]="card.gmail" placeholder="Email Address" name="user email" #userEmail="ngModel" required />
-                                            <div *ngIf="
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="user-email"></label>
+                      <input
+                        type="email"
+                        class="form-control step-form-element"
+                        id="user-email"
+                        [(ngModel)]="card.gmail"
+                        placeholder="Email Address"
+                        name="user email"
+                        #userEmail="ngModel"
+                        required
+                      />
+                      <div
+                        *ngIf="
                           userEmail.invalid &&
                           (userEmail.dirty || userEmail.touched)
-                        " class="validation-error">
-                                                <div *ngIf="userEmail.errors?.required">
-                                                    email is required.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                        "
+                        class="validation-error"
+                      >
+                        <div *ngIf="userEmail.errors?.required">
+                          email is required.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="user-country"></label>
-                                            <!-- <input
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="user-country"></label>
+                      <!-- <input
                         type="text"
                         class="form-control step-form-element"
                         id="user-country"
@@ -157,9 +310,14 @@
                         #userCountry="ngModel"
                         required
                       /> -->
-                                            <!-- (change)="onChange($event.target.value)" -->
-                                            <!-- #userCountry="ngModel" -->
-                                            <select class="form-control country-dropdown" [(ngModel)]="card.userCountry" name="user country" required>
+                      <!-- (change)="onChange($event.target.value)" -->
+                      <!-- #userCountry="ngModel" -->
+                      <select
+                        class="form-control country-dropdown"
+                        [(ngModel)]="card.userCountry"
+                        name="user country"
+                        required
+                      >
                         <option
                           *ngFor="let country of countryList"
                           value="{{ country.name }}"
@@ -167,7 +325,7 @@
                           {{ country.name }}
                         </option>
                       </select>
-                                            <!-- <div
+                      <!-- <div
                         *ngIf="
                           userCountry.invalid &&
                           (userCountry.dirty || userCountry.touched)
@@ -178,81 +336,262 @@
                           country is required.
                         </div>
                       </div> -->
-                                        </div>
-                                    </div>
+                    </div>
+                  </div>
 
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <select name="user-gender" class="form-control" id="user-gender" [(ngModel)]="card.userGender" #userGender="ngModel" required>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <select
+                        name="user-gender"
+                        class="form-control"
+                        id="user-gender"
+                        [(ngModel)]="card.userGender"
+                        #userGender="ngModel"
+                        required
+                      >
                         <option value="gender">Gender</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                         <option value="others">Others</option>
                       </select>
-                                            <div *ngIf="
+                      <div
+                        *ngIf="
                           userGender.invalid &&
                           (userGender.dirty || userGender.touched)
-                        " class="validation-error">
-                                                <div *ngIf="userGender.errors?.required">
-                                                    gender is required.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6 dob-input">
-                                        <div class="form-group">
-                                            <label for="user-dob"></label>
-                                            <input type="date" [(ngModel)]="card.userDob" class="form-control step-form-element" id="user-dob" placeholder="Date of birth" name="user DOB" #userDob="ngModel" required placement="bottom" ngbTooltip="Date of birth" />
-
-                                            <div *ngIf="
-                          userDob.invalid && (userDob.dirty || userDob.touched)
-                        " class="validation-error">
-                                                <div *ngIf="userDob.errors?.required">
-                                                    Date of birth is required.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        "
+                        class="validation-error"
+                      >
+                        <div *ngIf="userGender.errors?.required">
+                          gender is required.
                         </div>
+                      </div>
                     </div>
+                  </div>
+
+                  <div class="col-md-6 dob-input">
+                    <div class="form-group">
+                      <label for="user-dob"></label>
+                      <input
+                        type="date"
+                        [(ngModel)]="card.userDob"
+                        class="form-control step-form-element"
+                        id="user-dob"
+                        placeholder="Date of birth"
+                        name="user DOB"
+                        #userDob="ngModel"
+                        required
+                        placement="bottom"
+                        ngbTooltip="Date of birth"
+                      />
+
+                      <div
+                        *ngIf="
+                          userDob.invalid && (userDob.dirty || userDob.touched)
+                        "
+                        class="validation-error"
+                      >
+                        <div *ngIf="userDob.errors?.required">
+                          Date of birth is required.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-                <div class="second-step-in-create" *ngIf="currentStep === 3">
-                    <div class="row">
-                        <div class="col-md-8 offset-2" style="margin-top: 9px">
-                            <div class="form-step-icons-container d-flex">
-                                <img src="../../assets/instagram.svg" alt="instagram icon" class="form-step-icon" (click)="selectIcon('instagram')" [ngClass]="{ active: selectedIcon === 'instagram' }" placement="bottom" ngbTooltip="Instagram" />
-                                <img src="../../assets/twitter.svg" alt="twitter icon" class="form-step-icon" (click)="selectIcon('twitter')" [ngClass]="{ active: selectedIcon === 'twitter' }" placement="bottom" ngbTooltip="Twitter" />
-                                <img src="../../assets/linkedin.svg" alt="linkedIn icon" class="form-step-icon" (click)="selectIcon('linkedin')" [ngClass]="{ active: selectedIcon === 'linkedin' }" placement="bottom" ngbTooltip="Linkedin" />
+        <div class="second-step-in-create" *ngIf="currentStep === 3">
+          <div class="row">
+            <div class="col-md-8 offset-2" style="margin-top: 9px">
+              <div class="form-step-icons-container d-flex">
+                <img
+                  src="../../assets/facebook.svg"
+                  alt="facebook icon"
+                  class="form-step-icon"
+                  (click)="selectIcon('facebook')"
+                  [ngClass]="{ active: selectedIcon === 'facebook' }"
+                  placement="bottom"
+                  ngbTooltip="Facebook"
+                />
+                <img
+                  src="../../assets/instagram.svg"
+                  alt="instagram icon"
+                  class="form-step-icon"
+                  (click)="selectIcon('instagram')"
+                  [ngClass]="{ active: selectedIcon === 'instagram' }"
+                  placement="bottom"
+                  ngbTooltip="Instagram"
+                />
+                <img
+                  src="../../assets/twitter.svg"
+                  alt="twitter icon"
+                  class="form-step-icon"
+                  (click)="selectIcon('twitter')"
+                  [ngClass]="{ active: selectedIcon === 'twitter' }"
+                  placement="bottom"
+                  ngbTooltip="Twitter"
+                />
+                <img
+                  src="../../assets/linkedin.svg"
+                  alt="linkedIn icon"
+                  class="form-step-icon"
+                  (click)="selectIcon('linkedin')"
+                  [ngClass]="{ active: selectedIcon === 'linkedin' }"
+                  placement="bottom"
+                  ngbTooltip="Linkedin"
+                />
 
-                                <img src="../../assets/telegram.svg" alt="Telegram icon" class="form-step-icon" (click)="selectIcon('telegram')" [ngClass]="{ active: selectedIcon === 'telegram' }" placement="bottom" ngbTooltip="Telegram" />
+                <img
+                  src="../../assets/telegram.svg"
+                  alt="Telegram icon"
+                  class="form-step-icon"
+                  (click)="selectIcon('telegram')"
+                  [ngClass]="{ active: selectedIcon === 'telegram' }"
+                  placement="bottom"
+                  ngbTooltip="Telegram"
+                />
 
-                                <img src="../../assets/whatsapp.svg" alt="Telegram icon" class="form-step-icon" (click)="selectIcon('whatsapp')" [ngClass]="{ active: selectedIcon === 'whatsapp' }" placement="bottom" ngbTooltip="whatsapp" />
+                <img
+                  src="../../assets/whatsapp.svg"
+                  alt="Telegram icon"
+                  class="form-step-icon"
+                  (click)="selectIcon('whatsapp')"
+                  [ngClass]="{ active: selectedIcon === 'whatsapp' }"
+                  placement="bottom"
+                  ngbTooltip="whatsapp"
+                />
 
-                                <img src="../../assets/website.svg" alt="website icon" class="form-step-icon" (click)="selectIcon('website')" [ngClass]="{ active: selectedIcon === 'website' }" placement="bottom" ngbTooltip="Website" />
-                                <img src="../../assets/blogger.svg" alt="blog icon" class="form-step-icon" (click)="selectIcon('blog')" [ngClass]="{ active: selectedIcon === 'blog' }" placement="bottom" ngbTooltip="Blog" />
-                                <img src="../../assets/github.svg" alt="Blog icon" class="form-step-icon" (click)="selectIcon('github')" [ngClass]="{ active: selectedIcon === 'github' }" placement="bottom" ngbTooltip="Github" />
-                                <img src="../../assets/youtube.svg" alt="youtube icon" class="form-step-icon" (click)="selectIcon('youtube')" [ngClass]="{ active: selectedIcon === 'youtube' }" placement="bottom" ngbTooltip="Youtube Channel" />
-                                <img src="../../assets/snapchat.svg" alt="Snapchat icon" class="form-step-icon" (click)="selectIcon('snapchat')" [ngClass]="{ active: selectedIcon === 'snapchat' }" placement="bottom" ngbTooltip="Snapchat" />
+                <img
+                  src="../../assets/website.svg"
+                  alt="website icon"
+                  class="form-step-icon"
+                  (click)="selectIcon('website')"
+                  [ngClass]="{ active: selectedIcon === 'website' }"
+                  placement="bottom"
+                  ngbTooltip="Website"
+                />
+                <img
+                  src="../../assets/blogger.svg"
+                  alt="blog icon"
+                  class="form-step-icon"
+                  (click)="selectIcon('blog')"
+                  [ngClass]="{ active: selectedIcon === 'blog' }"
+                  placement="bottom"
+                  ngbTooltip="Blog"
+                />
+                <img
+                  src="../../assets/github.svg"
+                  alt="Blog icon"
+                  class="form-step-icon"
+                  (click)="selectIcon('github')"
+                  [ngClass]="{ active: selectedIcon === 'github' }"
+                  placement="bottom"
+                  ngbTooltip="Github"
+                />
+                <img
+                  src="../../assets/youtube.svg"
+                  alt="youtube icon"
+                  class="form-step-icon"
+                  (click)="selectIcon('youtube')"
+                  [ngClass]="{ active: selectedIcon === 'youtube' }"
+                  placement="bottom"
+                  ngbTooltip="Youtube Channel"
+                />
+                <img
+                  src="../../assets/snapchat.svg"
+                  alt="Snapchat icon"
+                  class="form-step-icon"
+                  (click)="selectIcon('snapchat')"
+                  [ngClass]="{ active: selectedIcon === 'snapchat' }"
+                  placement="bottom"
+                  ngbTooltip="Snapchat"
+                />
 
-                                <img src="../../assets/dribbble.svg" alt="Dribbble icon" class="form-step-icon" (click)="selectIcon('dribble')" [ngClass]="{ active: selectedIcon === 'dribble' }" placement="bottom" ngbTooltip="Dribbble" />
-                                <img src="../../assets/behance.svg" alt="Behance icon" class="form-step-icon" (click)="selectIcon('behance')" [ngClass]="{ active: selectedIcon === 'behance' }" placement="bottom" ngbTooltip="Behance" />
-                                <img src="../../assets/pubg.svg" alt="pubg icon" class="form-step-icon" (click)="selectIcon('pubg')" [ngClass]="{ active: selectedIcon === 'pubg' }" placement="bottom" ngbTooltip="Pubg" />
-                            </div>
+                <img
+                  src="../../assets/dribbble.svg"
+                  alt="Dribbble icon"
+                  class="form-step-icon"
+                  (click)="selectIcon('dribble')"
+                  [ngClass]="{ active: selectedIcon === 'dribble' }"
+                  placement="bottom"
+                  ngbTooltip="Dribbble"
+                />
+                <img
+                  src="../../assets/behance.svg"
+                  alt="Behance icon"
+                  class="form-step-icon"
+                  (click)="selectIcon('behance')"
+                  [ngClass]="{ active: selectedIcon === 'behance' }"
+                  placement="bottom"
+                  ngbTooltip="Behance"
+                />
+                <img
+                  src="../../assets/pubg.svg"
+                  alt="pubg icon"
+                  class="form-step-icon"
+                  (click)="selectIcon('pubg')"
+                  [ngClass]="{ active: selectedIcon === 'pubg' }"
+                  placement="bottom"
+                  ngbTooltip="Pubg"
+                />
+              </div>
 
-                            <div class="form-group">
-                                <div class="social-links-input-container" *ngIf="selectedIcon === 'facebook'">
-                                    <label for="facebook-username" class="social-media-url-prefix">https://facebook.com/</label
+              <!-- <div class="custom-links-block pt-3">
+                <button
+                  class="bg-green text-white btn btn-md"
+                  (click)="selectIcon('custom')"
+                  placement="bottom"
+                  ngbTooltip="Add your custom links, eg: app referral,Project links"
+                >
+                  Custom Links
+                </button>
+              </div> -->
+
+              <div class="form-group">
+                <div *ngIf="selectedIcon === 'custom'">
+                  <div
+                    class="custom-1-div"
+                    *ngFor="let customObj of customLinks; let i = index"
+                  >
+                    <div class="form-group">
+                      <label for="custom-text">Title {{ i + 1 }}</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="instagram-username"
+                        placeholder="Enter Title {{ i + 1 }}"
+                        [(ngModel)]="customObj.title"
+                        name="user custom title"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="custom-url">URL {{ i + 1 }}</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="custom-url"
+                        placeholder="Enter URL {{ i + 1 }}"
+                        [(ngModel)]="customObj.title"
+                        name="user custom url"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="social-links-input-container"
+                  *ngIf="selectedIcon === 'facebook'"
+                >
+                  <label for="facebook-username" class="social-media-url-prefix"
+                    >Facebook URL</label
                   >
                   <input
                     type="text"
                     class="form-control user-social-link-input"
                     id="facebook-username"
-                    [(ngModel)]="card.socialLinks.facebook"
-                    placeholder="Enter your username"
+                    [(ngModel)]="card.facebook"
+                    placeholder="https://www.facebook.com/InternetcardIN"
                     name="user facebook Url"
                   />
                 </div>
@@ -264,13 +603,13 @@
                   <label
                     for="instagram-username"
                     class="social-media-url-prefix"
-                    >https://instagram.com/</label
+                    >Instagram Username</label
                   >
                   <input
                     type="text"
                     class="form-control user-social-link-input"
                     id="instagram-username"
-                    placeholder="Enter your username"
+                    placeholder="@internetcardin"
                     [(ngModel)]="card.socialLinks.instagram"
                     name="user instagram url"
                   />
@@ -281,13 +620,13 @@
                   *ngIf="selectedIcon === 'website'"
                 >
                   <label for="user-website" class="social-media-url-prefix"
-                    >Website</label
+                    >Website URL</label
                   >
                   <input
                     type="text"
                     class="form-control user-social-link-input"
                     id="user-website-url"
-                    placeholder="Enter your website url"
+                    placeholder="https://www.internetcard.in/"
                     [(ngModel)]="card.website"
                     name="user blog url"
                   />
@@ -298,14 +637,14 @@
                   *ngIf="selectedIcon === 'linkedin'"
                 >
                   <label for="user-linkedUrl" class="social-media-url-prefix"
-                    >https://linkedin.com/</label
+                    >Linkedin URL</label
                   >
                   <input
                     type="text"
                     class="form-control user-social-link-input"
                     id="user-linkedUrl"
-                    placeholder="Enter your username"
-                    [(ngModel)]="card.socialLinks.linkedin"
+                    placeholder="https://www.linkedin.com/company/internetcard/"
+                    [(ngModel)]="card.linkedin"
                     name="user linkedin url"
                   />
                 </div>
@@ -315,13 +654,13 @@
                   *ngIf="selectedIcon === 'telegram'"
                 >
                   <label for="user-linkedUrl" class="social-media-url-prefix"
-                    >https://t.me/</label
+                    >Telegram Username</label
                   >
                   <input
                     type="text"
                     class="form-control user-social-link-input"
                     id="user-linkedUrl"
-                    placeholder="Enter your username"
+                    placeholder="@daytradertelugu"
                     [(ngModel)]="card.telegramUsername"
                     name="user Telegram url"
                   />
@@ -332,15 +671,15 @@
                   *ngIf="selectedIcon === 'whatsapp'"
                 >
                   <label for="user-linkedUrl" class="social-media-url-prefix"
-                    >https://wa.me/</label
+                    >Whatsapp Number</label
                   >
                   <input
                     type="text"
                     class="form-control user-social-link-input"
                     id="user-linkedUrl"
-                    placeholder="Enter your number"
+                    placeholder="8500000000"
                     [(ngModel)]="card.whatsappNumber"
-                    name="user whatsapp url"
+                    name="user whatsapp number"
                   />
                 </div>
                 <div
@@ -348,13 +687,13 @@
                   *ngIf="selectedIcon === 'blog'"
                 >
                   <label for="user-blog-url" class="social-media-url-prefix"
-                    >Blog</label
+                    >Blog URL</label
                   >
                   <input
                     type="text"
                     class="form-control user-social-link-input"
                     id="user-blog-url"
-                    placeholder="Enter your blog url"
+                    placeholder="https://save350.blogspot.com/"
                     [(ngModel)]="card.blog"
                     name="user blog url"
                   />
@@ -365,7 +704,7 @@
                   *ngIf="selectedIcon === 'twitter'"
                 >
                   <label for="twitter-username" class="social-media-url-prefix"
-                    >https://twitter.com/</label
+                    >Twitter Username</label
                   >
                   <input
                     type="text"
@@ -373,7 +712,7 @@
                     class="form-control user-social-link-input"
                     id="twitter-username"
                     name="user twitter url"
-                    placeholder="Enter your username"
+                    placeholder="@InternetcardIN"
                   />
                 </div>
 
@@ -382,7 +721,7 @@
                   *ngIf="selectedIcon === 'github'"
                 >
                   <label for="github-username" class="social-media-url-prefix"
-                    >https:/github.com/</label
+                    >Github Username</label
                   >
                   <input
                     type="text"
@@ -390,7 +729,7 @@
                     class="form-control user-social-link-input"
                     id="github-username"
                     name="user github username"
-                    placeholder="Enter your username"
+                    placeholder="@uspolo87"
                   />
                 </div>
 
@@ -399,7 +738,7 @@
                   *ngIf="selectedIcon === 'youtube'"
                 >
                   <label for="github-username" class="social-media-url-prefix"
-                    >Youtube</label
+                    >Youtube URL</label
                   >
                   <input
                     type="text"
@@ -407,7 +746,7 @@
                     class="form-control user-social-link-input"
                     id="youtube-username"
                     name="user youtube Url"
-                    placeholder="Enter your channel url"
+                    placeholder="https://www.youtube.com/channel"
                   />
                 </div>
 
@@ -416,11 +755,11 @@
                   *ngIf="selectedIcon === 'snapchat'"
                 >
                   <label for="snapchat-username" class="social-media-url-prefix"
-                    >https://snapchat.com</label
+                    >Snapchat Username</label
                   >
                   <input
                     type="text"
-                    [(ngModel)]="card.socialLinks.snapchat"
+                    [(ngModel)]="card.snapchat"
                     class="form-control user-social-link-input"
                     id="snapchat-username"
                     name="user snapchat Url"
@@ -433,7 +772,7 @@
                   *ngIf="selectedIcon === 'dribble'"
                 >
                   <label for="dribble-username" class="social-media-url-prefix"
-                    >https://dribbble.com/</label
+                    >Dribbble Username</label
                   >
                   <input
                     type="text"
@@ -441,7 +780,7 @@
                     class="form-control user-social-link-input"
                     id="dribble-username"
                     name="user Dribble Url"
-                    placeholder="Dribble username"
+                    placeholder="@dribble"
                   />
                 </div>
 
@@ -450,7 +789,7 @@
                   *ngIf="selectedIcon === 'behance'"
                 >
                   <label for="dribble-username" class="social-media-url-prefix"
-                    >https://behance.com/</label
+                    >Behance Username</label
                   >
                   <input
                     type="text"
@@ -458,7 +797,7 @@
                     class="form-control user-social-link-input"
                     id="behance-username"
                     name="user behance Url"
-                    placeholder="Behance username"
+                    placeholder="@Behance"
                   />
                 </div>
 
@@ -467,7 +806,7 @@
                   *ngIf="selectedIcon === 'pubg'"
                 >
                   <label for="dribble-username" class="social-media-url-prefix"
-                    >PUBG</label
+                    >BGMI</label
                   >
                   <input
                     type="text"
@@ -475,7 +814,7 @@
                     class="form-control user-social-link-input"
                     id="pubg-username"
                     name="user Pubg Url"
-                    placeholder="Pubg username"
+                    placeholder="BGMI username"
                   />
                 </div>
               </div>
@@ -507,9 +846,9 @@
                     <div class="form-group">
                       <div class="position-relative">
                         <span class="bio-length">
-                          {{ userBioLength }} /130</span
+                          {{ userBioLength }} /150</span
                         >
-                        <input
+                        <textarea
                           type="text"
                           class="form-control step-form-element"
                           id="user-bio"
@@ -518,9 +857,11 @@
                           name="user bio"
                           (keyup)="getUserBioLength()"
                           required
+                          rows="5"
                           #userBio="ngModel"
-                          maxlength="130"
-                        />
+                          maxlength="150"
+                        >
+                        </textarea>
                       </div>
 
                       <div
@@ -533,7 +874,7 @@
                           Bio is required.
                         </div>
                         <div *ngIf="userBio.errors?.maxlength">
-                          Bio must be within 130 characters.
+                          Bio must be within 150 characters.
                         </div>
                       </div>
                     </div>
@@ -569,30 +910,48 @@
                         <label for="upload-cv" id="upload-sv-label"
                           >Upload CV
                         </label>
-                                    <img src="assets/upload-icon.png" class="upload-icon" alt="upload icon" />
-                                </div>
+                        <img
+                          src="assets/upload-icon.png"
+                          class="upload-icon"
+                          alt="upload icon"
+                        />
+                      </div>
 
-                                <input type="file" class="form-control step-form-element" id="upload-cv" (change)="getCv($event)" placeholder="Upload CV" style="display: none" accept=".pdf,.doc" />
-                                <div class="cv-uploaded-block" *ngIf="filePath">
-                                    <p class="file-name">{{ filePath.name }}</p>
-                                    <button class="resume-upload-btn btn btn-md" (click)="uploadCv()">
+                      <input
+                        type="file"
+                        class="form-control step-form-element"
+                        id="upload-cv"
+                        (change)="getCv($event)"
+                        placeholder="Upload CV"
+                        style="display: none"
+                        accept=".pdf,.doc"
+                      />
+                      <div class="cv-uploaded-block" *ngIf="filePath">
+                        <p class="file-name">{{ filePath.name }}</p>
+                        <button
+                          class="resume-upload-btn btn btn-md"
+                          (click)="uploadCv()"
+                        >
                           Upload CV
                         </button>
-                                </div>
-                            </div>
-                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="skills-box">
-                                    <button *ngIf="innerWidth < 768" class="btn btn-md bg-green visible-small" (click)="addSkill($event, skillSearch)">
+                  <!-- <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="skills-box">
+                                            <button *ngIf="innerWidth < 768" class="btn btn-md bg-green visible-small" (click)="addSkill($event, skillSearch)">
                           add
                         </button>
-                                    <!-- <span (click)="$event.stopPropagation()"></span> -->
-                                    <input type="search" class="form-control skill-search-input" [(ngModel)]="skillSearch" (keyup.enter)="addSkill($event, skillSearch); (false)" name="skille search" placeholder="Type skill and press enter" #userSkill="ngModel" required />
+                                            <button class="btn btn-md bg-green text-white visible-large" (click)="addSkill($event, skillSearch)">
+                          add
+                        </button>
 
-                                    <div class="skill-display-box">
-                                        <span *ngFor="let skill of skillsArray" class="skills-card bg-blue text-white mr-3">
+                                            <input type="search" class="form-control skill-search-input" [(ngModel)]="skillSearch" name="skille search" placeholder="Add skills" #userSkill="ngModel" required />
+
+                                            <div class="skill-display-box">
+                                                <span *ngFor="let skill of skillsArray" class="skills-card bg-blue text-white mr-3">
                             {{ skill }}
                             <span
                               ><i
@@ -601,43 +960,64 @@
                                 aria-hidden="true"
                               ></i>
                             </span>
-                                        </span>
+                                                </span>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                </div> -->
                 </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-    </div>
 
-    <div class="fourth-step-in-create" *ngIf="currentStep === 5">
-        <div class="row">
-            <div class="col-md-11 text-center pr-0 visible-large" style="max-width: 82%; margin: auto">
-                <div class="card-branding-container">
-                    <img src="assets/card-branding-logo.svg" alt="eacrd-card-branding logo" class="img-fluid card-branding" />
-                </div>
-                <div class="user-card-inner-container-row" [ngStyle]="{ background: card.bgColor }">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card-peronsal-profile-container text-center">
-                                <img *ngIf="card.avatar" src="assets/{{ card.avatar }}.svg" alt="user perosnal card image" class="img-fluid user-personal-profile" />
+        <div class="fourth-step-in-create" *ngIf="currentStep === 5">
+          <div class="row">
+            <div
+              class="col-md-11 text-center pr-0 visible-large"
+              style="max-width: 82%; margin: auto"
+            >
+              <div class="card-branding-container">
+                <img
+                  src="assets/card-branding-logo.svg"
+                  alt="eacrd-card-branding logo"
+                  class="img-fluid card-branding"
+                />
+              </div>
+              <div
+                class="user-card-inner-container-row"
+                [ngStyle]="{ background: card.bgColor }"
+              >
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card-peronsal-profile-container text-center">
+                      <img
+                        *ngIf="card.avatar"
+                        src="assets/{{ card.avatar }}.svg"
+                        alt="user perosnal card image"
+                        class="img-fluid user-personal-profile"
+                      />
 
-                                <h4 class="user-name text-white">{{ card.userName }}</h4>
-                                <p class="user-country text-white mb-3">
-                                    <img src="assets/location-icon.svg" alt="location icon" class="img-fluid location-icon" /> {{ card.userCountry }}
-                                </p>
+                      <h4 class="user-name text-white">{{ card.userName }}</h4>
+                      <p class="user-country text-white mb-3">
+                        <img
+                          src="assets/location-icon.svg"
+                          alt="location icon"
+                          class="img-fluid location-icon"
+                        />
+                        {{ card.userCountry }}
+                      </p>
 
-                                <div class="likes-container">
-                                    <span class="user-like-icon"><i class="fa fa-heart-o" aria-hidden="true"></i>
+                      <div class="likes-container">
+                        <span class="user-like-icon"
+                          ><i class="fa fa-heart-o" aria-hidden="true"></i>
                         </span>
-                                    <p class="user-likes-count text-white text-bold">25</p>
-                                </div>
+                        <p class="user-likes-count text-white text-bold">0</p>
+                      </div>
 
-                                <div class="webiste-blog-container mt-2">
-                                    <div class="website-container">
-                                        <span class="perosnal-links">
+                      <div class="webiste-blog-container mt-2">
+                        <div class="website-container">
+                          <span class="perosnal-links">
                             <a href="#" target="_blank">
                               <img
                                 src="assets/website-icon.svg"
@@ -647,7 +1027,7 @@
                               Website</a
                             > </span
                           ><span class="perosnal-links">
-                            <a href="#"  target="_blank">
+                            <a href="#" target="_blank">
                               <img
                                 src="assets/blog-icon.svg"
                                 alt="blog icon"
@@ -656,172 +1036,292 @@
                               Blog</a
                             >
                           </span>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
+                      </div>
+                    </div>
+                  </div>
 
-                        <div class="col-md-8">
-                            <div class="personal-card-user-content-container text-left">
-                                <div class="user-bio-container">
-                                    <h3 class="bio-initial-content text-green">
-                                        <span class="user-bio-bold-text">I'</span>m
-                                        <span class="text-white">a </span>
-                                    </h3>
-                                    <p class="user-given-bio text-white">
-                                        {{ card.userBio }} <span class="text-green">.</span>
-                                    </p>
-                                </div>
+                  <div class="col-md-8">
+                    <div class="personal-card-user-content-container text-left">
+                      <div class="user-bio-container">
+                        <h3 class="bio-initial-content text-green">
+                          <span class="user-bio-bold-text">I'</span>m
+                          <span class="text-white">a </span>
+                        </h3>
+                        <p class="user-given-bio text-white">
+                          {{ card.userBio }} <span class="text-green">.</span>
+                        </p>
+                      </div>
 
-                                <div class="social-links-container">
-                                    <p class="follow-heading text-white">
-                                        Follow me through:
-                                    </p>
+                      <div class="social-links-container">
+                        <p class="follow-heading text-white">
+                          Follow me through:
+                        </p>
 
-                                    <div class="socials-icons-container">
-                                        <a target="_blank" *ngFor="
+                        <div class="socials-icons-container">
+                          <a
+                            target="_blank"
+                            *ngFor="
                               let item of card.socialLinks
                                 | keyvalue
                                 | slice: 0:6
-                            " href="https://{{ item.key }}.com/{{ item.value }}">
-                                            <img src="assets/{{ item.key }}.svg" alt="{{ item.key }} image" class="user-scoial-icon img-fluid" />
-                                        </a>
+                            "
+                            href="https://{{ item.key }}.com/{{ item.value }}"
+                          >
+                            <img
+                              src="assets/{{ item.key }}.svg"
+                              alt="{{ item.key }} image"
+                              class="user-scoial-icon img-fluid"
+                            />
+                          </a>
 
-                                        <span class="more-links" *ngIf="remaingLinksCount > 0">{{ remaingLinksCount }}+ more</span
+                          <span class="more-links" *ngIf="remaingLinksCount > 0"
+                            >{{ remaingLinksCount }}+ more</span
                           >
                         </div>
                       </div>
 
                       <div class="card-bottom-container">
                         <div class="user-interestes-container">
-                          <p class="intrests-head text-white">Intrests:</p>
-                          <div class="intrests-display-container">
+                          <button class="my-cv-button btn btn-md btn-block">
+                            My Resume
+                          </button>
+                          <!-- <p class="intrests-head text-white">MY CV:</p> -->
+                          <!-- <div class="intrests-display-container">
                             <span
                               *ngFor="let skill of skillsArray | slice: 0:4"
                               class="intrest-card"
                             >
                               {{ skill }}
                             </span>
-                                    </div>
-                                </div>
-                            </div>
+                                        </div> -->
                         </div>
+                      </div>
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
 
-        <section class="mini-internet-card visible-small">
-            <div class="visible-small">
-                <div class="card-customize-bg-colors mini-card-customize-colors">
-                    <p class="card-bg-color" style="background-color: #525be2" (click)="setCardbg('')"></p>
-                    <p class="card-bg-color" style="background-color: #1f1f1f" (click)="setCardbg('#1f1f1f')"></p>
-                    <p class="card-bg-color" style="background-color: #256879" (click)="setCardbg('#256879')"></p>
-                    <p class="card-bg-color" style="background-color: #2f3970" (click)="setCardbg('#2f3970')"></p>
-                    <p class="card-bg-color" style="background-color: #ea5252" (click)="setCardbg('#ea5252')"></p>
-                    <p class="card-bg-color" style="background-color: #08756e" (click)="setCardbg('#08756e')"></p>
+            <section class="mini-internet-card visible-small">
+              <div class="visible-small">
+                <div
+                  class="card-customize-bg-colors mini-card-customize-colors"
+                >
+                  <p
+                    class="card-bg-color"
+                    style="background-color: #525be2"
+                    (click)="setCardbg('')"
+                    [ngClass]="{ active: card.bgColor === '' }"
+                  ></p>
+                  <p
+                    class="card-bg-color"
+                    style="background-color: #1f1f1f"
+                    (click)="setCardbg('#1f1f1f')"
+                    [ngClass]="{ active: card.bgColor === '#1f1f1f' }"
+                  ></p>
+                  <p
+                    class="card-bg-color"
+                    style="background-color: #256879"
+                    (click)="setCardbg('#256879')"
+                    [ngClass]="{ active: card.bgColor === '#256879' }"
+                  ></p>
+                  <p
+                    class="card-bg-color"
+                    style="background-color: #2f3970"
+                    (click)="setCardbg('#2f3970')"
+                    [ngClass]="{ active: card.bgColor === '#2f3970' }"
+                  ></p>
+                  <p
+                    class="card-bg-color"
+                    style="background-color: #ea5252"
+                    (click)="setCardbg('#ea5252')"
+                    [ngClass]="{ active: card.bgColor === '#ea5252' }"
+                  ></p>
+                  <p
+                    class="card-bg-color"
+                    style="background-color: #08756e"
+                    (click)="setCardbg('#08756e')"
+                    [ngClass]="{ active: card.bgColor === '#08756e' }"
+                  ></p>
                 </div>
-            </div>
-            <div class="min-card-inner-container">
-                <div class="mini-card-header bg-color" [ngStyle]="{ background: card.bgColor }"></div>
+              </div>
+              <div class="min-card-inner-container">
+                <div
+                  class="mini-card-header bg-color"
+                  [ngStyle]="{ background: card.bgColor }"
+                ></div>
 
                 <div class="mini-card-body">
-                    <div class="mini-card-profile-container">
-                        <div class="card-pic-like-container">
-                            <img src="assets/{{ card.avatar }}.svg" alt="user profile image" class="mini-card-profile" />
-                            <span class="card-likes-icon"><i class="fa fa-heart" aria-hidden="true"></i
+                  <div class="mini-card-profile-container">
+                    <div class="card-pic-like-container">
+                      <img
+                        src="assets/{{ card.avatar }}.svg"
+                        alt="user profile image"
+                        class="mini-card-profile"
+                      />
+                      <span class="card-likes-icon"
+                        ><i class="fa fa-heart" aria-hidden="true"></i
                       ></span>
-                        </div>
-
-                        <div class="basic-info">
-                            <h4 class="user-name">{{ card.userName }}</h4>
-                            <p class="user-bio">{{ card.userBio }}</p>
-                        </div>
                     </div>
 
-                    <div class="mini-card-body user-data">
-                        <span class="follow-text">Follow me through: </span>
+                    <div class="basic-info">
+                      <h4 class="user-name">{{ card.userName }}</h4>
+                      <p class="user-bio">{{ card.userBio }}</p>
+                    </div>
+                  </div>
 
-                        <div class="social-links-icon-container">
-                            <a target="_blank" *ngFor="let item of card.socialLinks | keyvalue" href="https://{{ item.key }}.com/{{ item.value }}">
-                                <img src="assets/{{ item.key }}.svg" alt="{{ item.key }} image" class="mini-social-icon img-fluid" />
-                            </a>
-                        </div>
-                        <div class="card-bottom-container">
-                            <div class="mini-card-interestes-container">
-                                <p class="intrests-head text-white">Interests:</p>
-                                <div class="intrests-display-container">
-                                    <span *ngFor="let skill of skillsArray" class="mini-intrest-card">
+                  <div class="mini-card-body user-data">
+                    <span class="follow-text">Follow me through: </span>
+
+                    <div class="social-links-icon-container">
+                      <a
+                        target="_blank"
+                        *ngFor="let item of card.socialLinks | keyvalue"
+                        href="https://{{ item.key }}.com/{{ item.value }}"
+                      >
+                        <img
+                          src="assets/{{ item.key }}.svg"
+                          alt="{{ item.key }} image"
+                          class="mini-social-icon img-fluid"
+                        />
+                      </a>
+                    </div>
+                    <div class="card-bottom-container">
+                      <div class="mini-card-interestes-container">
+                        <p class="intrests-head text-white">Interests:</p>
+                        <div class="intrests-display-container">
+                          <span
+                            *ngFor="let skill of skillsArray"
+                            class="mini-intrest-card"
+                          >
                             {{ skill }}
                           </span>
-                                </div>
-                            </div>
                         </div>
+                      </div>
                     </div>
+                  </div>
                 </div>
-            </div>
-        </section>
+              </div>
+            </section>
 
-        <div class="col-md-1 pl-0 visible-large">
-            <div class="card-customize-bg-colors">
-                <p class="card-bg-color" style="background-color: #525be2" (click)="setCardbg('')"></p>
-                <p class="card-bg-color" style="background-color: #1f1f1f" (click)="setCardbg('#1f1f1f')"></p>
-                <p class="card-bg-color" style="background-color: #256879" (click)="setCardbg('#256879')"></p>
-                <p class="card-bg-color" style="background-color: #181718" (click)="setCardbg('#181718')"></p>
-                <p class="card-bg-color" style="background-color: #ea5252" (click)="setCardbg('#ea5252')"></p>
-                <p class="card-bg-color" style="background-color: #792525" (click)="setCardbg('#792525')"></p>
+            <div class="col-md-1 pl-0 visible-large">
+              <div class="card-customize-bg-colors">
+                <p
+                  class="card-bg-color"
+                  style="background-color: #525be2"
+                  (click)="setCardbg('')"
+                  [ngClass]="{ active: card.bgColor === '' }"
+                ></p>
+                <p
+                  class="card-bg-color"
+                  style="background-color: #1f1f1f"
+                  (click)="setCardbg('#1f1f1f')"
+                  [ngClass]="{ active: card.bgColor === '#1f1f1f' }"
+                ></p>
+                <p
+                  class="card-bg-color"
+                  style="background-color: #256879"
+                  (click)="setCardbg('#256879')"
+                  [ngClass]="{ active: card.bgColor === '#256879' }"
+                ></p>
+                <p
+                  class="card-bg-color"
+                  style="background-color: #2f3970"
+                  (click)="setCardbg('#2f3970')"
+                  [ngClass]="{ active: card.bgColor === '#2f3970' }"
+                ></p>
+                <p
+                  class="card-bg-color"
+                  style="background-color: #ea5252"
+                  (click)="setCardbg('#ea5252')"
+                  [ngClass]="{ active: card.bgColor === '#ea5252' }"
+                ></p>
+                <p
+                  class="card-bg-color"
+                  style="background-color: #08756e"
+                  (click)="setCardbg('#08756e')"
+                  [ngClass]="{ active: card.bgColor === '#08756e' }"
+                ></p>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-    </div>
-    </form>
+      </form>
 
-    <div class="form-interaction-steps">
-        <button class="btn btn-md prev-step bg-none text-blue" (click)="showStep(currentStep - 1)" [hidden]="currentStep === 1">
+      <div class="form-interaction-steps">
+        <button
+          class="btn btn-md prev-step bg-none text-blue"
+          (click)="showStep(currentStep - 1)"
+          [hidden]="currentStep === 1"
+        >
           Back
         </button>
 
-        <button class="btn btn-md next-step bg-none text-blue" (click)="showStep(currentStep + 1)" [hidden]="currentStep === 5">
+        <button
+          class="btn btn-md next-step bg-none text-blue"
+          (click)="showStep(currentStep + 1)"
+          [hidden]="currentStep === 5"
+        >
           Next
         </button>
-        <button class="btn btn-md next-step bg-none text-blue" *ngIf="currentStep === 5" (click)="createCard()">
+        <button
+          class="btn btn-md next-step bg-none text-blue"
+          *ngIf="currentStep === 5"
+          (click)="createCard()"
+        >
           Create
         </button>
-    </div>
+      </div>
 
-    <div class="clear"></div>
+      <div class="clear"></div>
     </div>
-    </div>
+  </div>
 </section>
 
-<section class="card-creation-forms-section business-form-steps" *ngIf="cardType === 'business'">
-    <div class="container">
-        <div class="form-inner-container">
-            <form action="#" class="form">
-                <div class="form-steps-blocks">
-                    <div class="form-step-container" [ngClass]="{ active: currentStep === 1 }">
-                        <p class="form-step fw-600" (click)="showStep(1)">Edit Profile</p>
-                    </div>
+<section
+  class="card-creation-forms-section business-form-steps"
+  *ngIf="cardType === 'business'"
+>
+  <div class="container">
+    <div class="form-inner-container">
+      <form action="#" class="form">
+        <div class="form-steps-blocks">
+          <div
+            class="form-step-container"
+            [ngClass]="{ active: currentStep === 1 }"
+          >
+            <p class="form-step fw-600" (click)="showStep(1)">Edit Profile</p>
+          </div>
 
-                    <div class="form-step-container" [ngClass]="{ active: currentStep === 2 }">
-                        <p class="form-step fw-600" (click)="showStep(2)">Update Links</p>
-                    </div>
+          <div
+            class="form-step-container"
+            [ngClass]="{ active: currentStep === 2 }"
+          >
+            <p class="form-step fw-600" (click)="showStep(2)">Update Links</p>
+          </div>
 
-                    <div class="form-step-container" [ngClass]="{ active: currentStep === 3 }">
-                        <p class="form-step fw-600" (click)="showStep(3)">Business info</p>
-                    </div>
+          <div
+            class="form-step-container"
+            [ngClass]="{ active: currentStep === 3 }"
+          >
+            <p class="form-step fw-600" (click)="showStep(3)">Business info</p>
+          </div>
 
-                    <div class="form-step-container" [ngClass]="{ active: currentStep === 4 }">
-                        <p class="form-step fw-600" (click)="showStep(4)">Customize card</p>
-                    </div>
-                </div>
+          <div
+            class="form-step-container"
+            [ngClass]="{ active: currentStep === 4 }"
+          >
+            <p class="form-step fw-600" (click)="showStep(4)">Customize card</p>
+          </div>
+        </div>
 
-                <div class="first-step-in-create" *ngIf="currentStep === 1">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="ml-3">
-                                <div class="upload-container">
-                                    <label for="upload-logo" *ngIf="!imageChangedEvent">
+        <div class="first-step-in-create" *ngIf="currentStep === 1">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="ml-3">
+                <div class="upload-container">
+                  <label for="upload-logo" *ngIf="!imageChangedEvent">
                     <img
                       src="assets/add-avatar-image.svg"
                       class="upload-icon"
@@ -838,75 +1338,132 @@
                       style="display: none"
                     />
                   </label>
-                                </div>
-                            </div>
-                            <div class="image-container" *ngIf="imageChangedEvent">
-                                <img [src]="card.businessLogo" *ngIf="card.businessLogo" alt="{{ card.businessName }} logo" class="uploaded-businessLogo" />
-                                <div class="cropped-image" *ngIf="!card.businessLogo">
-                                    <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="false" format="png" (imageCropped)="imageCropped($event)" (loadImageFailed)="loadImageFailed()"></image-cropper>
-                                </div>
+                </div>
+              </div>
+              <div class="image-container" *ngIf="imageChangedEvent">
+                <img
+                  [src]="card.businessLogo"
+                  *ngIf="card.businessLogo"
+                  alt="{{ card.businessName }} logo"
+                  class="uploaded-businessLogo"
+                />
+                <div class="cropped-image" *ngIf="!card.businessLogo">
+                  <image-cropper
+                    [imageChangedEvent]="imageChangedEvent"
+                    [maintainAspectRatio]="false"
+                    format="png"
+                    (imageCropped)="imageCropped($event)"
+                    (loadImageFailed)="loadImageFailed()"
+                  ></image-cropper>
+                </div>
 
-                                <button class="btn btn-md bg-green text-white img-upload-btn" (click)="uploadBusinessProfilePicture()" *ngIf="!card.businessLogo">
+                <button
+                  class="btn btn-md bg-green text-white img-upload-btn"
+                  (click)="uploadBusinessProfilePicture()"
+                  *ngIf="!card.businessLogo"
+                >
                   Upload
                 </button>
-                            </div>
-                        </div>
+              </div>
+            </div>
 
-                        <div class="col-md-7">
-                            <div class="form-elements-container">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="user-name"></label>
+            <div class="col-md-7">
+              <div class="form-elements-container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="user-name"></label>
 
-                                            <input type="text" class="form-control step-form-element" id="user-name" [(ngModel)]="card.businessName" placeholder="Business Name" name="Business name" maxlength="30" #businessName="ngModel" required />
-                                            <div *ngIf="
+                      <input
+                        type="text"
+                        class="form-control step-form-element"
+                        id="user-name"
+                        [(ngModel)]="card.businessName"
+                        placeholder="Business Name"
+                        name="Business name"
+                        maxlength="30"
+                        #businessName="ngModel"
+                        required
+                      />
+                      <div
+                        *ngIf="
                           businessName.invalid &&
                           (businessName.dirty || businessName.touched)
-                        " class="validation-error">
-                                                <div *ngIf="businessName.errors?.required">
-                                                    Business Name is required.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                        "
+                        class="validation-error"
+                      >
+                        <div *ngIf="businessName.errors?.required">
+                          Business Name is required.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="user-contact"></label>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="user-contact"></label>
 
-                                            <input type="number" class="form-control step-form-element" id="user-contact" [(ngModel)]="card.businessContact" placeholder="Business Phone" name="Business Contact" #businessContact="ngModel" required />
-                                            <div *ngIf="
+                      <input
+                        type="number"
+                        class="form-control step-form-element"
+                        id="user-contact"
+                        [(ngModel)]="card.businessContact"
+                        placeholder="Business Phone"
+                        name="Business Contact"
+                        #businessContact="ngModel"
+                        required
+                      />
+                      <div
+                        *ngIf="
                           businessContact.invalid &&
                           (businessContact.dirty || businessContact.touched)
-                        " class="validation-error">
-                                                <div *ngIf="businessContact.errors?.required">
-                                                    Business Contact is required.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                        "
+                        class="validation-error"
+                      >
+                        <div *ngIf="businessContact.errors?.required">
+                          Business Contact is required.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="user-email"></label>
-                                            <input type="email" class="form-control step-form-element" id="user-email" [(ngModel)]="card.businessEmail" placeholder="Email Address" name="user email" #businessEmail="ngModel" required />
-                                            <div *ngIf="
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="user-email"></label>
+                      <input
+                        type="email"
+                        class="form-control step-form-element"
+                        id="user-email"
+                        [(ngModel)]="card.businessEmail"
+                        placeholder="Email Address"
+                        name="user email"
+                        #businessEmail="ngModel"
+                        required
+                      />
+                      <div
+                        *ngIf="
                           businessEmail.invalid &&
                           (businessEmail.dirty || businessEmail.touched)
-                        " class="validation-error">
-                                                <div *ngIf="businessEmail.errors?.required">
-                                                    Business email is required.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                        "
+                        class="validation-error"
+                      >
+                        <div *ngIf="businessEmail.errors?.required">
+                          Business email is required.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="user-country"></label>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="user-country"></label>
 
-                                            <select class="form-control country-dropdown" [(ngModel)]="card.businessCountry" name="businessCountry" required>
+                      <select
+                        class="form-control country-dropdown"
+                        [(ngModel)]="card.businessCountry"
+                        name="businessCountry"
+                        required
+                      >
                         <option
                           *ngFor="let country of countryList"
                           value="{{ country.name }}"
@@ -914,7 +1471,7 @@
                           {{ country.name }}
                         </option>
                       </select>
-                                            <!-- <div
+                      <!-- <div
                         *ngIf="
                           businessCountry.invalid &&
                           (businessCountry.dirty || businessCountry.touched)
@@ -925,26 +1482,43 @@
                           Country is required.
                         </div>
                       </div> -->
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="business-city"></label>
-                                            <input type="text" class="form-control step-form-element" id="business-city" placeholder="Business City" [(ngModel)]="card.businessCity" name="city" #businessCity="ngModel" required />
-                                            <div *ngIf="
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="business-city"></label>
+                      <input
+                        type="text"
+                        class="form-control step-form-element"
+                        id="business-city"
+                        placeholder="Business City"
+                        [(ngModel)]="card.businessCity"
+                        name="city"
+                        #businessCity="ngModel"
+                        required
+                      />
+                      <div
+                        *ngIf="
                           businessCity.invalid &&
                           (businessCity.dirty || businessCity.touched)
-                        " class="validation-error">
-                                                <div *ngIf="businessCity.errors?.required">
-                                                    City is required.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="business-type"></label>
-                                            <select name="business type" class="form-control business-type" id="business-type" [(ngModel)]="card.businessType">
+                        "
+                        class="validation-error"
+                      >
+                        <div *ngIf="businessCity.errors?.required">
+                          City is required.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="business-type"></label>
+                      <select
+                        name="business type"
+                        class="form-control business-type"
+                        id="business-type"
+                        [(ngModel)]="card.businessType"
+                      >
                         <option value="">Business Type</option>
                         <option value="Arts">Arts</option>
                         <option value="advertising">Advertising</option>
@@ -964,39 +1538,139 @@
                         <option value="Consultancy">Consultancy</option>
                         <option value="other">Other</option>
                       </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
+                  </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-                <div class="second-step-in-create" *ngIf="currentStep === 2">
-                    <div class="row">
-                        <div class="col-md-8 offset-2" style="margin-top: 9px">
-                            <div class="form-step-icons-container d-flex">
-                                <img src="../../assets/facebook.svg" alt="facebook icon" class="form-step-icon" (click)="selectIcon('facebook')" [ngClass]="{ active: selectedIcon === 'facebook' }" placement="bottom" ngbTooltip="Facebook" />
-                                <img src="../../assets/instagram.svg" alt="instagram icon" class="form-step-icon" (click)="selectIcon('instagram')" [ngClass]="{ active: selectedIcon === 'instagram' }" placement="bottom" ngbTooltip="Instagram" />
-                                <img src="../../assets/twitter.svg" alt="twitter icon" class="form-step-icon" (click)="selectIcon('twitter')" [ngClass]="{ active: selectedIcon === 'twitter' }" placement="bottom" ngbTooltip="Twitter" />
-                                <img src="../../assets/linkedin.svg" alt="linkedIn icon" class="form-step-icon" (click)="selectIcon('linkedin')" [ngClass]="{ active: selectedIcon === 'linkedin' }" placement="bottom" ngbTooltip="Linkedin" />
-                                <img src="../../assets/telegram.svg" alt="Telegram icon" class="form-step-icon" (click)="selectIcon('telegram')" [ngClass]="{ active: selectedIcon === 'telegram' }" placement="bottom" ngbTooltip="Telegram" />
+        <div class="second-step-in-create" *ngIf="currentStep === 2">
+          <div class="row">
+            <div class="col-md-8 offset-2" style="margin-top: 9px">
+              <div class="form-step-icons-container d-flex">
+                <img
+                  src="../../assets/facebook.svg"
+                  alt="facebook icon"
+                  class="form-step-icon"
+                  (click)="selectIcon('facebook')"
+                  [ngClass]="{ active: selectedIcon === 'facebook' }"
+                  placement="bottom"
+                  ngbTooltip="Facebook"
+                />
+                <img
+                  src="../../assets/instagram.svg"
+                  alt="instagram icon"
+                  class="form-step-icon"
+                  (click)="selectIcon('instagram')"
+                  [ngClass]="{ active: selectedIcon === 'instagram' }"
+                  placement="bottom"
+                  ngbTooltip="Instagram"
+                />
+                <img
+                  src="../../assets/twitter.svg"
+                  alt="twitter icon"
+                  class="form-step-icon"
+                  (click)="selectIcon('twitter')"
+                  [ngClass]="{ active: selectedIcon === 'twitter' }"
+                  placement="bottom"
+                  ngbTooltip="Twitter"
+                />
+                <img
+                  src="../../assets/linkedin.svg"
+                  alt="linkedIn icon"
+                  class="form-step-icon"
+                  (click)="selectIcon('linkedin')"
+                  [ngClass]="{ active: selectedIcon === 'linkedin' }"
+                  placement="bottom"
+                  ngbTooltip="Linkedin"
+                />
+                <img
+                  src="../../assets/telegram.svg"
+                  alt="Telegram icon"
+                  class="form-step-icon"
+                  (click)="selectIcon('telegram')"
+                  [ngClass]="{ active: selectedIcon === 'telegram' }"
+                  placement="bottom"
+                  ngbTooltip="Telegram"
+                />
 
-                                <img src="../../assets/whatsapp.svg" alt="Telegram icon" class="form-step-icon" (click)="selectIcon('whatsapp')" [ngClass]="{ active: selectedIcon === 'whatsapp' }" placement="bottom" ngbTooltip="whatsapp" />
+                <img
+                  src="../../assets/whatsapp.svg"
+                  alt="Telegram icon"
+                  class="form-step-icon"
+                  (click)="selectIcon('whatsapp')"
+                  [ngClass]="{ active: selectedIcon === 'whatsapp' }"
+                  placement="bottom"
+                  ngbTooltip="whatsapp"
+                />
 
-                                <img src="../../assets/website.svg" alt="website icon" class="form-step-icon" (click)="selectIcon('website')" [ngClass]="{ active: selectedIcon === 'website' }" placement="bottom" ngbTooltip="Website" />
-                                <img src="../../assets/blogger.svg" alt="blog icon" class="form-step-icon" (click)="selectIcon('blog')" [ngClass]="{ active: selectedIcon === 'blog' }" placement="bottom" ngbTooltip="Blog" />
+                <img
+                  src="../../assets/website.svg"
+                  alt="website icon"
+                  class="form-step-icon"
+                  (click)="selectIcon('website')"
+                  [ngClass]="{ active: selectedIcon === 'website' }"
+                  placement="bottom"
+                  ngbTooltip="Website"
+                />
+                <img
+                  src="../../assets/blogger.svg"
+                  alt="blog icon"
+                  class="form-step-icon"
+                  (click)="selectIcon('blog')"
+                  [ngClass]="{ active: selectedIcon === 'blog' }"
+                  placement="bottom"
+                  ngbTooltip="Blog"
+                />
 
-                                <img src="../../assets/youtube.svg" alt="youtube icon" class="form-step-icon" (click)="selectIcon('youtube')" [ngClass]="{ active: selectedIcon === 'youtube' }" placement="bottom" ngbTooltip="Youtube Channel" />
-                                <img src="../../assets/snapchat.svg" alt="Snapchat icon" class="form-step-icon" (click)="selectIcon('snapchat')" [ngClass]="{ active: selectedIcon === 'snapchat' }" placement="bottom" ngbTooltip="Snapchat" />
+                <img
+                  src="../../assets/youtube.svg"
+                  alt="youtube icon"
+                  class="form-step-icon"
+                  (click)="selectIcon('youtube')"
+                  [ngClass]="{ active: selectedIcon === 'youtube' }"
+                  placement="bottom"
+                  ngbTooltip="Youtube Channel"
+                />
+                <img
+                  src="../../assets/snapchat.svg"
+                  alt="Snapchat icon"
+                  class="form-step-icon"
+                  (click)="selectIcon('snapchat')"
+                  [ngClass]="{ active: selectedIcon === 'snapchat' }"
+                  placement="bottom"
+                  ngbTooltip="Snapchat"
+                />
 
-                                <img src="../../assets/dribbble.svg" alt="Dribbble icon" class="form-step-icon" (click)="selectIcon('dribble')" [ngClass]="{ active: selectedIcon === 'dribble' }" placement="bottom" ngbTooltip="Dribbble" />
-                                <img src="../../assets/behance.svg" alt="Behance icon" class="form-step-icon" (click)="selectIcon('behance')" [ngClass]="{ active: selectedIcon === 'behance' }" placement="bottom" ngbTooltip="Behance" />
-                            </div>
+                <img
+                  src="../../assets/dribbble.svg"
+                  alt="Dribbble icon"
+                  class="form-step-icon"
+                  (click)="selectIcon('dribble')"
+                  [ngClass]="{ active: selectedIcon === 'dribble' }"
+                  placement="bottom"
+                  ngbTooltip="Dribbble"
+                />
+                <img
+                  src="../../assets/behance.svg"
+                  alt="Behance icon"
+                  class="form-step-icon"
+                  (click)="selectIcon('behance')"
+                  [ngClass]="{ active: selectedIcon === 'behance' }"
+                  placement="bottom"
+                  ngbTooltip="Behance"
+                />
+              </div>
 
-                            <div class="form-group">
-                                <div class="social-links-input-container" *ngIf="selectedIcon === 'facebook'">
-                                    <label for="facebook-username" class="social-media-url-prefix">https://facebook.com/</label
+              <div class="form-group">
+                <div
+                  class="social-links-input-container"
+                  *ngIf="selectedIcon === 'facebook'"
+                >
+                  <label for="facebook-username" class="social-media-url-prefix"
+                    >https://facebook.com/</label
                   >
                   <input
                     type="text"
@@ -1153,7 +1827,7 @@
                   >
                   <input
                     type="text"
-                    [(ngModel)]="card.socialLinks.snapchat"
+                    [(ngModel)]="card.snapchat"
                     class="form-control user-social-link-input"
                     id="snapchat-username"
                     name="user snapchat Url"
@@ -1294,10 +1968,7 @@
                           <div class="col-md-8">
                             <div class="personal-card-user-content-container">
                               <div
-                                class="
-                                  user-bio-container
-                                  business-bio-container
-                                "
+                                class="user-bio-container business-bio-container"
                               >
                                 <p
                                   class="user-given-bio text-white business-bio"
@@ -1314,7 +1985,8 @@
                                 </p>
 
                                 <div class="socials-icons-container">
-                                  <a  target="_blank"
+                                  <a
+                                    target="_blank"
                                     *ngFor="
                                       let item of card.socialLinks
                                         | keyvalue
@@ -1331,7 +2003,7 @@
                                       class="user-scoial-icon img-fluid"
                                     />
                                   </a>
-                                  <a  target="_blank">
+                                  <a target="_blank">
                                     <span
                                       class="more-links"
                                       *ngIf="remaingLinksCount > 0"
@@ -1363,11 +2035,7 @@
 
                           <div class="col-md-4">
                             <div
-                              class="
-                                card-peronsal-profile-container
-                                text-center
-                                business-profile
-                              "
+                              class="card-peronsal-profile-container text-center business-profile"
                             >
                               <img
                                 [src]="card.businessLogo"
@@ -1404,7 +2072,10 @@
                               <div class="webiste-blog-container mt-2">
                                 <div class="website-container">
                                   <span class="perosnal-links business-link">
-                                    <a  target="_blank" href="{{ card.website }}">
+                                    <a
+                                      target="_blank"
+                                      href="{{ card.website }}"
+                                    >
                                       <img
                                         src="assets/website-icon.svg"
                                         alt="website icon"
@@ -1413,7 +2084,7 @@
                                     </a>
                                   </span>
                                   <span class="perosnal-links business-link">
-                                    <a  target="_blank" href="{{ card.blog }}">
+                                    <a target="_blank" href="{{ card.blog }}">
                                       <img
                                         src="assets/small-mail-icon.svg"
                                         alt="blog icon"
@@ -1423,7 +2094,10 @@
                                   </span>
 
                                   <span class="perosnal-links business-link">
-                                    <a  target="_blank" href="tel:{{ card.businessContact }}">
+                                    <a
+                                      target="_blank"
+                                      href="tel:{{ card.businessContact }}"
+                                    >
                                       <img
                                         src="assets/call-icon.svg"
                                         alt="call icon"
@@ -1503,7 +2177,8 @@
                     <span class="follow-text">Follow me through: </span>
 
                     <div class="social-links-icon-container">
-                      <a  target="_blank"
+                      <a
+                        target="_blank"
                         *ngFor="let item of card.socialLinks | keyvalue"
                         href="https://{{ item.key }}.com/{{ item.value }}"
                         target="_blank"

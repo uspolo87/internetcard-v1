@@ -1,21 +1,30 @@
 <div class="stateLoading" *ngIf="stateLoading">
-    <div class="blur">
-        <img src="../.././assets/loader.svg" alt="site main loader" />
-    </div>
+  <div class="blur">
+    <img src="../.././assets/loader.svg" alt="site main loader" />
+  </div>
 </div>
 
 <notifier-container></notifier-container>
 
 <!-- perosnal card section starts here -->
 <div class="cardview-container">
-    <div *ngIf="!showSearchUI">
-        <section class="mini-internet-card visible-small" *ngIf="cardData">
-            <div class="card-container" [ngClass]="{
+  <div *ngIf="!showSearchUI">
+    <section class="mini-internet-card visible-small" *ngIf="cardData">
+      <div
+        class="card-container"
+        [ngClass]="{
           flipped: flipCardSide
-        }">
-                <div class="card-view-front">
-                    <div class="min-card-inner-container position-relative" *ngIf="cardData">
-                        <span class="cardType business" *ngIf="cardData.cardType === 'business'">B</span
+        }"
+      >
+        <div class="card-view-front">
+          <div
+            class="min-card-inner-container position-relative"
+            *ngIf="cardData"
+          >
+            <span
+              class="cardType business"
+              *ngIf="cardData.cardType === 'business'"
+              >B</span
             >
             <span class="cardType" *ngIf="cardData.cardType === 'personal'"
               >P</span
@@ -46,7 +55,7 @@
                       src="assets/like-icon.svg"
                       alt="like icon"
                       class="card-likes-icon"
-                      [ngClass]="{'disabled':!user}"
+                      [ngClass]="{ disabled: !user }"
                       (click)="
                         likeThisCard(
                           cardData.userName,
@@ -61,170 +70,357 @@
                       src="assets/liked-icon.svg"
                       alt="like icon"
                       class="card-likes-icon"
-                      [ngClass]="{'disabled':!user}"
+                      [ngClass]="{ disabled: !user }"
                       *ngIf="showLike"
                       (click)="unLikeThisCard(cardId)"
                     />
                     <span class="user-likes-count text-white text-bold">
                       {{ likesLength }}
                     </span>
-                    </div>
+                  </div>
                 </div>
 
                 <div class="basic-info">
-                    <div *ngIf="cardData.cardType === 'personal'">
-                        <h4 class="user-name">{{ cardData.userName }}</h4>
-                        <p class="user-bio">{{ cardData.userBio }}</p>
-                    </div>
-                    <div *ngIf="cardData.cardType === 'business'">
-                        <h4 class="user-name">{{ cardData.businessName }}</h4>
-                        <p class="user-bio">{{ cardData.businessBio }}</p>
-                    </div>
-                    <div class="business-add-on-container" *ngIf="cardData.cardType === 'business'">
-                        <a href="tel:{{ cardData.businessContact }}">
-                            <img src="assets/mini-card-call.svg" alt="phone icon" class="mini-card-business-spcl-icons" />
-                        </a>
-                        <a href="mailto:{{ cardData.businessEmail }}">
-                            <img src="assets/mini-card-mail.svg" alt="mail icon" class="mini-card-business-spcl-icons" />
-                        </a>
-                        <a href="{{ cardData.website }}">
-                            <img src="assets/mini-card-web.svg" alt="phone icon" class="mini-card-business-spcl-icons" />
-                        </a>
-                    </div>
+                  <div *ngIf="cardData.cardType === 'personal'">
+                    <h4 class="user-name">{{ cardData.userName }}</h4>
+                    <p class="user-bio">{{ cardData.userBio }}</p>
+                  </div>
+                  <div *ngIf="cardData.cardType === 'business'">
+                    <h4 class="user-name">{{ cardData.businessName }}</h4>
+                    <p class="user-bio">{{ cardData.businessBio }}</p>
+                  </div>
+                  <div
+                    class="business-add-on-container"
+                    *ngIf="cardData.cardType === 'business'"
+                  >
+                    <a href="tel:{{ cardData.businessContact }}">
+                      <img
+                        src="assets/mini-card-call.svg"
+                        alt="phone icon"
+                        class="mini-card-business-spcl-icons"
+                      />
+                    </a>
+                    <a href="mailto:{{ cardData.businessEmail }}">
+                      <img
+                        src="assets/mini-card-mail.svg"
+                        alt="mail icon"
+                        class="mini-card-business-spcl-icons"
+                      />
+                    </a>
+                    <a href="{{ cardData.website }}" target="_blank">
+                      <img
+                        src="assets/mini-card-web.svg"
+                        alt="phone icon"
+                        class="mini-card-business-spcl-icons"
+                      />
+                    </a>
+                  </div>
                 </div>
-            </div>
+              </div>
 
-            <div class="mini-card-body user-data">
-                <span class="follow-text" *ngIf="cardData.cardType === 'personal'">Follow me through:
+              <div class="mini-card-body user-data">
+                <span
+                  class="follow-text"
+                  *ngIf="cardData.cardType === 'personal'"
+                  >Follow me through:
                 </span>
-                <span class="follow-text" *ngIf="cardData.cardType === 'business'">Connect us socially:
+                <span
+                  class="follow-text"
+                  *ngIf="cardData.cardType === 'business'"
+                  >Connect us socially:
                 </span>
 
                 <div class="social-links-icon-container">
-                    <a *ngFor="let item of cardData.socialLinks | keyvalue" href="https://{{ item.key }}.com/{{ item.value }}" target="_blank">
-                        <img src="assets/{{ item.key }}.svg" alt="{{ item.key }} image" class="mini-social-icon img-fluid" />
-                    </a>
+                  <a
+                    *ngFor="let item of cardData.socialLinks | keyvalue"
+                    href="https://{{ item.key }}.com/{{ item.value }}"
+                    target="_blank"
+                  >
+                    <img
+                      src="assets/{{ item.key }}.svg"
+                      alt="{{ item.key }} image"
+                      class="mini-social-icon img-fluid"
+                    />
+                  </a>
 
-                    <a *ngIf="cardData.telegramUsername" target="_blank" href="https://t.me/{{ cardData.telegramUsername }}">
-                        <img src="assets/telegram.svg" alt="Telegram image" class="user-scoial-icon img-fluid mini-social-icon" />
-                    </a>
-                    <a href="https://wa.me/{{ cardData.whatsappNumber }}" target="_blank" *ngIf="cardData.whatsappNumber">
-                        <img src="assets/whatsapp.svg" alt="Whatsapp image" class="user-scoial-icon img-fluid mini-social-icon" />
-                    </a>
+                  <a
+                    *ngIf="cardData.facebook"
+                    target="_blank"
+                    href="{{ cardData.facebook }}"
+                    target="_blank"
+                  >
+                    <img
+                      src="assets/facebook.svg"
+                      alt="facebook image"
+                      class="user-scoial-icon img-fluid mini-social-icon"
+                    />
+                  </a>
+
+                  <a
+                    *ngIf="cardData.telegramUsername"
+                    target="_blank"
+                    href="https://t.me/{{ cardData.telegramUsername }}"
+                    target="_blank"
+                  >
+                    <img
+                      src="assets/telegram.svg"
+                      alt="Telegram image"
+                      class="user-scoial-icon img-fluid mini-social-icon"
+                    />
+                  </a>
+
+                  <a
+                    *ngIf="cardData.snapchat"
+                    target="_blank"
+                    href="https://snapchat/add/{{ cardData.snapchat }}"
+                  >
+                    <img
+                      src="assets/snapchat.svg"
+                      alt="snapchat image"
+                      class="user-scoial-icon img-fluid mini-social-icon"
+                    />
+                  </a>
+
+                  <a
+                    href="https://wa.me/{{ cardData.whatsappNumber }}"
+                    target="_blank"
+                    *ngIf="cardData.whatsappNumber"
+                    target="_blank"
+                  >
+                    <img
+                      src="assets/whatsapp.svg"
+                      alt="Whatsapp image"
+                      class="user-scoial-icon img-fluid mini-social-icon"
+                    />
+                  </a>
                 </div>
-                <div class="card-bottom-container">
-                    <div class="mini-card-interestes-container">
-                        <p class="intrests-head text-white" *ngIf="cardData.cardType === 'personal'">
-                            Interests:
-                        </p>
-                        <p class="intrests-head text-white" *ngIf="cardData.cardType === 'business'">
-                            Services:
-                        </p>
-                        <div class="intrests-display-container">
-                            <span *ngFor="let skill of cardData.skillsArray" class="mini-intrest-card">
+                <a
+                  class="my-cv-button btn btn-md btn-block min-card"
+                  target="_blank"
+                  href="{{ cardData.resumeUrl }}"
+                  >My Resume
+                </a>
+                <!-- <div class="card-bottom-container">
+                  <div class="mini-card-interestes-container">
+                    <p
+                      class="intrests-head text-white"
+                      *ngIf="cardData.cardType === 'personal'"
+                    >
+                      Skills:
+                    </p>
+                    <p
+                      class="intrests-head text-white"
+                      *ngIf="cardData.cardType === 'business'"
+                    >
+                      Services:
+                    </p>
+                    <div class="intrests-display-container">
+                      <span
+                        *ngFor="let skill of cardData.skillsArray"
+                        class="mini-intrest-card"
+                      >
                         {{ skill }}
                       </span>
-                        </div>
                     </div>
-                </div>
+                  </div>
+                </div> -->
+              </div>
             </div>
-    </div>
-</div>
-</div>
+          </div>
+        </div>
 
-<div class="card-view-back mini-card-back" [ngStyle]="{ background: cardData.bgColor }">
-    <h2 class="scan-text-heading text-white">
-        <span class="text-green" style="font-weight: 900"> Scan </span> QR Code
-    </h2>
+        <div
+          class="card-view-back mini-card-back"
+          [ngStyle]="{ background: cardData.bgColor }"
+        >
+          <h2 class="scan-text-heading text-white">
+            <span class="text-green" style="font-weight: 900"> Scan </span> QR
+            Code
+          </h2>
 
-    <div class="qr-container">
-        <ngx-kjua [text]="locationUrl" [ecLevel]="'H'" [render]="'image'" [fill]="'#000'" [back]="'#fff'" [label]="'Internet Card'" [image]="'img1'"></ngx-kjua>
-    </div>
-</div>
-</div>
-<div class="mini-card-actions-block min-card-inner-container" [ngClass]="{
+          <div class="qr-container">
+            <ngx-kjua
+              [text]="locationUrl"
+              [ecLevel]="'H'"
+              [render]="'image'"
+              [fill]="'#000'"
+              [back]="'#fff'"
+              [label]="'Internet Card'"
+              [image]="'img1'"
+            ></ngx-kjua>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mini-card-actions-block min-card-inner-container"
+        [ngClass]="{
           'mini-business-action': cardData.cardType === 'business'
-        }">
-    <div class="mini-action-block">
-        <img src="assets/mini-card-rotate-icon.png" alt="rotate icon" class="img-fluid action-icon mini-card-rotate-icon" placement="bottom" ngbTooltip="Flip Card" (click)="flipCard()" />
-    </div>
+        }"
+      >
+        <div class="mini-action-block">
+          <img
+            src="assets/mini-card-rotate-icon.png"
+            alt="rotate icon"
+            class="img-fluid action-icon mini-card-rotate-icon"
+            placement="bottom"
+            ngbTooltip="Flip Card"
+            (click)="flipCard()"
+          />
+        </div>
 
-    <!-- *ngIf="user.uid === cardId" -->
-    <div class="mini-action-block" *ngIf="user && user.uid === cardId">
-        <img src="assets/mini-card-edit-icon.png" alt="edit icon" class="img-fluid action-icon" (click)="goToCardEdit()" placement="bottom" ngbTooltip="Edit" />
-    </div>
+        <!-- *ngIf="user.uid === cardId" -->
+        <div class="mini-action-block" *ngIf="user && user.uid === cardId">
+          <img
+            src="assets/mini-card-edit-icon.png"
+            alt="edit icon"
+            class="img-fluid action-icon"
+            (click)="goToCardEdit()"
+            placement="bottom"
+            ngbTooltip="Edit"
+          />
+        </div>
 
-    <div class="mini-action-block" *ngIf="user && user.uid !== cardId && !showSavedCard">
-        <img (click)="
+        <div
+          class="mini-action-block"
+          *ngIf="user && user.uid !== cardId && !showSavedCard"
+        >
+          <img
+            (click)="
               addToSavedCard(
                 cardData.userName,
                 cardData.avatar,
                 cardId,
                 cardData.cardType
               )
-            " src="assets/mini-card-save-icon.svg" alt="save icon" class="img-fluid action-icon" placement="bottom" ngbTooltip="Save Card" />
-    </div>
-    <!-- *ngIf="user.uid === cardId" -->
+            "
+            src="assets/mini-card-save-icon.svg"
+            alt="save icon"
+            class="img-fluid action-icon"
+            placement="bottom"
+            ngbTooltip="Save Card"
+          />
+        </div>
+        <!-- *ngIf="user.uid === cardId" -->
 
-    <div class="mini-action-block" *ngIf="user && showSavedCard">
-        <img src="assets/mini-card-solid-save.svg" alt="save icon" class="img-fluid action-icon" placement="bottom" ngbTooltip="you saved this card" />
-    </div>
-    <!-- *ngIf="user.uid === cardId" -->
-    <div class="mini-action-block" *ngIf="user && user.uid === cardId">
-        <img src="assets/mini-card-solid-save.svg" alt="Saved icon" class="img-fluid action-icon" (click)="goToSavedCards()" placement="bottom" ngbTooltip="Saved cards" />
-    </div>
+        <div class="mini-action-block" *ngIf="user && showSavedCard">
+          <img
+            src="assets/mini-card-solid-save.svg"
+            alt="save icon"
+            class="img-fluid action-icon"
+            placement="bottom"
+            ngbTooltip="you saved this card"
+          />
+        </div>
+        <!-- *ngIf="user.uid === cardId" -->
+        <div class="mini-action-block" *ngIf="user && user.uid === cardId">
+          <img
+            src="assets/mini-card-solid-save.svg"
+            alt="Saved icon"
+            class="img-fluid action-icon"
+            (click)="goToSavedCards()"
+            placement="bottom"
+            ngbTooltip="Saved cards"
+          />
+        </div>
 
-    <div class="mini-action-block">
-        <img src="assets/mini-card-share-icon.png" alt="share icon" class="img-fluid action-icon" (click)="shareCard()" placement="bottom" ngbTooltip="Share Card" />
-    </div>
-</div>
-</section>
+        <div class="mini-action-block">
+          <img
+            src="assets/mini-card-share-icon.png"
+            alt="share icon"
+            class="img-fluid action-icon"
+            (click)="shareCard()"
+            placement="bottom"
+            ngbTooltip="Share Card"
+          />
+        </div>
+      </div>
+    </section>
 
-<section class="peronsal-card-section visible-large" *ngIf="cardData && cardData.cardType === 'personal'">
-    <div class="perosnal-card-container">
+    <section
+      class="peronsal-card-section visible-large"
+      *ngIf="cardData && cardData.cardType === 'personal'"
+    >
+      <div class="perosnal-card-container">
         <div class="container">
-            <div class="row">
-                <div class="col-md-10" aTilt>
-                    <div class="card-container" [ngClass]="{
+          <div class="row">
+            <div class="col-md-10" aTilt>
+              <div
+                class="card-container"
+                [ngClass]="{
                   flipped: flipCardSide
-                }">
-                        <div class="card-view-front">
-                            <div class="card-branding-container">
-                                <img src="assets/card-branding-logo-personal.svg" alt="eacrd-card-branding logo" class="img-fluid card-branding" />
-                            </div>
+                }"
+              >
+                <div class="card-view-front">
+                  <div class="card-branding-container">
+                    <img
+                      src="assets/card-branding-logo-personal.svg"
+                      alt="eacrd-card-branding logo"
+                      class="img-fluid card-branding"
+                    />
+                  </div>
 
-                            <div class="user-card-inner-container-row card-view-front" [ngStyle]="{ background: cardData.bgColor }">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="card-peronsal-profile-container text-center">
-                                            <img src="assets/{{ cardData.avatar }}.svg" alt="{{ cardData.userName }} image" class="img-fluid user-personal-profile" />
+                  <div
+                    class="user-card-inner-container-row card-view-front"
+                    [ngStyle]="{ background: cardData.bgColor }"
+                  >
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div
+                          class="card-peronsal-profile-container text-center"
+                        >
+                          <img
+                            src="assets/{{ cardData.avatar }}.svg"
+                            alt="{{ cardData.userName }} image"
+                            class="img-fluid user-personal-profile"
+                          />
 
-                                            <h4 class="user-name text-white">
-                                                {{ cardData.userName }}
-                                            </h4>
-                                            <p class="user-country text-white mb-3">
-                                                <img src="assets/location-icon.svg" alt="location icon" class="img-fluid location-icon" /> {{ cardData.userCountry }}
-                                            </p>
+                          <h4 class="user-name text-white">
+                            {{ cardData.userName }}
+                          </h4>
+                          <p class="user-country text-white mb-3">
+                            <img
+                              src="assets/location-icon.svg"
+                              alt="location icon"
+                              class="img-fluid location-icon"
+                            />
+                            {{ cardData.userCountry }}
+                          </p>
 
-                                            <div class="likes-container">
-                                                <img src="assets/like-icon.svg" alt="like icon" class="card-likes-icon" [ngClass]="{'disabled':!user}" (click)="
+                          <div class="likes-container">
+                            <img
+                              src="assets/like-icon.svg"
+                              alt="like icon"
+                              class="card-likes-icon"
+                              [ngClass]="{ disabled: !user }"
+                              (click)="
                                 likeThisCard(
                                   cardData.userName,
                                   cardData.avatar,
                                   cardId,
                                   cardData.cardType
                                 )
-                              " *ngIf="!showLike" />
-                                                <img src="assets/liked-icon.svg" alt="like icon" class="card-likes-icon" *ngIf="showLike" (click)="unLikeThisCard(cardId)" />
-                                                <p class="user-likes-count text-white text-bold">
-                                                    {{ likesLength }}
-                                                </p>
-                                            </div>
+                              "
+                              *ngIf="!showLike"
+                            />
+                            <img
+                              src="assets/liked-icon.svg"
+                              alt="like icon"
+                              class="card-likes-icon"
+                              *ngIf="showLike"
+                              (click)="unLikeThisCard(cardId)"
+                            />
+                            <p class="user-likes-count text-white text-bold">
+                              {{ likesLength }}
+                            </p>
+                          </div>
 
-                                            <div class="webiste-blog-container">
-                                                <div class="website-container">
-                                                    <span class="perosnal-links">
-                                <a href="{{ cardData.website }}">
+                          <div class="webiste-blog-container">
+                            <div class="website-container">
+                              <span class="perosnal-links">
+                                <a
+                                  href="{{ cardData.website }}"
+                                  target="_blank"
+                                >
                                   <img
                                     src="assets/website-icon.svg"
                                     alt="website icon"
@@ -242,68 +438,138 @@
                                   Blog</a
                                 >
                               </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
-                                    <div class="col-md-8">
-                                        <div>
-                                            <a [href]="cardData.resumeUrl" target="_blank" *ngIf="cardData.resumeUrl">
-                                                <img src="assets/resume-icon.png" alt="resume icon" class="img-fluid resume-icon" /></a>
-                                        </div>
-                                        <div class="personal-card-user-content-container">
-                                            <div class="user-bio-container">
-                                                <h3 class="bio-initial-content text-green">
-                                                    <span class="user-bio-bold-text">I'</span>m
-                                                    <span class="text-white">a </span>
-                                                </h3>
-                                                <p class="user-given-bio text-white">
-                                                    {{ cardData.userBio }}
-                                                    <span class="text-green">.</span>
-                                                </p>
-                                            </div>
+                      <div class="col-md-8">
+                        <!-- <div>
+                          <a
+                            [href]="cardData.resumeUrl"
+                            target="_blank"
+                            *ngIf="cardData.resumeUrl"
+                          >
+                            <img
+                              src="assets/resume-icon.png"
+                              alt="resume icon"
+                              class="img-fluid resume-icon"
+                          /></a>
+                        </div> -->
+                        <div class="personal-card-user-content-container">
+                          <div class="user-bio-container">
+                            <h3 class="bio-initial-content text-green">
+                              <span class="user-bio-bold-text">I'</span>m
+                              <span class="text-white">a </span>
+                            </h3>
+                            <p class="user-given-bio text-white">
+                              {{ cardData.userBio }}
+                              <span class="text-green">.</span>
+                            </p>
+                          </div>
 
-                                            <div class="social-links-container">
-                                                <p class="follow-heading text-white">
-                                                    Follow me through:
-                                                </p>
+                          <div class="social-links-container">
+                            <p class="follow-heading text-white">
+                              Follow me through:
+                            </p>
 
-                                                <div class="socials-icons-container">
-                                                    <a *ngFor="
+                            <div class="socials-icons-container">
+                              <a
+                                *ngIf="cardData.facebook"
+                                target="_blank"
+                                href="{{ cardData.facebook }}"
+                              >
+                                <img
+                                  src="assets/facebook.svg"
+                                  alt="Facebook image"
+                                  class="user-scoial-icon img-fluid"
+                                />
+                              </a>
+
+                              <a
+                                *ngIf="cardData.linkedin"
+                                target="_blank"
+                                href="{{ cardData.linkedin }}"
+                              >
+                                <img
+                                  src="assets/linkedin.svg"
+                                  alt="linkedin image"
+                                  class="user-scoial-icon img-fluid"
+                                />
+                              </a>
+
+                              <a
+                                *ngIf="cardData.telegramUsername"
+                                target="_blank"
+                                href="{{ cardData.telegramUsername }}"
+                              >
+                                <img
+                                  src="assets/telegram.svg"
+                                  alt="Telegram image"
+                                  class="user-scoial-icon img-fluid"
+                                />
+                              </a>
+                              <a
+                                *ngIf="cardData.snapchat"
+                                target="_blank"
+                                href="https://www.snapchat.com/add/{{
+                                  cardData.snapchat
+                                }}"
+                              >
+                                <img
+                                  src="assets/snapchat.svg"
+                                  alt="Snapchat image"
+                                  class="user-scoial-icon img-fluid"
+                                />
+                              </a>
+                              <a
+                                href="https://wa.me/{{
+                                  cardData.whatsappNumber
+                                }}"
+                                target="_blank"
+                                *ngIf="cardData.whatsappNumber"
+                              >
+                                <img
+                                  src="assets/whatsapp.svg"
+                                  alt="Whatsapp image"
+                                  class="user-scoial-icon img-fluid"
+                                />
+                              </a>
+                              <a
+                                *ngFor="
                                   let item of cardData.socialLinks
                                     | keyvalue
                                     | slice: 0:linkCount
-                                " href="https://{{ item.key }}.com/{{
+                                "
+                                href="https://{{ item.key }}.com/{{
                                   item.value
-                                }}" target="_blank">
-                                                        <img src="assets/{{ item.key }}.svg" alt="{{ item.key }} image" class="user-scoial-icon img-fluid" />
-                                                    </a>
+                                }}"
+                                target="_blank"
+                              >
+                                <img
+                                  src="assets/{{ item.key }}.svg"
+                                  alt="{{ item.key }} image"
+                                  class="user-scoial-icon img-fluid"
+                                />
+                              </a>
 
-                                                    <a *ngIf="cardData.telegramUsername" target="_blank" href="https://t.me/{{
-                                  cardData.telegramUsername
-                                }}">
-                                                        <img src="assets/telegram.svg" alt="Telegram image" class="user-scoial-icon img-fluid" />
-                                                    </a>
-                                                    <a href="https://wa.me/{{
-                                  cardData.whatsappNumber
-                                }}" target="_blank" *ngIf="cardData.whatsappNumber">
-                                                        <img src="assets/whatsapp.svg" alt="Whatsapp image" class="user-scoial-icon img-fluid" />
-                                                    </a>
-
-                                                    <a (click)="updateLinkCount()" [hidden]="showMoreLinks" style="cursor: pointer">
+                              <a
+                                (click)="updateLinkCount()"
+                                [hidden]="showMoreLinks"
+                                style="cursor: pointer"
+                              >
                                 <span
                                   class="more-links"
                                   *ngIf="remaingLinksCount > 0"
                                   >{{ remaingLinksCount }}+ more</span
                                 >
                               </a>
-                                                </div>
-                                            </div>
+                            </div>
+                          </div>
 
-                                            <div class="card-bottom-container">
-                                                <div class="user-interestes-container">
-                                                    <p class="intrests-head text-white">Intrests:</p>
+                          <div class="card-bottom-container">
+                            <div class="user-interestes-container">
+                              <!-- <p class="intrests-head text-white">Skills:</p>
                                                     <div class="intrests-display-container">
                                                         <span *ngFor="
                                     let skill of cardData.skillsArray
@@ -311,179 +577,314 @@
                                   " class="intrest-card">
                                   {{ skill }}
                                 </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                                    </div> -->
+
+                              <a
+                                class="my-cv-button btn btn-md btn-block"
+                                target="_blank"
+                                href="{{ cardData.resumeUrl }}"
+                                >My Resume
+                              </a>
                             </div>
+                          </div>
                         </div>
-
-                        <div class="card-view-back" [ngStyle]="{ background: cardData.bgColor }">
-                            <div class="card-branding-container back-side-branding">
-                                <img src="assets/card-branding-logo-personal.svg" alt="eacrd-card-branding logo" class="img-fluid card-branding" />
-                            </div>
-
-                            <h2 class="scan-text-heading text-white">
-                                <span class="text-green" style="font-weight: 900">
-                      Scan
-                    </span> QR Code
-                            </h2>
-
-                            <div class="qr-container">
-                                <ngx-kjua [text]="locationUrl" [ecLevel]="'H'" [render]="'image'" [fill]="'#000'" [back]="'#fff'" [label]="'Internet Card'" [image]="'img1'"></ngx-kjua>
-                            </div>
-                        </div>
+                      </div>
                     </div>
+                  </div>
                 </div>
 
-                <div class="col-md-2">
-                    <div class="card-action-container" *ngIf="user">
-                        <div class="action-block">
-                            <img (click)="flipCard()" src="assets/flip-icon.png" alt="save icon" class="img-fluid action-icon" placement="bottom" ngbTooltip="Flip Card" />
-                        </div>
-                        <div class="action-block" *ngIf="user.uid != cardId">
-                            <img (click)="
+                <div
+                  class="card-view-back"
+                  [ngStyle]="{ background: cardData.bgColor }"
+                >
+                  <div class="card-branding-container back-side-branding">
+                    <img
+                      src="assets/card-branding-logo-personal.svg"
+                      alt="eacrd-card-branding logo"
+                      class="img-fluid card-branding"
+                    />
+                  </div>
+
+                  <h2 class="scan-text-heading text-white">
+                    <span class="text-green" style="font-weight: 900">
+                      Scan
+                    </span>
+                    QR Code
+                  </h2>
+
+                  <div class="qr-container">
+                    <ngx-kjua
+                      [text]="locationUrl"
+                      [ecLevel]="'H'"
+                      [render]="'image'"
+                      [fill]="'#000'"
+                      [back]="'#fff'"
+                      [label]="'Internet Card'"
+                      [image]="'img1'"
+                    ></ngx-kjua>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-2">
+              <div class="card-action-container" *ngIf="user">
+                <div class="action-block">
+                  <img
+                    (click)="flipCard()"
+                    src="assets/flip-icon.png"
+                    alt="save icon"
+                    class="img-fluid action-icon"
+                    placement="bottom"
+                    ngbTooltip="Flip Card"
+                  />
+                </div>
+                <div class="action-block" *ngIf="user.uid != cardId">
+                  <img
+                    (click)="
                       addToSavedCard(
                         cardData.userName,
                         cardData.avatar,
                         cardId,
                         cardData.cardType
                       )
-                    " src="assets/save-icon.svg" alt="save icon" class="img-fluid action-icon" placement="bottom" *ngIf="!showSavedCard" ngbTooltip="Save Card" />
-                            <img src="assets/saved-solid-green.svg" alt="save icon" class="img-fluid action-icon" placement="bottom" *ngIf="showSavedCard" ngbTooltip="you saved this card" />
-                        </div>
-                        <div class="action-block" *ngIf="user.uid === cardId">
-                            <img (click)="goToSavedCards()" src="assets/saved-solid-green.svg" alt="save icon" class="img-fluid action-icon" placement="bottom" ngbTooltip="Saved Cards" />
-                        </div>
-
-                        <div class="action-block">
-                            <img src="assets/share-icon.svg" alt="share icon" class="img-fluid action-icon" placement="bottom" ngbTooltip="Share" (click)="copyToClipboard()" />
-                        </div>
-
-                        <div class="action-block" (click)="goToCardEdit()" *ngIf="user.uid === cardId">
-                            <img src="assets/awesome-user-edit.svg" alt="edit icon" class="img-fluid action-icon" placement="bottom" ngbTooltip="Edit Card" />
-                        </div>
-                    </div>
+                    "
+                    src="assets/save-icon.svg"
+                    alt="save icon"
+                    class="img-fluid action-icon"
+                    placement="bottom"
+                    *ngIf="!showSavedCard"
+                    ngbTooltip="Save Card"
+                  />
+                  <img
+                    src="assets/saved-solid-green.svg"
+                    alt="save icon"
+                    class="img-fluid action-icon"
+                    placement="bottom"
+                    *ngIf="showSavedCard"
+                    ngbTooltip="you saved this card"
+                  />
                 </div>
+                <div class="action-block" *ngIf="user.uid === cardId">
+                  <img
+                    (click)="goToSavedCards()"
+                    src="assets/saved-solid-green.svg"
+                    alt="save icon"
+                    class="img-fluid action-icon"
+                    placement="bottom"
+                    ngbTooltip="Saved Cards"
+                  />
+                </div>
+
+                <div class="action-block">
+                  <img
+                    src="assets/share-icon.svg"
+                    alt="share icon"
+                    class="img-fluid action-icon"
+                    placement="bottom"
+                    ngbTooltip="Share"
+                    (click)="copyToClipboard()"
+                  />
+                </div>
+
+                <div
+                  class="action-block"
+                  (click)="goToCardEdit()"
+                  *ngIf="user.uid === cardId"
+                >
+                  <img
+                    src="assets/awesome-user-edit.svg"
+                    alt="edit icon"
+                    class="img-fluid action-icon"
+                    placement="bottom"
+                    ngbTooltip="Edit Card"
+                  />
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-    <!-- perosnal card section ends here -->
-</section>
+      </div>
+      <!-- perosnal card section ends here -->
+    </section>
 
-<section class="peronsal-card-section business-card visible-large" *ngIf="cardData && cardData.cardType === 'business'">
-    <div class="perosnal-card-container">
+    <section
+      class="peronsal-card-section business-card visible-large"
+      *ngIf="cardData && cardData.cardType === 'business'"
+    >
+      <div class="perosnal-card-container">
         <div class="container">
-            <div class="row">
-                <div class="col-md-10" aTilt>
-                    <div class="card-container" [ngClass]="{
+          <div class="row">
+            <div class="col-md-10" aTilt>
+              <div
+                class="card-container"
+                [ngClass]="{
                   flipped: flipCardSide
-                }">
-                        <div class="card-view-front">
-                            <div class="card-branding-container">
-                                <img src="assets/card-branding-logo-business.svg" alt="eacrd-card-branding logo" class="img-fluid card-branding" />
-                            </div>
-                            <div class="user-card-inner-container-row bussines-card">
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <div class="personal-card-user-content-container">
-                                            <div class="user-bio-container business-bio-container">
-                                                <p class="user-given-bio text-white business-bio">
-                                                    {{ cardData.businessBio }}
-                                                    <span class="text-green">.</span>
-                                                </p>
-                                            </div>
+                }"
+              >
+                <div class="card-view-front">
+                  <div class="card-branding-container">
+                    <img
+                      src="assets/card-branding-logo-business.svg"
+                      alt="eacrd-card-branding logo"
+                      class="img-fluid card-branding"
+                    />
+                  </div>
+                  <div class="user-card-inner-container-row bussines-card">
+                    <div class="row">
+                      <div class="col-md-8">
+                        <div class="personal-card-user-content-container">
+                          <div
+                            class="user-bio-container business-bio-container"
+                          >
+                            <p class="user-given-bio text-white business-bio">
+                              {{ cardData.businessBio }}
+                              <span class="text-green">.</span>
+                            </p>
+                          </div>
 
-                                            <div class="social-links-container">
-                                                <p class="follow-heading text-green fw-600">
-                                                    Connect us socially:
-                                                </p>
-                                                <div class="socials-icons-container">
-                                                    <a target="_blank" *ngFor="
+                          <div class="social-links-container">
+                            <p class="follow-heading text-green fw-600">
+                              Connect us socially:
+                            </p>
+                            <div class="socials-icons-container">
+                              <a
+                                target="_blank"
+                                *ngFor="
                                   let item of cardData.socialLinks
                                     | keyvalue
                                     | slice: 0:linkCount
-                                " href="https://{{ item.key }}.com/{{
+                                "
+                                href="https://{{ item.key }}.com/{{
                                   item.value
-                                }}">
-                                                        <img src="assets/{{ item.key }}.svg" alt="{{ item.key }} image" class="user-scoial-icon img-fluid" />
-                                                    </a>
+                                }}"
+                              >
+                                <img
+                                  src="assets/{{ item.key }}.svg"
+                                  alt="{{ item.key }} image"
+                                  class="user-scoial-icon img-fluid"
+                                />
+                              </a>
 
-                                                    <a href="https://wa.me/{{
+                              <a
+                                href="https://wa.me/{{
                                   cardData.whatsappNumber
-                                }}" target="_blank" *ngIf="cardData.whatsappNumber">
-                                                        <img src="assets/whatsapp.svg" alt="Whatsapp image" class="user-scoial-icon img-fluid" />
-                                                    </a>
+                                }}"
+                                target="_blank"
+                                *ngIf="cardData.whatsappNumber"
+                              >
+                                <img
+                                  src="assets/whatsapp.svg"
+                                  alt="Whatsapp image"
+                                  class="user-scoial-icon img-fluid"
+                                />
+                              </a>
 
-                                                    <a *ngIf="cardData.telegramUsername" target="_blank" href="https://t.me/{{
+                              <a
+                                *ngIf="cardData.telegramUsername"
+                                target="_blank"
+                                href="https://t.me/{{
                                   cardData.telegramUsername
-                                }}">
-                                                        <img src="assets/telegram.svg" alt="Telegram image" class="user-scoial-icon img-fluid" />
-                                                    </a>
+                                }}"
+                              >
+                                <img
+                                  src="assets/telegram.svg"
+                                  alt="Telegram image"
+                                  class="user-scoial-icon img-fluid"
+                                />
+                              </a>
 
-                                                    <a (click)="updateLinkCount()" [hidden]="showMoreLinks" style="cursor: pointer">
+                              <a
+                                (click)="updateLinkCount()"
+                                [hidden]="showMoreLinks"
+                                style="cursor: pointer"
+                              >
                                 <span
                                   class="more-links"
                                   *ngIf="remaingLinksCount > 0"
                                   >{{ remaingLinksCount }}+ more</span
                                 >
                               </a>
-                                                </div>
+                            </div>
 
-                                                <div class="card-bottom-container">
-                                                    <div class="user-interestes-container">
-                                                        <p class="intrests-head text-white">
-                                                            Services:
-                                                        </p>
-                                                        <div class="intrests-display-container">
-                                                            <span *ngFor="
+                            <div class="card-bottom-container">
+                              <div class="user-interestes-container">
+                                <p class="intrests-head text-white">
+                                  Services:
+                                </p>
+                                <div class="intrests-display-container">
+                                  <span
+                                    *ngFor="
                                       let skill of cardData.skillsArray
                                         | slice: 0:4
-                                    " class="intrest-card">
+                                    "
+                                    class="intrest-card"
+                                  >
                                     {{ skill }}
                                   </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
-                                    <div class="col-md-4">
-                                        <div class="
-                            card-peronsal-profile-container
-                            text-center
-                            business-profile
-                          ">
-                                            <img src="{{ cardData.businessLogo }}" alt="user perosnal card image" class="img-fluid user-personal-profile" />
+                      <div class="col-md-4">
+                        <div
+                          class="card-peronsal-profile-container text-center business-profile"
+                        >
+                          <img
+                            src="{{ cardData.businessLogo }}"
+                            alt="user perosnal card image"
+                            class="img-fluid user-personal-profile"
+                          />
 
-                                            <h4 class="user-name text-white">
-                                                {{ cardData.businessName }}
-                                            </h4>
-                                            <p class="user-country text-white mb-3">
-                                                <img src="assets/location-icon.svg" alt="location icon" class="img-fluid location-icon" /> {{ cardData.businessCountry }}/{{ cardData.businessCity }}
-                                            </p>
+                          <h4 class="user-name text-white">
+                            {{ cardData.businessName }}
+                          </h4>
+                          <p class="user-country text-white mb-3">
+                            <img
+                              src="assets/location-icon.svg"
+                              alt="location icon"
+                              class="img-fluid location-icon"
+                            />
+                            {{ cardData.businessCountry }}/{{
+                              cardData.businessCity
+                            }}
+                          </p>
 
-                                            <div class="likes-container">
-                                                <img src="assets/like-icon.svg" alt="like icon" class="card-likes-icon" [ngClass]="{'disabled':!user}" (click)="
+                          <div class="likes-container">
+                            <img
+                              src="assets/like-icon.svg"
+                              alt="like icon"
+                              class="card-likes-icon"
+                              [ngClass]="{ disabled: !user }"
+                              (click)="
                                 likeThisCard(
                                   cardData.businessName,
                                   cardData.businessLogo,
                                   cardId,
                                   cardData.cardType
                                 )
-                              " *ngIf="!showLike" />
-                                                <img src="assets/liked-icon.svg" alt="like icon" class="card-likes-icon" [ngClass]="{'disabled':!user}" *ngIf="showLike" (click)="unLikeThisCard(cardId)" />
-                                                <p class="user-likes-count text-white text-bold">
-                                                    {{ likesLength ? likesLength : 0 }}
-                                                </p>
-                                            </div>
+                              "
+                              *ngIf="!showLike"
+                            />
+                            <img
+                              src="assets/liked-icon.svg"
+                              alt="like icon"
+                              class="card-likes-icon"
+                              [ngClass]="{ disabled: !user }"
+                              *ngIf="showLike"
+                              (click)="unLikeThisCard(cardId)"
+                            />
+                            <p class="user-likes-count text-white text-bold">
+                              {{ likesLength ? likesLength : 0 }}
+                            </p>
+                          </div>
 
-                                            <div class="webiste-blog-container mt-2">
-                                                <div class="website-container">
-                                                    <span class="perosnal-links business-link">
+                          <div class="webiste-blog-container mt-2">
+                            <div class="website-container">
+                              <span class="perosnal-links business-link">
                                 <a
                                   href="{{ cardData.website }}"
                                   target="_blank"
@@ -495,7 +896,7 @@
                                   />
                                 </a>
                               </span>
-                                                    <span class="perosnal-links business-link">
+                              <span class="perosnal-links business-link">
                                 <a
                                   href="mailto:{{ cardData.businessEmail }}"
                                   target="_blank"
@@ -508,7 +909,7 @@
                                 </a>
                               </span>
 
-                                                    <span class="perosnal-links business-link">
+                              <span class="perosnal-links business-link">
                                 <a href="tel:{{ cardData.businessContact }}">
                                   <img
                                     src="assets/call-icon.svg"
@@ -517,99 +918,172 @@
                                   />
                                 </a>
                               </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
+                          </div>
                         </div>
-
-                        <div class="card-view-back">
-                            <div class="card-branding-container back-side-branding">
-                                <img src="assets/card-branding-logo-business.svg" alt="eacrd-card-branding logo" class="img-fluid card-branding" />
-                            </div>
-
-                            <h2 class="scan-text-heading text-white">
-                                <span class="text-green" style="font-weight: 900">
-                      Scan
-                    </span> QR Code
-                            </h2>
-
-                            <div class="qr-container">
-                                <ngx-kjua [text]="locationUrl" [ecLevel]="'H'" [render]="'image'" [fill]="'#000'" [back]="'#fff'" [label]="'Internet Card'" [image]="'img1'"></ngx-kjua>
-                            </div>
-                        </div>
+                      </div>
                     </div>
+                  </div>
                 </div>
 
-                <div class="col-md-2">
-                    <div class="card-action-container visible-large">
-                        <div class="action-block">
-                            <img (click)="flipCard()" src="assets/flip-icon.png" alt="save icon" class="img-fluid action-icon" placement="bottom" ngbTooltip="Flip card" />
-                        </div>
-                        <div class="action-block" *ngIf="user && user.uid !== cardId">
-                            <img (click)="
+                <div class="card-view-back">
+                  <div class="card-branding-container back-side-branding">
+                    <img
+                      src="assets/card-branding-logo-business.svg"
+                      alt="eacrd-card-branding logo"
+                      class="img-fluid card-branding"
+                    />
+                  </div>
+
+                  <h2 class="scan-text-heading text-white">
+                    <span class="text-green" style="font-weight: 900">
+                      Scan
+                    </span>
+                    QR Code
+                  </h2>
+
+                  <div class="qr-container">
+                    <ngx-kjua
+                      [text]="locationUrl"
+                      [ecLevel]="'H'"
+                      [render]="'image'"
+                      [fill]="'#000'"
+                      [back]="'#fff'"
+                      [label]="'Internet Card'"
+                      [image]="'img1'"
+                    ></ngx-kjua>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-2">
+              <div class="card-action-container visible-large">
+                <div class="action-block">
+                  <img
+                    (click)="flipCard()"
+                    src="assets/flip-icon.png"
+                    alt="save icon"
+                    class="img-fluid action-icon"
+                    placement="bottom"
+                    ngbTooltip="Flip card"
+                  />
+                </div>
+                <div class="action-block" *ngIf="user && user.uid !== cardId">
+                  <img
+                    (click)="
                       addToSavedCard(
                         cardData.businessName,
                         cardData.businessLogo,
                         cardId,
                         cardData.cardType
                       )
-                    " src="assets/save-icon.svg" alt="save icon" class="img-fluid action-icon" placement="bottom" *ngIf="!showSavedCard" ngbTooltip="Save Card" />
+                    "
+                    src="assets/save-icon.svg"
+                    alt="save icon"
+                    class="img-fluid action-icon"
+                    placement="bottom"
+                    *ngIf="!showSavedCard"
+                    ngbTooltip="Save Card"
+                  />
 
-                            <img src="assets/saved-solid-green.svg" alt="save icon" class="img-fluid action-icon" placement="bottom" *ngIf="showSavedCard" ngbTooltip="you saved this card" />
-                        </div>
-
-                        <div class="action-block" *ngIf="user && user.uid === cardId">
-                            <img (click)="goToSavedCards()" src="assets/saved-solid-green.svg" alt="save icon" class="img-fluid action-icon" placement="bottom" ngbTooltip="Saved Card" />
-                        </div>
-
-                        <div class="action-block">
-                            <img src="assets/share-icon.svg" alt="share icon" class="img-fluid action-icon" placement="bottom" ngbTooltip="Share Card" (click)="copyToClipboard()" />
-                        </div>
-
-                        <div class="action-block" *ngIf="user && user.uid === cardId">
-                            <img src="assets/awesome-user-edit.svg" alt="edit icon" class="img-fluid action-icon" (click)="goToCardEdit()" placement="bottom" ngbTooltip="Edit Card" />
-                        </div>
-                    </div>
+                  <img
+                    src="assets/saved-solid-green.svg"
+                    alt="save icon"
+                    class="img-fluid action-icon"
+                    placement="bottom"
+                    *ngIf="showSavedCard"
+                    ngbTooltip="you saved this card"
+                  />
                 </div>
+
+                <div class="action-block" *ngIf="user && user.uid === cardId">
+                  <img
+                    (click)="goToSavedCards()"
+                    src="assets/saved-solid-green.svg"
+                    alt="save icon"
+                    class="img-fluid action-icon"
+                    placement="bottom"
+                    ngbTooltip="Saved Card"
+                  />
+                </div>
+
+                <div class="action-block">
+                  <img
+                    src="assets/share-icon.svg"
+                    alt="share icon"
+                    class="img-fluid action-icon"
+                    placement="bottom"
+                    ngbTooltip="Share Card"
+                    (click)="copyToClipboard()"
+                  />
+                </div>
+
+                <div class="action-block" *ngIf="user && user.uid === cardId">
+                  <img
+                    src="assets/awesome-user-edit.svg"
+                    alt="edit icon"
+                    class="img-fluid action-icon"
+                    (click)="goToCardEdit()"
+                    placement="bottom"
+                    ngbTooltip="Edit Card"
+                  />
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</section>
-</div>
+      </div>
+    </section>
+  </div>
 
-<!-- search sections starts here -->
+  <!-- search sections starts here -->
 
-<section class="search-card-results-section" *ngIf="showSearchUI">
+  <section class="search-card-results-section" *ngIf="showSearchUI">
     <p class="results-sub-heading text-blue fw-600">Results:</p>
 
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-4 col-sm-4" *ngFor="let card of searchResults">
-                <div class="search-result-card" (click)="goToCard(card.cardId)">
-                    <img src="assets/{{ card.avatar }}.svg" alt="{{ card.name }}" class="img-fluid search-card-user-profile" *ngIf="card.cardType === 'personal'" />
-                    <img src="{{ card.avatar }}" alt="{{ card.name }}" class="img-fluid search-card-user-profile" *ngIf="card.cardType === 'business'" />
-                    <p class="search-card-user-name text-blud fw-600">
-                        {{ card.name }}
-                    </p>
-                </div>
-            </div>
+      <div class="row">
+        <div class="col-md-4 col-sm-4" *ngFor="let card of searchResults">
+          <div class="search-result-card" (click)="goToCard(card.cardId)">
+            <img
+              src="assets/{{ card.avatar }}.svg"
+              alt="{{ card.name }}"
+              class="img-fluid search-card-user-profile"
+              *ngIf="card.cardType === 'personal'"
+            />
+            <img
+              src="{{ card.avatar }}"
+              alt="{{ card.name }}"
+              class="img-fluid search-card-user-profile"
+              *ngIf="card.cardType === 'business'"
+            />
+            <p class="search-card-user-name text-blud fw-600">
+              {{ card.name }}
+            </p>
+          </div>
         </div>
+      </div>
     </div>
 
-    <section class="search-results-empty-container text-center" *ngIf="searchResults.length === 0">
-        <p class="search-container-data">No cards found</p>
+    <section
+      class="search-results-empty-container text-center"
+      *ngIf="searchResults.length === 0"
+    >
+      <p class="search-container-data">No cards found</p>
     </section>
-</section>
+  </section>
 
-<!-- search sections ends here -->
+  <!-- search sections ends here -->
 </div>
 
 <div *ngIf="!cardData" class="no-card-container">
-    <div *ngIf="!myData">
-        <img src="assets/search-results-image.svg" alt="No card found" class="no-card-found" />
-        <p class="no-card-found-text text-green">No card found</p>
-    </div>
+  <div *ngIf="!myData">
+    <img
+      src="assets/search-results-image.svg"
+      alt="No card found"
+      class="no-card-found"
+    />
+    <p class="no-card-found-text text-green">No card found</p>
+  </div>
 </div>

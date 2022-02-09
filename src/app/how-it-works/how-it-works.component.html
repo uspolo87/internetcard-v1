@@ -125,14 +125,14 @@
         class="how-it-works-footer-action-container hvr-bounce-to-right"
         *ngIf="!cardCreated"
       >
-        <button class="btn btn-lg text-green">Create card</button>
+        <button class="btn btn-lg text-green"  (click)="goToCardInit();">Create card</button>
       </div>
 
       <div
         class="how-it-works-footer-action-container hvr-bounce-to-right"
         *ngIf="cardCreated"
       >
-        <button class="btn btn-lg text-green">Go to your card</button>
+        <button class="btn btn-lg text-green" (click)="goToCard();">Go to your card</button>
       </div>
     </div>
   </div>
