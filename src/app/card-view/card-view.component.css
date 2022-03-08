@@ -37,12 +37,20 @@
 img.card-likes-icon {
   width: 25px;
   height: 25px;
+  margin-right: 8px;
   cursor: pointer;
+}
+.likes-container {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  right: 18px;
+  top: 10px;
 }
 
 section.peronsal-card-section {
   padding-top: 4%;
-  padding-bottom: 10%;
+  padding-bottom: 4%;
 }
 
 span.user-bio-bold-text {
@@ -126,7 +134,7 @@ img.img-fluid.action-icon.mini-card-rotate-icon {
 }
 
 .social-links-container {
-  margin: 16px 0px;
+  margin: 35px 0px 0px;
 }
 
 img.user-scoial-icon.img-fluid {
@@ -148,9 +156,33 @@ span.intrest-card {
   margin-right: 10px;
 }
 
+a.custom-links.hidden {
+  display: none;
+}
+
+a.custom-links {
+  color: #22c98b;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 11px 41px;
+  background: #112654;
+  border-radius: 8px;
+}
+.custom-link-display-container {
+  display: flex;
+  justify-content: space-evenly;
+  background: url("../../assets/create-business-card-bg.png");
+}
 p.intrests-head.text-white {
   margin-bottom: 8px;
   font-weight: 800;
+}
+h3.custom-links-heading {
+  margin-left: 145px;
+  margin-bottom: 24px;
+  color: #112654;
+  font-size: 26px;
+  font-weight: 500;
 }
 
 p.follow-heading.text-white {
@@ -158,14 +190,14 @@ p.follow-heading.text-white {
 }
 
 .user-interestes-container {
-  margin-top: 28px;
+  margin-left: 32px;
 }
 
 span.more-links {
   border: 1px solid #fff;
   color: #fff;
   padding: 9px;
-  margin-left: 21px;
+  margin-left: 5px;
   border-radius: 18px;
 }
 
@@ -176,6 +208,7 @@ i.fa.fa-heart-o {
 
 i.fa.fa-heart-o:active {
   color: #21c98b;
+  margin-bottom: 10px;
 }
 
 p.user-likes-count.text-white.text-bold {
@@ -234,7 +267,7 @@ img.img-fluid.user-personal-profile {
   width: 150px;
   height: 150px;
   border-radius: 56%;
-  margin-top: 11px;
+  margin-top: 10px;
 }
 
 /* business card css starts here */
@@ -327,6 +360,15 @@ img.img-fluid.resume-icon {
   margin: 10px 7px;
 }
 
+.business-services {
+  margin-left: 0;
+}
+.social-links-container.business-social-apps {
+  margin-top: 21px;
+}
+.user-interestes-container.business-services {
+  margin-top: 20px;
+}
 /* search cards css ends here */
 
 .no-card-container {
@@ -472,7 +514,7 @@ a.my-cv-button.btn {
   font-size: 18px;
   font-weight: 700;
   max-width: 96.8%;
-  margin-top: 45px;
+  padding: 3px 18px;
 }
 a.my-cv-button.btn.btn-md.btn-block.min-card {
   margin-top: 15px;
@@ -549,7 +591,7 @@ h2.scan-text-heading.text-white {
     justify-content: space-around;
   }
   section.mini-internet-card.visible-small {
-    padding-top: 150px;
+    padding-top: 20px;
     width: 400px;
     margin: auto;
   }
@@ -595,12 +637,41 @@ h2.scan-text-heading.text-white {
   }
   .social-links-icon-container a {
     margin-right: 9px;
+    margin-bottom: 12px;
   }
   img.mini-social-icon.img-fluid {
     margin-right: 8px;
   }
   section.peronsal-card-section {
     padding-top: 24%;
+  }
+
+  h3.custom-links-heading {
+    margin: 44px 0px 24px 0;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+  }
+  a.custom-links {
+    background: transparent;
+    border: 2px solid #112654;
+    margin-bottom: 9px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 5px 24px;
+  }
+  .custom-link-display-container {
+    flex-direction: column;
+    margin-top: 25px;
+  }
+
+  .cardview-container {
+    background: none;
+  }
+
+  .custom-link-display-container {
+    flex-direction: column;
   }
 }
 

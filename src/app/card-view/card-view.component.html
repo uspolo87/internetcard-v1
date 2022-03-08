@@ -9,6 +9,7 @@
 <!-- perosnal card section starts here -->
 <div class="cardview-container">
   <div *ngIf="!showSearchUI">
+    <!-- mini card starts here -->
     <section class="mini-internet-card visible-small" *ngIf="cardData">
       <div
         class="card-container"
@@ -75,7 +76,7 @@
                       (click)="unLikeThisCard(cardId)"
                     />
                     <span class="user-likes-count text-white text-bold">
-                      {{ likesLength }}
+                      {{ likesLength ? likesLength : 0 }}
                     </span>
                   </div>
                 </div>
@@ -132,6 +133,87 @@
 
                 <div class="social-links-icon-container">
                   <a
+                    *ngIf="cardData.facebook"
+                    target="_blank"
+                    href="{{ cardData.facebook }}"
+                  >
+                    <img
+                      src="assets/facebook.svg"
+                      alt="Facebook image"
+                      class="user-scoial-icon img-fluid"
+                    />
+                  </a>
+
+                  <a
+                    *ngIf="cardData.linkedin"
+                    target="_blank"
+                    href="{{ cardData.linkedin }}"
+                  >
+                    <img
+                      src="assets/linkedin.svg"
+                      alt="linkedin image"
+                      class="user-scoial-icon img-fluid"
+                    />
+                  </a>
+
+                  <a
+                    *ngIf="cardData.telegramUsername"
+                    target="_blank"
+                    href="{{ cardData.telegramUsername }}"
+                  >
+                    <img
+                      src="assets/telegram.svg"
+                      alt="Telegram image"
+                      class="user-scoial-icon img-fluid"
+                    />
+                  </a>
+                  <a
+                    *ngIf="cardData.snapchat"
+                    target="_blank"
+                    href="https://www.snapchat.com/add/{{ cardData.snapchat }}"
+                  >
+                    <img
+                      src="assets/snapchat.svg"
+                      alt="Snapchat image"
+                      class="user-scoial-icon img-fluid"
+                    />
+                  </a>
+                  <a
+                    href="https://wa.me/{{ cardData.whatsappNumber }}"
+                    target="_blank"
+                    *ngIf="cardData.whatsappNumber"
+                  >
+                    <img
+                      src="assets/whatsapp.svg"
+                      alt="Whatsapp image"
+                      class="user-scoial-icon img-fluid"
+                    />
+                  </a>
+
+                  <a
+                    href="{{ cardData.website }}"
+                    target="_blank"
+                    *ngIf="cardData.website"
+                  >
+                    <img
+                      src="assets/website-icon.svg"
+                      alt="Whatsapp image"
+                      class="user-scoial-icon img-fluid"
+                    />
+                  </a>
+
+                  <a
+                    href="{{ cardData.blog }}"
+                    target="_blank"
+                    *ngIf="cardData.blog"
+                  >
+                    <img
+                      src="assets/blog-icon.svg"
+                      alt="Whatsapp image"
+                      class="user-scoial-icon img-fluid"
+                    />
+                  </a>
+                  <a
                     *ngFor="let item of cardData.socialLinks | keyvalue"
                     href="https://{{ item.key }}.com/{{ item.value }}"
                     target="_blank"
@@ -142,65 +224,18 @@
                       class="mini-social-icon img-fluid"
                     />
                   </a>
-
-                  <a
-                    *ngIf="cardData.facebook"
-                    target="_blank"
-                    href="{{ cardData.facebook }}"
-                    target="_blank"
-                  >
-                    <img
-                      src="assets/facebook.svg"
-                      alt="facebook image"
-                      class="user-scoial-icon img-fluid mini-social-icon"
-                    />
-                  </a>
-
-                  <a
-                    *ngIf="cardData.telegramUsername"
-                    target="_blank"
-                    href="https://t.me/{{ cardData.telegramUsername }}"
-                    target="_blank"
-                  >
-                    <img
-                      src="assets/telegram.svg"
-                      alt="Telegram image"
-                      class="user-scoial-icon img-fluid mini-social-icon"
-                    />
-                  </a>
-
-                  <a
-                    *ngIf="cardData.snapchat"
-                    target="_blank"
-                    href="https://snapchat/add/{{ cardData.snapchat }}"
-                  >
-                    <img
-                      src="assets/snapchat.svg"
-                      alt="snapchat image"
-                      class="user-scoial-icon img-fluid mini-social-icon"
-                    />
-                  </a>
-
-                  <a
-                    href="https://wa.me/{{ cardData.whatsappNumber }}"
-                    target="_blank"
-                    *ngIf="cardData.whatsappNumber"
-                    target="_blank"
-                  >
-                    <img
-                      src="assets/whatsapp.svg"
-                      alt="Whatsapp image"
-                      class="user-scoial-icon img-fluid mini-social-icon"
-                    />
-                  </a>
                 </div>
                 <a
                   class="my-cv-button btn btn-md btn-block min-card"
                   target="_blank"
                   href="{{ cardData.resumeUrl }}"
+                  *ngIf="cardData.cardType == 'personal'"
                   >My Resume
                 </a>
-                <!-- <div class="card-bottom-container">
+                <div
+                  class="card-bottom-container"
+                  *ngIf="cardData.cardType == 'business'"
+                >
                   <div class="mini-card-interestes-container">
                     <p
                       class="intrests-head text-white"
@@ -216,14 +251,14 @@
                     </p>
                     <div class="intrests-display-container">
                       <span
-                        *ngFor="let skill of cardData.skillsArray"
+                        *ngFor="let skill of cardData.skillsArray | slice: 0:3"
                         class="mini-intrest-card"
                       >
                         {{ skill }}
                       </span>
                     </div>
                   </div>
-                </div> -->
+                </div>
               </div>
             </div>
           </div>
@@ -335,7 +370,8 @@
         </div>
       </div>
     </section>
-
+    <!-- mini card ends here -->
+    <!-- personal card starts here -->
     <section
       class="peronsal-card-section visible-large"
       *ngIf="cardData && cardData.cardType === 'personal'"
@@ -377,7 +413,7 @@
                           <h4 class="user-name text-white">
                             {{ cardData.userName }}
                           </h4>
-                          <p class="user-country text-white mb-3">
+                          <p class="user-country text-white">
                             <img
                               src="assets/location-icon.svg"
                               alt="location icon"
@@ -386,64 +422,48 @@
                             {{ cardData.userCountry }}
                           </p>
 
-                          <div class="likes-container">
-                            <img
-                              src="assets/like-icon.svg"
-                              alt="like icon"
-                              class="card-likes-icon"
-                              [ngClass]="{ disabled: !user }"
-                              (click)="
-                                likeThisCard(
-                                  cardData.userName,
-                                  cardData.avatar,
-                                  cardId,
-                                  cardData.cardType
-                                )
-                              "
-                              *ngIf="!showLike"
-                            />
-                            <img
-                              src="assets/liked-icon.svg"
-                              alt="like icon"
-                              class="card-likes-icon"
-                              *ngIf="showLike"
-                              (click)="unLikeThisCard(cardId)"
-                            />
-                            <p class="user-likes-count text-white text-bold">
-                              {{ likesLength }}
-                            </p>
-                          </div>
-
                           <div class="webiste-blog-container">
-                            <div class="website-container">
-                              <span class="perosnal-links">
-                                <a
-                                  href="{{ cardData.website }}"
-                                  target="_blank"
-                                >
-                                  <img
-                                    src="assets/website-icon.svg"
-                                    alt="website icon"
-                                    class="img-fluid web-icon"
-                                  />
-                                  Website</a
-                                > </span
-                              ><span class="perosnal-links">
-                                <a href="{{ cardData.blog }}" target="_blank">
-                                  <img
-                                    src="assets/blog-icon.svg"
-                                    alt="blog icon"
-                                    class="img-fluid web-icon"
-                                  />
-                                  Blog</a
-                                >
-                              </span>
+                            <div class="user-interestes-container">
+                              <a
+                                class="my-cv-button btn btn-md btn-block"
+                                target="_blank"
+                                href="{{ cardData.resumeUrl }}"
+                                >My Resume
+                              </a>
                             </div>
                           </div>
                         </div>
                       </div>
 
                       <div class="col-md-8">
+                        <div class="likes-container">
+                          <img
+                            src="assets/like-icon.svg"
+                            alt="like icon"
+                            class="card-likes-icon"
+                            [ngClass]="{ disabled: !user }"
+                            (click)="
+                              likeThisCard(
+                                cardData.userName,
+                                cardData.avatar,
+                                cardId,
+                                cardData.cardType
+                              )
+                            "
+                            *ngIf="!showLike"
+                          />
+                          <img
+                            src="assets/liked-icon.svg"
+                            alt="like icon"
+                            class="card-likes-icon"
+                            *ngIf="showLike"
+                            (click)="unLikeThisCard(cardId)"
+                          />
+                          <p class="user-likes-count text-white text-bold">
+                            {{ likesLength ? likesLength : 0 }}
+                          </p>
+                        </div>
+
                         <!-- <div>
                           <a
                             [href]="cardData.resumeUrl"
@@ -535,6 +555,31 @@
                                   class="user-scoial-icon img-fluid"
                                 />
                               </a>
+
+                              <a
+                                href="{{ cardData.website }}"
+                                target="_blank"
+                                *ngIf="cardData.website"
+                              >
+                                <img
+                                  src="assets/website-icon.svg"
+                                  alt="Whatsapp image"
+                                  class="user-scoial-icon img-fluid"
+                                />
+                              </a>
+
+                              <a
+                                href="{{ cardData.blog }}"
+                                target="_blank"
+                                *ngIf="cardData.blog"
+                              >
+                                <img
+                                  src="assets/blog-icon.svg"
+                                  alt="Whatsapp image"
+                                  class="user-scoial-icon img-fluid"
+                                />
+                              </a>
+
                               <a
                                 *ngFor="
                                   let item of cardData.socialLinks
@@ -567,26 +612,16 @@
                             </div>
                           </div>
 
-                          <div class="card-bottom-container">
-                            <div class="user-interestes-container">
-                              <!-- <p class="intrests-head text-white">Skills:</p>
-                                                    <div class="intrests-display-container">
-                                                        <span *ngFor="
-                                    let skill of cardData.skillsArray
-                                      | slice: 0:4
-                                  " class="intrest-card">
-                                  {{ skill }}
-                                </span>
-                                                    </div> -->
-
-                              <a
-                                class="my-cv-button btn btn-md btn-block"
-                                target="_blank"
-                                href="{{ cardData.resumeUrl }}"
-                                >My Resume
-                              </a>
+                          <!-- <div class="card-bottom-container">
+                            <div class="intrests-display-container">
+                              <span
+                                *ngFor="let custom of cardData.customLinks"
+                                class="intrest-card"
+                              >
+                                {{ custom.title }}
+                              </span>
                             </div>
-                          </div>
+                          </div> -->
                         </div>
                       </div>
                     </div>
@@ -707,7 +742,9 @@
       </div>
       <!-- perosnal card section ends here -->
     </section>
+    <!-- personal card ends here -->
 
+    <!-- Business card starts here -->
     <section
       class="peronsal-card-section business-card visible-large"
       *ngIf="cardData && cardData.cardType === 'business'"
@@ -743,29 +780,61 @@
                             </p>
                           </div>
 
-                          <div class="social-links-container">
+                          <div
+                            class="social-links-container business-social-apps"
+                          >
                             <p class="follow-heading text-green fw-600">
                               Connect us socially:
                             </p>
                             <div class="socials-icons-container">
                               <a
+                                *ngIf="cardData.facebook"
                                 target="_blank"
-                                *ngFor="
-                                  let item of cardData.socialLinks
-                                    | keyvalue
-                                    | slice: 0:linkCount
-                                "
-                                href="https://{{ item.key }}.com/{{
-                                  item.value
-                                }}"
+                                href="{{ cardData.facebook }}"
                               >
                                 <img
-                                  src="assets/{{ item.key }}.svg"
-                                  alt="{{ item.key }} image"
+                                  src="assets/facebook.svg"
+                                  alt="Facebook image"
                                   class="user-scoial-icon img-fluid"
                                 />
                               </a>
 
+                              <a
+                                *ngIf="cardData.linkedin"
+                                target="_blank"
+                                href="{{ cardData.linkedin }}"
+                              >
+                                <img
+                                  src="assets/linkedin.svg"
+                                  alt="linkedin image"
+                                  class="user-scoial-icon img-fluid"
+                                />
+                              </a>
+
+                              <a
+                                *ngIf="cardData.telegramUsername"
+                                target="_blank"
+                                href="{{ cardData.telegramUsername }}"
+                              >
+                                <img
+                                  src="assets/telegram.svg"
+                                  alt="Telegram image"
+                                  class="user-scoial-icon img-fluid"
+                                />
+                              </a>
+                              <a
+                                *ngIf="cardData.snapchat"
+                                target="_blank"
+                                href="https://www.snapchat.com/add/{{
+                                  cardData.snapchat
+                                }}"
+                              >
+                                <img
+                                  src="assets/snapchat.svg"
+                                  alt="Snapchat image"
+                                  class="user-scoial-icon img-fluid"
+                                />
+                              </a>
                               <a
                                 href="https://wa.me/{{
                                   cardData.whatsappNumber
@@ -781,15 +850,41 @@
                               </a>
 
                               <a
-                                *ngIf="cardData.telegramUsername"
+                                href="{{ cardData.website }}"
                                 target="_blank"
-                                href="https://t.me/{{
-                                  cardData.telegramUsername
+                                *ngIf="cardData.website"
+                              >
+                                <img
+                                  src="assets/website-icon.svg"
+                                  alt="Whatsapp image"
+                                  class="user-scoial-icon img-fluid"
+                                />
+                              </a>
+
+                              <a
+                                href="{{ cardData.blog }}"
+                                target="_blank"
+                                *ngIf="cardData.blog"
+                              >
+                                <img
+                                  src="assets/blog-icon.svg"
+                                  alt="Whatsapp image"
+                                  class="user-scoial-icon img-fluid"
+                                />
+                              </a>
+
+                              <a
+                                target="_blank"
+                                *ngFor="
+                                  let item of cardData.socialLinks | keyvalue
+                                "
+                                href="https://{{ item.key }}.com/{{
+                                  item.value
                                 }}"
                               >
                                 <img
-                                  src="assets/telegram.svg"
-                                  alt="Telegram image"
+                                  src="assets/{{ item.key }}.svg"
+                                  alt="{{ item.key }} image"
                                   class="user-scoial-icon img-fluid"
                                 />
                               </a>
@@ -808,7 +903,9 @@
                             </div>
 
                             <div class="card-bottom-container">
-                              <div class="user-interestes-container">
+                              <div
+                                class="user-interestes-container business-services"
+                              >
                                 <p class="intrests-head text-white">
                                   Services:
                                 </p>
@@ -1035,6 +1132,39 @@
         </div>
       </div>
     </section>
+    <!-- Business card ends here -->
+
+    <!-- custom link container starts from here -->
+
+    <div class="container-fluid">
+      <div class="custom-links-container">
+        <!-- <div class="down-arrow-image text-center">
+          <img
+            src="assets/down-arrow-icon.png"
+            alt="down arrow icon"
+            class="img-fluid down-arow-icon"
+          />
+        </div> -->
+
+        <div class="card-bottom-container">
+          <div class="custom-link-display-container">
+            <a
+              *ngFor="let custom of cardData.customLinks"
+              class="custom-links"
+              target="_blank"
+              href="{{ custom.url }}"
+              [ngClass]="{
+                hidden: !custom.url || !custom.title,
+                activeLinks: custom.url && custom.title
+              }"
+            >
+              {{ custom.title }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- custom link container starts ends here -->
   </div>
 
   <!-- search sections starts here -->

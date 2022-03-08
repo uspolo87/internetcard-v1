@@ -131,7 +131,7 @@ input.user-social-link-input {
 
 .social-links-input-container {
   position: relative;
-  margin-top: 100px;
+  margin-top: 75px;
 }
 
 .third-step-inner-container {
@@ -283,7 +283,7 @@ span.perosnal-links a {
 }
 
 .social-links-container {
-  margin: 29px 0px;
+  margin: 49px 0px 0 0;
 }
 
 img.user-scoial-icon.img-fluid {
@@ -333,6 +333,7 @@ i.fa.fa-heart-o:active {
 
 p.user-likes-count.text-white.text-bold {
   font-weight: bold;
+  margin-left: 5px;
 }
 
 .action-block {
@@ -367,7 +368,7 @@ img.img-fluid.card-branding {
 }
 
 .business-card .card-branding-container {
-  left: 49px;
+  left: 15px;
 }
 
 .card-branding-container {
@@ -379,6 +380,59 @@ img.img-fluid.card-branding {
   left: 15px;
 }
 
+button.my-cv-button.btn {
+  background: #fff;
+  color: #22c98b;
+  font-size: 18px;
+  font-weight: 700;
+  max-width: 96.8%;
+  padding: 3px 18px;
+}
+
+.likes-container {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  right: 18px;
+  top: 10px;
+}
+
+img.card-likes-icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+img.user-scoial-icon.img-fluid {
+  width: 47px;
+  margin-right: -8px;
+}
+
+.custom-link-container {
+  background: #ffffff;
+  padding: 3%;
+  color: #fff;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.modal-body {
+  background: whitesmoke;
+}
+h4.modal-title {
+  color: #22c98b;
+  font-size: 23px;
+  font-weight: 500;
+  margin-left: 20px;
+}
+.modal-header {
+  align-items: center;
+}
+.modal-body .form-group {
+  margin-bottom: 0;
+}
+
 /* personal card css ends here */
 
 /* business card css starts here */
@@ -387,21 +441,22 @@ img.img-fluid.card-branding {
   background: url("../../assets/business-card-background.svg") #303970;
   background-repeat: no-repeat;
   background-position: 32% 42%;
-  max-width: 92%;
   margin: auto;
 }
 
 .user-bio-container.business-bio-container {
-  margin-top: 42px;
+  margin-top: 29px;
 }
 
 p.user-given-bio.text-white.business-bio {
   font-size: 20px;
-  min-height: 120px;
 }
 
 .card-peronsal-profile-container.text-center.business-profile {
-  margin-top: 2%;
+  margin-top: 19px;
+}
+.social-links-container.business-social-apps {
+  margin-top: 21px;
 }
 
 span.perosnal-links.business-link {
@@ -562,17 +617,9 @@ span.cardType {
 
 .custom-links-block.pt-3 {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
-button.my-cv-button.btn {
-  background: #fff;
-  color: #22c98b;
-  font-size: 18px;
-  font-weight: 700;
-  max-width: 96.8%;
-  margin-top: 45px;
-}
 p.card-bg-color.active {
   box-shadow: 0px 0px 7px 6px #22c98b;
 }
@@ -684,6 +731,18 @@ p.card-bg-color.active {
     display: flex;
     justify-content: space-evenly;
   }
+
+  .custom-1-div input {
+    width: 95% !important;
+  }
+
+  .custom-1-div {
+    flex-direction: column;
+  }
+
+  .modal-body .form-group {
+    margin-bottom: 10px;
+  }
 }
 
 /* mini card */
@@ -722,7 +781,7 @@ section.mini-internet-card.visible-small {
 img.mini-social-icon.img-fluid {
   width: 40px;
   height: 40px;
-  margin-right: 40px;
+  margin-right: 20px;
   margin-bottom: 18px;
 }
 
@@ -814,7 +873,18 @@ button.btn.btn-md.bg-green.text-white.visible-large {
   width: 350px;
 }
 
+.business-services-button {
+  position: absolute;
+  right: 26px;
+  border-radius: 8px;
+  font-size: 14px;
+  padding: 5px 20px;
+}
+
 @media only screen and (max-width: 576px) {
+  button.btn.btn-md.bg-green.business-services-button {
+    right: 42px;
+  }
   .avatars-container img.img-fluid {
     width: 75px;
     height: 75px;
@@ -923,7 +993,16 @@ button.btn.btn-md.bg-green.text-white.visible-large {
   }
   .bio-length {
     top: 4px;
-    right: 9px;
+    right: 41px;
+  }
+  .modal-header {
+    padding: 0px;
+  }
+  .modal-body {
+    padding-top: 0;
+  }
+  .custom-link-container {
+    margin-top: 13px;
   }
 }
 

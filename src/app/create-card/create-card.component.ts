@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { NotifierService } from 'angular-notifier';
 import { AuthService } from '../authservice.service';
@@ -8,6 +8,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 
 import { base64ToFile, ImageCroppedEvent } from 'ngx-image-cropper';
 import { finalize } from 'rxjs/operators';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-create-card',
@@ -30,15 +31,18 @@ export class CreateCardComponent implements OnInit {
     userGender: 'gender',
     userCountry: 'India',
   };
+
+  customLinks = [
+    { url: '', title: '' },
+    { url: '', title: '' },
+    { url: '', title: '' },
+    { url: '', title: '' },
+    { url: '', title: '' },
+  ];
   userName: string = '';
   cardType: any;
   skillSearch: any;
   skillsArray: any = [];
-  customLinks: any = [
-    { title: '', url: '' },
-    { title: '', url: '' },
-    { title: '', url: '' },
-  ];
   selectedAvatar: any;
   remaingLinksCount: number = 0;
   userBioLength: number = 0;
@@ -65,7 +69,9 @@ export class CreateCardComponent implements OnInit {
     private firebaseAuth: AngularFireAuth,
     private authService: AuthService,
     private notifierService: NotifierService,
-    private storage: AngularFireStorage
+    private storage: AngularFireStorage,
+    private modalService: NgbModal,
+    private ref: ChangeDetectorRef
   ) {
     this.notifier = notifierService;
     firebaseAuth.authState.subscribe((user) => {
@@ -77,6 +83,10 @@ export class CreateCardComponent implements OnInit {
         this.user = null;
       }
     });
+  }
+
+  openLg(content: any) {
+    this.modalService.open(content, { size: 'lg', centered: true });
   }
 
   getUserBioLength() {
@@ -192,10 +202,8 @@ export class CreateCardComponent implements OnInit {
   async createCard() {
     this.stateLoading = true;
     this.updateUserBasicInfo();
-
     this.card.skillsArray = this.skillsArray;
-    this.card.customLinksArray = this.customLinks;
-
+    this.card.customLinks = this.customLinks;
     this.dbService
       .createCard(this.card, this.user.uid)
       .then((res) => {
@@ -266,9 +274,13 @@ export class CreateCardComponent implements OnInit {
           if (
             !this.card.userBio ||
             !this.card.userInstitute ||
-            this.skillsArray.length === 0
+            this.skillsArray.length === 0 ||
+            !this.card.resumeUrl
           ) {
-            this.notifier.notify('error', 'Please fill all the details');
+            this.notifier.notify(
+              'error',
+              'Please fill all the details/upload CV'
+            );
             return;
           }
         } else if (
@@ -283,32 +295,33 @@ export class CreateCardComponent implements OnInit {
           return;
         }
       }
-    } else if (this.cardType === 'business') {
-      if (step === 2) {
-        if (
-          !this.card.businessName ||
-          !this.card.businessContact ||
-          !this.card.businessEmail ||
-          !this.card.businessCountry ||
-          !this.card.businessCity
-        ) {
-          this.notifier.notify('error', 'Please fill all the details');
-          return;
-        }
-      } else if (step === 3) {
-        const length = Object.keys(this.card.socialLinks).length;
-        if (length < 4) {
-          this.notifier.notify('error', 'Please fill at least 4 links');
-          return;
-        }
-      } else if (step === 4) {
-        if (!this.card.businessBio || this.skillsArray.length === 0) {
-          this.notifier.notify('error', 'Please fill services/logo');
-          return;
-        }
-        //this.uploadBusinessProfilePicture();
-      }
     }
+    // else if (this.cardType === 'business') {
+    //   if (step === 2) {
+    //     if (
+    //       !this.card.businessName ||
+    //       !this.card.businessContact ||
+    //       !this.card.businessEmail ||
+    //       !this.card.businessCountry ||
+    //       !this.card.businessCity
+    //     ) {
+    //       this.notifier.notify('error', 'Please fill all the details');
+    //       return;
+    //     }
+    //   } else if (step === 3) {
+    //     const length = Object.keys(this.card.socialLinks).length;
+    //     if (length < 4) {
+    //       this.notifier.notify('error', 'Please fill at least 4 links');
+    //       return;
+    //     }
+    //   } else if (step === 4) {
+    //     if (!this.card.businessBio || this.skillsArray.length === 0) {
+    //       this.notifier.notify('error', 'Please fill services/logo');
+    //       return;
+    //     }
+    //     //this.uploadBusinessProfilePicture();
+    //   }
+    // }
     this.currentStep = step;
 
     if (step === 5 || step === 4) {
@@ -337,7 +350,7 @@ export class CreateCardComponent implements OnInit {
         } else {
           this.userBioLength = this.card.userBio.length;
         }
-        //
+        this.customLinks = this.card.customLinks ? this.card.customLinks : '';
         this.imageUrl = this.card.businessLogo;
         this.selectedAvatar = this.card.avatar;
         this.skillsArray = this.card.skillsArray;

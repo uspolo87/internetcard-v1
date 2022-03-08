@@ -300,18 +300,6 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="user-country"></label>
-                      <!-- <input
-                        type="text"
-                        class="form-control step-form-element"
-                        id="user-country"
-                        placeholder="Country"
-                        [(ngModel)]="card.userCountry"
-                        name="user country"
-                        #userCountry="ngModel"
-                        required
-                      /> -->
-                      <!-- (change)="onChange($event.target.value)" -->
-                      <!-- #userCountry="ngModel" -->
                       <select
                         class="form-control country-dropdown"
                         [(ngModel)]="card.userCountry"
@@ -538,47 +526,171 @@
                 />
               </div>
 
-              <!-- <div class="custom-links-block pt-3">
+              <div class="custom-links-block pt-3">
                 <button
                   class="bg-green text-white btn btn-md"
-                  (click)="selectIcon('custom')"
+                  (click)="openLg(content)"
                   placement="bottom"
                   ngbTooltip="Add your custom links, eg: app referral,Project links"
                 >
                   Custom Links
                 </button>
-              </div> -->
+              </div>
 
-              <div class="form-group">
-                <div *ngIf="selectedIcon === 'custom'">
-                  <div
-                    class="custom-1-div"
-                    *ngFor="let customObj of customLinks; let i = index"
+              <ng-template #content let-modal>
+                <div class="modal-header">
+                  <h4 class="modal-title">Custom Links</h4>
+
+                  <button
+                    type="button"
+                    class="btn btn-sm"
+                    aria-label="Close"
+                    (click)="modal.dismiss('Cross click')"
                   >
-                    <div class="form-group">
-                      <label for="custom-text">Title {{ i + 1 }}</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="instagram-username"
-                        placeholder="Enter Title {{ i + 1 }}"
-                        [(ngModel)]="customObj.title"
-                        name="user custom title"
-                      />
+                    <img
+                      src="assets/modal-close.png"
+                      alt="Modal close icon"
+                      class="img-fluid modal-close-icon"
+                    />
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="custom-link-container">
+                    <div class="custom-1-div">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="instagram-username"
+                          placeholder="Enter Title"
+                          [(ngModel)]="customLinks[0].title"
+                          name="customTitle1"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <input
+                          type="url"
+                          class="form-control"
+                          id="custom-url"
+                          placeholder="Enter URL "
+                          [(ngModel)]="customLinks[0].url"
+                          name="customURL1"
+                        />
+                      </div>
                     </div>
-                    <div class="form-group">
-                      <label for="custom-url">URL {{ i + 1 }}</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="custom-url"
-                        placeholder="Enter URL {{ i + 1 }}"
-                        [(ngModel)]="customObj.title"
-                        name="user custom url"
-                      />
+                  </div>
+                  <div class="custom-link-container">
+                    <div class="custom-1-div">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="instagram-username"
+                          placeholder="Enter Title"
+                          [(ngModel)]="customLinks[1].title"
+                          name="customTitle2"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <input
+                          type="url"
+                          class="form-control"
+                          id="custom-url"
+                          placeholder="Enter URL "
+                          [(ngModel)]="customLinks[1].url"
+                          name="customURL2"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="custom-link-container">
+                    <div class="custom-1-div">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="instagram-username"
+                          placeholder="Enter Title"
+                          [(ngModel)]="customLinks[2].title"
+                          name="customTitle3"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <input
+                          type="url"
+                          class="form-control"
+                          id="custom-url"
+                          placeholder="Enter URL "
+                          [(ngModel)]="customLinks[2].url"
+                          name="customURL3"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="custom-link-container">
+                    <div class="custom-1-div">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="instagram-username"
+                          placeholder="Enter Title"
+                          [(ngModel)]="customLinks[3].title"
+                          name="customTitle4"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <input
+                          type="url"
+                          class="form-control"
+                          id="custom-url"
+                          placeholder="Enter URL "
+                          [(ngModel)]="customLinks[3].url"
+                          name="customURL4"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="custom-link-container">
+                    <div class="custom-1-div">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="instagram-username"
+                          placeholder="Enter Title"
+                          [(ngModel)]="customLinks[4].title"
+                          name="customTitle5"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <input
+                          type="url"
+                          class="form-control"
+                          id="custom-url"
+                          placeholder="Enter URL "
+                          [(ngModel)]="customLinks[4].url"
+                          name="customURL5"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-light"
+                    (click)="modal.close('Close click')"
+                  >
+                    Close
+                  </button>
+                </div>
+              </ng-template>
+
+              <div class="form-group">
                 <div
                   class="social-links-input-container"
                   *ngIf="selectedIcon === 'facebook'"
@@ -742,7 +854,7 @@
                   >
                   <input
                     type="text"
-                    [(ngModel)]="card.socialLinks.youtube"
+                    [(ngModel)]="card.youtube"
                     class="form-control user-social-link-input"
                     id="youtube-username"
                     name="user youtube Url"
@@ -908,7 +1020,7 @@
                     <div class="form-group">
                       <div class="cv-upload-block" *ngIf="!filePath">
                         <label for="upload-cv" id="upload-sv-label"
-                          >Upload CV
+                          >Upload CV *
                         </label>
                         <img
                           src="assets/upload-icon.png"
@@ -1008,40 +1120,26 @@
                         {{ card.userCountry }}
                       </p>
 
-                      <div class="likes-container">
-                        <span class="user-like-icon"
-                          ><i class="fa fa-heart-o" aria-hidden="true"></i>
-                        </span>
-                        <p class="user-likes-count text-white text-bold">0</p>
-                      </div>
-
                       <div class="webiste-blog-container mt-2">
-                        <div class="website-container">
-                          <span class="perosnal-links">
-                            <a href="#" target="_blank">
-                              <img
-                                src="assets/website-icon.svg"
-                                alt="website icon"
-                                class="img-fluid web-icon"
-                              />
-                              Website</a
-                            > </span
-                          ><span class="perosnal-links">
-                            <a href="#" target="_blank">
-                              <img
-                                src="assets/blog-icon.svg"
-                                alt="blog icon"
-                                class="img-fluid web-icon"
-                              />
-                              Blog</a
-                            >
-                          </span>
+                        <div class="user-interestes-container">
+                          <button class="my-cv-button btn btn-md btn-block">
+                            My Resume
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
 
                   <div class="col-md-8">
+                    <div class="likes-container">
+                      <img
+                        src="assets/like-icon.svg"
+                        alt="like icon"
+                        class="card-likes-icon"
+                      />
+
+                      <p class="user-likes-count text-white text-bold">100</p>
+                    </div>
                     <div class="personal-card-user-content-container text-left">
                       <div class="user-bio-container">
                         <h3 class="bio-initial-content text-green">
@@ -1060,11 +1158,93 @@
 
                         <div class="socials-icons-container">
                           <a
+                            href="{{ card.website }}"
+                            target="_blank"
+                            *ngIf="card.website"
+                          >
+                            <img
+                              src="assets/website-icon.svg"
+                              alt="Whatsapp image"
+                              class="user-scoial-icon img-fluid"
+                            />
+                          </a>
+
+                          <a
+                            href="{{ card.blog }}"
+                            target="_blank"
+                            *ngIf="card.blog"
+                          >
+                            <img
+                              src="assets/blog-icon.svg"
+                              alt="Whatsapp image"
+                              class="user-scoial-icon img-fluid"
+                            />
+                          </a>
+                          <a
+                            *ngIf="card.facebook"
+                            target="_blank"
+                            href="{{ card.facebook }}"
+                          >
+                            <img
+                              src="assets/facebook.svg"
+                              alt="Facebook image"
+                              class="user-scoial-icon img-fluid"
+                            />
+                          </a>
+
+                          <a
+                            *ngIf="card.linkedin"
+                            target="_blank"
+                            href="{{ card.linkedin }}"
+                          >
+                            <img
+                              src="assets/linkedin.svg"
+                              alt="linkedin image"
+                              class="user-scoial-icon img-fluid"
+                            />
+                          </a>
+
+                          <a
+                            *ngIf="card.telegramUsername"
+                            target="_blank"
+                            href="{{ card.telegramUsername }}"
+                          >
+                            <img
+                              src="assets/telegram.svg"
+                              alt="Telegram image"
+                              class="user-scoial-icon img-fluid"
+                            />
+                          </a>
+                          <a
+                            *ngIf="card.snapchat"
+                            target="_blank"
+                            href="https://www.snapchat.com/add/{{
+                              card.snapchat
+                            }}"
+                          >
+                            <img
+                              src="assets/snapchat.svg"
+                              alt="Snapchat image"
+                              class="user-scoial-icon img-fluid"
+                            />
+                          </a>
+                          <a
+                            href="https://wa.me/{{ card.whatsappNumber }}"
+                            target="_blank"
+                            *ngIf="card.whatsappNumber"
+                          >
+                            <img
+                              src="assets/whatsapp.svg"
+                              alt="Whatsapp image"
+                              class="user-scoial-icon img-fluid"
+                            />
+                          </a>
+                          <a
                             target="_blank"
                             *ngFor="
                               let item of card.socialLinks
                                 | keyvalue
-                                | slice: 0:6
+                                | slice: 0:5
                             "
                             href="https://{{ item.key }}.com/{{ item.value }}"
                           >
@@ -1081,22 +1261,22 @@
                         </div>
                       </div>
 
-                      <div class="card-bottom-container">
+                      <!-- <div class="card-bottom-container">
                         <div class="user-interestes-container">
                           <button class="my-cv-button btn btn-md btn-block">
                             My Resume
                           </button>
-                          <!-- <p class="intrests-head text-white">MY CV:</p> -->
-                          <!-- <div class="intrests-display-container">
+                          <p class="intrests-head text-white">MY CV:</p>
+                          <div class="intrests-display-container">
                             <span
                               *ngFor="let skill of skillsArray | slice: 0:4"
                               class="intrest-card"
                             >
                               {{ skill }}
                             </span>
-                                        </div> -->
+                                        </div>
                         </div>
-                      </div>
+                      </div> -->
                     </div>
                   </div>
                 </div>
@@ -1160,9 +1340,14 @@
                         alt="user profile image"
                         class="mini-card-profile"
                       />
-                      <span class="card-likes-icon"
-                        ><i class="fa fa-heart" aria-hidden="true"></i
-                      ></span>
+                      <div>
+                        <span class="card-likes-icon"
+                          ><i class="fa fa-heart" aria-hidden="true"></i
+                        ></span>
+                        <span class="user-likes-count text-white text-bold">
+                          2
+                        </span>
+                      </div>
                     </div>
 
                     <div class="basic-info">
@@ -1186,8 +1371,65 @@
                           class="mini-social-icon img-fluid"
                         />
                       </a>
+                      <a
+                        *ngIf="card.facebook"
+                        target="_blank"
+                        href="{{ card.facebook }}"
+                      >
+                        <img
+                          src="assets/facebook.svg"
+                          alt="Facebook image"
+                          class="mini-social-icon img-fluid"
+                        />
+                      </a>
+
+                      <a
+                        *ngIf="card.linkedin"
+                        target="_blank"
+                        href="{{ card.linkedin }}"
+                      >
+                        <img
+                          src="assets/linkedin.svg"
+                          alt="linkedin image"
+                          class="mini-social-icon img-fluid"
+                        />
+                      </a>
+
+                      <a
+                        *ngIf="card.telegramUsername"
+                        target="_blank"
+                        href="{{ card.telegramUsername }}"
+                      >
+                        <img
+                          src="assets/telegram.svg"
+                          alt="Telegram image"
+                          class="mini-social-icon img-fluid"
+                        />
+                      </a>
+                      <a
+                        *ngIf="card.snapchat"
+                        target="_blank"
+                        href="https://www.snapchat.com/add/{{ card.snapchat }}"
+                      >
+                        <img
+                          src="assets/snapchat.svg"
+                          alt="Snapchat image"
+                          class="mini-social-icon img-fluid"
+                        />
+                      </a>
+                      <a
+                        href="https://wa.me/{{ card.whatsappNumber }}"
+                        target="_blank"
+                        *ngIf="card.whatsappNumber"
+                      >
+                        <img
+                          src="assets/whatsapp.svg"
+                          alt="Whatsapp image"
+                          class="mini-social-icon img-fluid"
+                        />
+                      </a>
                     </div>
-                    <div class="card-bottom-container">
+                    <!-- <div class="card-bottom-container">
                       <div class="mini-card-interestes-container">
                         <p class="intrests-head text-white">Interests:</p>
                         <div class="intrests-display-container">
@@ -1199,7 +1441,7 @@
                           </span>
                         </div>
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
@@ -1664,21 +1906,185 @@
                 />
               </div>
 
+              <div class="custom-links-block pt-3">
+                <button
+                  class="bg-green text-white btn btn-md"
+                  (click)="openLg(content)"
+                  placement="bottom"
+                  ngbTooltip="Add your custom links, eg: app referral,Project links"
+                >
+                  Custom Links
+                </button>
+              </div>
+
+              <ng-template #content let-modal>
+                <div class="modal-header">
+                  <h4 class="modal-title">Custom Links</h4>
+
+                  <button
+                    type="button"
+                    class="btn btn-sm"
+                    aria-label="Close"
+                    (click)="modal.dismiss('Cross click')"
+                  >
+                    <img
+                      src="assets/modal-close.png"
+                      alt="Modal close icon"
+                      class="img-fluid modal-close-icon"
+                    />
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="custom-link-container">
+                    <div class="custom-1-div">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="instagram-username"
+                          placeholder="Enter Title"
+                          [(ngModel)]="customLinks[0].title"
+                          name="customTitle1"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <input
+                          type="url"
+                          class="form-control"
+                          id="custom-url"
+                          placeholder="Enter URL "
+                          [(ngModel)]="customLinks[0].url"
+                          name="customURL1"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="custom-link-container">
+                    <div class="custom-1-div">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="instagram-username"
+                          placeholder="Enter Title"
+                          [(ngModel)]="customLinks[1].title"
+                          name="customTitle2"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <input
+                          type="url"
+                          class="form-control"
+                          id="custom-url"
+                          placeholder="Enter URL "
+                          [(ngModel)]="customLinks[1].url"
+                          name="customURL2"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="custom-link-container">
+                    <div class="custom-1-div">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="instagram-username"
+                          placeholder="Enter Title"
+                          [(ngModel)]="customLinks[2].title"
+                          name="customTitle3"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <input
+                          type="url"
+                          class="form-control"
+                          id="custom-url"
+                          placeholder="Enter URL "
+                          [(ngModel)]="customLinks[2].url"
+                          name="customURL3"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="custom-link-container">
+                    <div class="custom-1-div">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="instagram-username"
+                          placeholder="Enter Title"
+                          [(ngModel)]="customLinks[3].title"
+                          name="customTitle4"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <input
+                          type="url"
+                          class="form-control"
+                          id="custom-url"
+                          placeholder="Enter URL "
+                          [(ngModel)]="customLinks[3].url"
+                          name="customURL4"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="custom-link-container">
+                    <div class="custom-1-div">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="instagram-username"
+                          placeholder="Enter Title"
+                          [(ngModel)]="customLinks[4].title"
+                          name="customTitle5"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <input
+                          type="url"
+                          class="form-control"
+                          id="custom-url"
+                          placeholder="Enter URL "
+                          [(ngModel)]="customLinks[4].url"
+                          name="customURL5"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-light"
+                    (click)="modal.close('Close click')"
+                  >
+                    Close
+                  </button>
+                </div>
+              </ng-template>
+
               <div class="form-group">
                 <div
                   class="social-links-input-container"
                   *ngIf="selectedIcon === 'facebook'"
                 >
                   <label for="facebook-username" class="social-media-url-prefix"
-                    >https://facebook.com/</label
+                    >Facebook URL</label
                   >
                   <input
                     type="text"
                     class="form-control user-social-link-input"
                     id="facebook-username"
-                    [(ngModel)]="card.socialLinks.facebook"
-                    placeholder="Enter your username"
-                    name="user facebook Url"
+                    [(ngModel)]="card.facebook"
+                    placeholder="https://www.facebook.com/InternetcardIN"
+                    name="Business facebook Url"
                   />
                 </div>
 
@@ -1689,15 +2095,15 @@
                   <label
                     for="instagram-username"
                     class="social-media-url-prefix"
-                    >https://instagram.com/</label
+                    >Instagram Username</label
                   >
                   <input
                     type="text"
                     class="form-control user-social-link-input"
                     id="instagram-username"
-                    placeholder="Enter your username"
+                    placeholder="@internetcardin"
                     [(ngModel)]="card.socialLinks.instagram"
-                    name="user instagram url"
+                    name="Business instagram url"
                   />
                 </div>
 
@@ -1706,15 +2112,15 @@
                   *ngIf="selectedIcon === 'website'"
                 >
                   <label for="user-website" class="social-media-url-prefix"
-                    >Website</label
+                    >Website URL</label
                   >
                   <input
                     type="text"
                     class="form-control user-social-link-input"
                     id="user-website-url"
-                    placeholder="Enter your website Url"
+                    placeholder="https://www.internetcard.in/"
                     [(ngModel)]="card.website"
-                    name="user blog url"
+                    name="Business website url"
                   />
                 </div>
                 <div
@@ -1722,15 +2128,15 @@
                   *ngIf="selectedIcon === 'telegram'"
                 >
                   <label for="user-linkedUrl" class="social-media-url-prefix"
-                    >https://t.me/</label
+                    >Telegram Username</label
                   >
                   <input
                     type="text"
                     class="form-control user-social-link-input"
                     id="user-linkedUrl"
-                    placeholder="Enter your username"
+                    placeholder="@daytradertelugu"
                     [(ngModel)]="card.telegramUsername"
-                    name="user Telegram url"
+                    name="Business Telegram url"
                   />
                 </div>
 
@@ -1739,7 +2145,7 @@
                   *ngIf="selectedIcon === 'whatsapp'"
                 >
                   <label for="user-linkedUrl" class="social-media-url-prefix"
-                    >https://wa.me/</label
+                    >Whatsapp Number</label
                   >
                   <input
                     type="text"
@@ -1747,7 +2153,7 @@
                     id="user-linkedUrl"
                     placeholder="Enter your number"
                     [(ngModel)]="card.whatsappNumber"
-                    name="user whatsapp url"
+                    name="Business whatsapp Number"
                   />
                 </div>
 
@@ -1756,15 +2162,15 @@
                   *ngIf="selectedIcon === 'linkedin'"
                 >
                   <label for="user-linkedUrl" class="social-media-url-prefix"
-                    >https://linkedin.com/</label
+                    >Linkedin URL</label
                   >
                   <input
                     type="text"
                     class="form-control user-social-link-input"
                     id="user-linkedUrl"
-                    placeholder="Enter your Username"
-                    [(ngModel)]="card.socialLinks.linkedin"
-                    name="user linkedin url"
+                    placeholder="https://www.linkedin.com/company/internetcard/"
+                    [(ngModel)]="card.linkedin"
+                    name="Business linkedin url"
                   />
                 </div>
                 <div
@@ -1772,13 +2178,13 @@
                   *ngIf="selectedIcon === 'blog'"
                 >
                   <label for="user-blog-url" class="social-media-url-prefix"
-                    >Blog</label
+                    >Blog URL</label
                   >
                   <input
                     type="text"
                     class="form-control user-social-link-input"
                     id="user-blog-url"
-                    placeholder="Enter your Blog Url"
+                    placeholder="https://save350.blogspot.com/"
                     [(ngModel)]="card.blog"
                     name="user blog url"
                   />
@@ -1789,15 +2195,15 @@
                   *ngIf="selectedIcon === 'twitter'"
                 >
                   <label for="twitter-username" class="social-media-url-prefix"
-                    >https://twitter.com/</label
+                    >Twitter Username</label
                   >
                   <input
                     type="text"
                     [(ngModel)]="card.socialLinks.twitter"
                     class="form-control user-social-link-input"
                     id="twitter-username"
-                    name="user twitter url"
-                    placeholder="Enter your username"
+                    name="Business twitter url"
+                    placeholder="@InternetcardIN"
                   />
                 </div>
 
@@ -1806,15 +2212,15 @@
                   *ngIf="selectedIcon === 'youtube'"
                 >
                   <label for="github-username" class="social-media-url-prefix"
-                    >Youtube</label
+                    >Youtube URL</label
                   >
                   <input
                     type="text"
-                    [(ngModel)]="card.socialLinks.youtube"
+                    [(ngModel)]="card.youtube"
                     class="form-control user-social-link-input"
                     id="youtube-username"
-                    name="user youtube Url"
-                    placeholder="Enter your Url"
+                    name="Business youtube Url"
+                    placeholder="https://www.youtube.com/channel"
                   />
                 </div>
 
@@ -1823,15 +2229,15 @@
                   *ngIf="selectedIcon === 'snapchat'"
                 >
                   <label for="snapchat-username" class="social-media-url-prefix"
-                    >Snapchat</label
+                    >Snapchat Username</label
                   >
                   <input
                     type="text"
                     [(ngModel)]="card.snapchat"
                     class="form-control user-social-link-input"
                     id="snapchat-username"
-                    name="user snapchat Url"
-                    placeholder="Enter your username"
+                    name="Business Snapchat username"
+                    placeholder="Snapchat username"
                   />
                 </div>
 
@@ -1840,15 +2246,15 @@
                   *ngIf="selectedIcon === 'dribble'"
                 >
                   <label for="dribble-username" class="social-media-url-prefix"
-                    >https://dribbble.com/</label
+                    >Dribbble Username</label
                   >
                   <input
                     type="text"
                     [(ngModel)]="card.socialLinks.dribbble"
                     class="form-control user-social-link-input"
                     id="dribble-username"
-                    name="user Dribble Url"
-                    placeholder="Enter your username"
+                    name="Business Dribble Url"
+                    placeholder="@dribble"
                   />
                 </div>
 
@@ -1857,15 +2263,15 @@
                   *ngIf="selectedIcon === 'behance'"
                 >
                   <label for="dribble-username" class="social-media-url-prefix"
-                    >https://behance.com/</label
+                    >Behance Username</label
                   >
                   <input
                     type="text"
                     [(ngModel)]="card.socialLinks.behance"
                     class="form-control user-social-link-input"
                     id="behance-username"
-                    name="user behance Url"
-                    placeholder="Enter your username"
+                    name="Business behance Url"
+                    placeholder="@Behance"
                   />
                 </div>
               </div>
@@ -1881,7 +2287,7 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <span class="bio-length">
-                        {{ bussinessBioLength }} /130</span
+                        {{ bussinessBioLength }} /150</span
                       >
                       <input
                         type="text"
@@ -1890,7 +2296,7 @@
                         [(ngModel)]="card.businessBio"
                         placeholder="About Your Business"
                         name="Business bio"
-                        maxlength="130"
+                        maxlength="150"
                         #businessBio="ngModel"
                         (keyup)="getbussinessBioLength()"
                         required
@@ -1910,8 +2316,7 @@
                     <div class="form-group">
                       <div class="skills-box">
                         <button
-                          *ngIf="innerWidth < 768"
-                          class="btn btn-md bg-green visible-small"
+                          class="btn btn-md bg-green business-services-button"
                           (click)="addSkill($event, skillSearch)"
                         >
                           add
@@ -1920,9 +2325,8 @@
                           type="search"
                           class="form-control skill-search-input"
                           [(ngModel)]="skillSearch"
-                          (keyup.enter)="addSkill($event, skillSearch)"
                           name="skille search"
-                          placeholder="Type services and press enter"
+                          placeholder="Business Services"
                         />
                         <div class="skill-display-box">
                           <span
@@ -1979,18 +2383,103 @@
                                 </p>
                               </div>
 
-                              <div class="social-links-container">
+                              <div
+                                class="social-links-container business-social-apps"
+                              >
                                 <p class="follow-heading text-green fw-600">
                                   Connect us socially:
                                 </p>
 
                                 <div class="socials-icons-container">
                                   <a
+                                    *ngIf="card.facebook"
+                                    target="_blank"
+                                    href="{{ card.facebook }}"
+                                  >
+                                    <img
+                                      src="assets/facebook.svg"
+                                      alt="Facebook image"
+                                      class="user-scoial-icon img-fluid"
+                                    />
+                                  </a>
+
+                                  <a
+                                    *ngIf="card.linkedin"
+                                    target="_blank"
+                                    href="{{ card.linkedin }}"
+                                  >
+                                    <img
+                                      src="assets/linkedin.svg"
+                                      alt="linkedin image"
+                                      class="user-scoial-icon img-fluid"
+                                    />
+                                  </a>
+
+                                  <a
+                                    *ngIf="card.telegramUsername"
+                                    target="_blank"
+                                    href="{{ card.telegramUsername }}"
+                                  >
+                                    <img
+                                      src="assets/telegram.svg"
+                                      alt="Telegram image"
+                                      class="user-scoial-icon img-fluid"
+                                    />
+                                  </a>
+                                  <a
+                                    *ngIf="card.snapchat"
+                                    target="_blank"
+                                    href="https://www.snapchat.com/add/{{
+                                      card.snapchat
+                                    }}"
+                                  >
+                                    <img
+                                      src="assets/snapchat.svg"
+                                      alt="Snapchat image"
+                                      class="user-scoial-icon img-fluid"
+                                    />
+                                  </a>
+                                  <a
+                                    href="https://wa.me/{{
+                                      card.whatsappNumber
+                                    }}"
+                                    target="_blank"
+                                    *ngIf="card.whatsappNumber"
+                                  >
+                                    <img
+                                      src="assets/whatsapp.svg"
+                                      alt="Whatsapp image"
+                                      class="user-scoial-icon img-fluid"
+                                    />
+                                  </a>
+
+                                  <a
+                                    href="{{ card.website }}"
+                                    target="_blank"
+                                    *ngIf="card.website"
+                                  >
+                                    <img
+                                      src="assets/website-icon.svg"
+                                      alt="Whatsapp image"
+                                      class="user-scoial-icon img-fluid"
+                                    />
+                                  </a>
+
+                                  <a
+                                    href="{{ card.blog }}"
+                                    target="_blank"
+                                    *ngIf="card.blog"
+                                  >
+                                    <img
+                                      src="assets/blog-icon.svg"
+                                      alt="Whatsapp image"
+                                      class="user-scoial-icon img-fluid"
+                                    />
+                                  </a>
+                                  <a
                                     target="_blank"
                                     *ngFor="
-                                      let item of card.socialLinks
-                                        | keyvalue
-                                        | slice: 0:5
+                                      let item of card.socialLinks | keyvalue
                                     "
                                     href="https://{{ item.key }}.com/{{
                                       item.value
@@ -2002,13 +2491,6 @@
                                       alt="{{ item.key }} image"
                                       class="user-scoial-icon img-fluid"
                                     />
-                                  </a>
-                                  <a target="_blank">
-                                    <span
-                                      class="more-links"
-                                      *ngIf="remaingLinksCount > 0"
-                                      >{{ remaingLinksCount }}+ more</span
-                                    >
                                   </a>
                                 </div>
                               </div>
@@ -2156,7 +2638,7 @@
                         />
 
                         <span class="user-likes-count text-white text-bold">
-                          0
+                          2
                         </span>
                       </div>
                     </div>
