@@ -167,11 +167,11 @@ a.custom-links {
   padding: 11px 41px;
   background: #112654;
   border-radius: 8px;
+  margin-right: 40px;
 }
 .custom-link-display-container {
   display: flex;
-  justify-content: space-evenly;
-  background: url("../../assets/create-business-card-bg.png");
+  margin-left: 150px;
 }
 p.intrests-head.text-white {
   margin-bottom: 8px;
@@ -261,6 +261,64 @@ img.img-fluid.card-branding {
   border-radius: 0 0 102px 5px;
 }
 
+img.img-fluid.feedback-avatar {
+  width: 70%;
+}
+
+.feedback-action-container {
+  margin-top: 60px;
+}
+
+textarea#feedback-info {
+  border-radius: 16px;
+  border-color: #22c98b;
+  padding: 13px;
+}
+.feedback-submit-btn.btn.btn-md {
+  position: absolute;
+  bottom: 3px;
+  right: 13px;
+  border-radius: 4px;
+}
+
+.feedback-optional-box {
+  margin: 17px 0 0 30px;
+}
+
+.feedback-actions {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 60px;
+}
+
+img.img-fluid.feedback-action-img {
+  width: 80px;
+  cursor: pointer;
+}
+
+.feedback-heading {
+  font-size: 30px;
+  font-weight: 700;
+}
+.feedback-init-container {
+  position: fixed;
+  bottom: 0;
+  right: 60px;
+}
+.feedback-init-container img {
+  width: 60px;
+  cursor: pointer;
+}
+p.d-none.d-md-block.d-lg-block.desktop-feedback-init {
+  position: absolute;
+  transform: rotate(90deg);
+  background: #112654;
+  color: #fff;
+  padding: 8px 16px;
+  left: -38px;
+  top: 237px;
+  cursor: pointer;
+}
 /* personal card css ends here */
 
 img.img-fluid.user-personal-profile {
@@ -585,6 +643,9 @@ h2.scan-text-heading.text-white {
 }
 
 @media only screen and (max-width: 767px) {
+  .feedback-init-container {
+    right: 9px;
+  }
   .card-view-back.mini-card-back {
     border-radius: 16px 16px 0 0;
     flex-direction: column;
@@ -623,6 +684,19 @@ h2.scan-text-heading.text-white {
 }
 
 @media only screen and (max-width: 576px) {
+  .feedback-action-container {
+    margin-top: 0px;
+  }
+  img.img-fluid.feedback-action-img.hvr-icon {
+    width: 40px;
+  }
+  .feedback-actions {
+    margin-top: 35px;
+  }
+  .feedback-heading {
+    font-size: 21px;
+    font-weight: 700;
+  }
   section.mini-internet-card.visible-small {
     padding-top: 20px;
   }
@@ -664,14 +738,11 @@ h2.scan-text-heading.text-white {
   .custom-link-display-container {
     flex-direction: column;
     margin-top: 25px;
+    margin-left: 22px;
   }
 
   .cardview-container {
     background: none;
-  }
-
-  .custom-link-display-container {
-    flex-direction: column;
   }
 }
 

@@ -9,6 +9,7 @@ import { NotifierOptions, NotifierService } from 'angular-notifier';
 import { Meta } from '@angular/platform-browser';
 
 import { ShareService } from '../share.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 // import { QrCodeModule } from 'ng-qrcode';
 
@@ -37,7 +38,15 @@ export class CardViewComponent implements OnInit {
   qrImageUrl: string = '';
   flipCardSide: boolean = false;
 
-  hideCustomHeading: boolean = false;
+  showFeedbackTextarea: boolean = false;
+
+  feedbackData: any = {
+    action: '',
+    message: '',
+    userId: '',
+    email: '',
+    name: '',
+  };
 
   constructor(
     private shareService: ShareService,
@@ -46,7 +55,8 @@ export class CardViewComponent implements OnInit {
     private router: Router,
     private searchService: SearchService,
     private firebaseAuth: AngularFireAuth,
-    private notifierService: NotifierService
+    private notifierService: NotifierService,
+    private modalService: NgbModal
   ) {
     firebaseAuth.authState.subscribe((user) => {
       //console.log(user);
@@ -61,9 +71,30 @@ export class CardViewComponent implements OnInit {
     this.notifier = notifierService;
   }
 
+  openLg(content: any) {
+    this.modalService.open(content, { size: 'xl', centered: true });
+  }
+
   updateLinkCount() {
     this.linkCount = this.cardData.socialLinks.length;
     this.showMoreLinks = true;
+  }
+
+  registerFeedbackAction(action: string) {
+    this.feedbackData.action = action;
+    this.showFeedbackTextarea = true;
+  }
+
+  registerFeedback(message: string) {
+    this.feedbackData.name = this.cardData.userName;
+    (this.feedbackData.email = this.user.email),
+      (this.feedbackData.userId = this.user.uid);
+    this.feedbackData.message = message;
+    this.dbService.feedback(this.feedbackData).then((res) => {
+      this.modalService.dismissAll();
+      this.showFeedbackTextarea = false;
+      this.notifier.notify('success', 'Thanks for your valuble feedback');
+    });
   }
 
   flipCard() {

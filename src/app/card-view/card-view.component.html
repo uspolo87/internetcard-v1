@@ -1207,6 +1207,122 @@
   <!-- search sections ends here -->
 </div>
 
+<div class="feedback-init-container" *ngIf="user">
+  <img
+    src="assets/feedback-mobile-icon.svg"
+    alt="feedback icon"
+    class="img-fluid feedback-init-icon d-md-none"
+    (click)="openLg(content)"
+    placement="top"
+    ngbTooltip="Feedback"
+  />
+</div>
+<p
+  class="d-none d-md-block d-lg-block desktop-feedback-init"
+  (click)="openLg(content)"
+>
+  Feedback
+</p>
+<!-- feedabck modal starts here -->
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Feedback</h4>
+
+    <button
+      type="button"
+      class="btn btn-sm"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <img
+        src="assets/modal-close.png"
+        alt="Modal close icon"
+        class="img-fluid modal-close-icon"
+      />
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="feedback-conatainer">
+      <div class="d-flex text-center">
+        <div class="feedback-action-container">
+          <h3 class="feedback-heading">
+            Your <span class="text-green">Feedback</span> matters a lot to us!!
+          </h3>
+
+          <div class="feedback-actions" *ngIf="!showFeedbackTextarea">
+            <div class="hvr-icon-up">
+              <img
+                src="assets/feedback-like.svg"
+                alt="Feedback like svg"
+                class="img-fluid feedback-action-img hvr-icon"
+                (click)="registerFeedbackAction('like')"
+              />
+            </div>
+
+            <div class="hvr-icon-up">
+              <img
+                src="assets/feedback-love.svg"
+                alt="Feedback love svg"
+                class="img-fluid feedback-action-img hvr-icon"
+                (click)="registerFeedbackAction('love')"
+              />
+            </div>
+
+            <div class="hvr-icon-up">
+              <img
+                src="assets/feedback-dislike.svg"
+                alt="Feedback dislike svg"
+                class="img-fluid feedback-action-img hvr-icon"
+                (click)="registerFeedbackAction('dislike')"
+              />
+            </div>
+          </div>
+          <div
+            class="feedback-optional-box position-relative"
+            *ngIf="showFeedbackTextarea"
+          >
+            <textarea
+              name="feedback"
+              id="feedback-info"
+              cols="50"
+              class="form-control"
+              placeholder="Your text feedback here"
+              rows="5"
+              #feedbackMessage
+            ></textarea>
+
+            <button
+              class="bg-green text-white feedback-submit-btn btn btn-md"
+              (click)="registerFeedback(feedbackMessage.value)"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+
+        <div class="feedback-image-container d-none d-md-block">
+          <img
+            src="assets/feedback-img.svg"
+            alt="Feedback avatar"
+            class="img-fluid feedback-avatar"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-light"
+      (click)="modal.close('Close click')"
+    >
+      Close
+    </button>
+  </div>
+</ng-template>
+
+<!-- feedabck modal ends here -->
+
 <div *ngIf="!cardData" class="no-card-container">
   <div *ngIf="!myData">
     <img

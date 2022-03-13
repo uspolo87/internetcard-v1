@@ -70,8 +70,7 @@ export class CreateCardComponent implements OnInit {
     private authService: AuthService,
     private notifierService: NotifierService,
     private storage: AngularFireStorage,
-    private modalService: NgbModal,
-    private ref: ChangeDetectorRef
+    private modalService: NgbModal
   ) {
     this.notifier = notifierService;
     firebaseAuth.authState.subscribe((user) => {
@@ -295,33 +294,32 @@ export class CreateCardComponent implements OnInit {
           return;
         }
       }
+    } else if (this.cardType === 'business') {
+      if (step === 2) {
+        if (
+          !this.card.businessName ||
+          !this.card.businessContact ||
+          !this.card.businessEmail ||
+          !this.card.businessCountry ||
+          !this.card.businessCity
+        ) {
+          this.notifier.notify('error', 'Please fill all the details');
+          return;
+        }
+      } else if (step === 3) {
+        const length = Object.keys(this.card.socialLinks).length;
+        if (length < 4) {
+          this.notifier.notify('error', 'Please fill at least 4 links');
+          return;
+        }
+      } else if (step === 4) {
+        if (!this.card.businessBio || this.skillsArray.length === 0) {
+          this.notifier.notify('error', 'Please fill services/logo');
+          return;
+        }
+        //this.uploadBusinessProfilePicture();
+      }
     }
-    // else if (this.cardType === 'business') {
-    //   if (step === 2) {
-    //     if (
-    //       !this.card.businessName ||
-    //       !this.card.businessContact ||
-    //       !this.card.businessEmail ||
-    //       !this.card.businessCountry ||
-    //       !this.card.businessCity
-    //     ) {
-    //       this.notifier.notify('error', 'Please fill all the details');
-    //       return;
-    //     }
-    //   } else if (step === 3) {
-    //     const length = Object.keys(this.card.socialLinks).length;
-    //     if (length < 4) {
-    //       this.notifier.notify('error', 'Please fill at least 4 links');
-    //       return;
-    //     }
-    //   } else if (step === 4) {
-    //     if (!this.card.businessBio || this.skillsArray.length === 0) {
-    //       this.notifier.notify('error', 'Please fill services/logo');
-    //       return;
-    //     }
-    //     //this.uploadBusinessProfilePicture();
-    //   }
-    // }
     this.currentStep = step;
 
     if (step === 5 || step === 4) {
@@ -350,7 +348,9 @@ export class CreateCardComponent implements OnInit {
         } else {
           this.userBioLength = this.card.userBio.length;
         }
-        this.customLinks = this.card.customLinks ? this.card.customLinks : '';
+        this.customLinks = this.card.customLinks
+          ? this.card.customLinks
+          : this.customLinks;
         this.imageUrl = this.card.businessLogo;
         this.selectedAvatar = this.card.avatar;
         this.skillsArray = this.card.skillsArray;
