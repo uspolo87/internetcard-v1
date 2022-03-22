@@ -1,0 +1,99 @@
+<div class="ipl-theme-cotainer">
+  <div class="card-preview-container">
+    <app-card-view
+      [cardActions]="actionStatus"
+      [mode]="mode"
+      [selectedTeam]="selectedTeam"
+      (updateCard)="updateCard()"
+    ></app-card-view>
+  </div>
+
+  <div class="preview-action-container">
+    <div class="ipl-icon-container">
+      <img
+        src="assets/csk-icon.png"
+        alt="Csk Image"
+        class="img-fluid ipl-logo-icon"
+        (click)="setCardBg('csk')"
+      />
+
+      <img
+        src="assets/dc-icon.png"
+        alt="DC Image"
+        class="img-fluid ipl-logo-icon"
+        (click)="setCardBg('dc')"
+      />
+    </div>
+    <div class="ipl-icon-container">
+      <img
+        src="assets/gt-icon.png"
+        alt="Gujarat titans Image"
+        class="img-fluid ipl-logo-icon"
+        (click)="setCardBg('gt')"
+      />
+
+      <img
+        src="assets/lsg-icon.png"
+        alt="Mumbai indians Image"
+        class="img-fluid ipl-logo-icon"
+        (click)="setCardBg('lsg')"
+      />
+    </div>
+
+    <div class="ipl-icon-container">
+      <img
+        src="assets/mi-icon.png"
+        alt="Mumbai indians Image"
+        class="img-fluid ipl-logo-icon"
+        (click)="setCardBg('mi')"
+      />
+
+      <img
+        src="assets/pk-icon.png"
+        alt="Punjab kinds Image"
+        class="img-fluid ipl-logo-icon"
+        (click)="setCardBg('pk')"
+      />
+    </div>
+
+    <div class="ipl-icon-container">
+      <img
+        src="assets/rcb-icon.png"
+        alt="Rcb Image"
+        class="img-fluid ipl-logo-icon"
+        (click)="setCardBg('rcb')"
+      />
+
+      <img
+        src="assets/rr-icon.png"
+        alt="RR Image"
+        class="img-fluid ipl-logo-icon"
+        (click)="setCardBg('rr')"
+      />
+    </div>
+
+    <div class="ipl-icon-container">
+      <img
+        src="assets/srh-icon.png"
+        alt="SRH Image"
+        class="img-fluid ipl-logo-icon"
+        (click)="setCardBg('srh')"
+      />
+      <img
+        src="assets/kkr-icon.png"
+        alt="SRH Image"
+        class="img-fluid ipl-logo-icon"
+        (click)="setCardBg('kkr')"
+      />
+    </div>
+  </div>
+</div>
+
+<div class="update-card-container">
+  <button
+    (click)="updateCard()"
+    class="btn btn-info btn-lg bg-green text-white"
+  >
+    Apply theme
+  </button>
+</div>

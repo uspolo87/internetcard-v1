@@ -179,7 +179,7 @@
                     />
                   </a>
                   <a
-                    href="https://wa.me/{{ cardData.whatsappNumber }}"
+                    href="https://wa.me/+91{{ cardData.whatsappNumber }}"
                     target="_blank"
                     *ngIf="cardData.whatsappNumber"
                   >
@@ -229,7 +229,7 @@
                   class="my-cv-button btn btn-md btn-block min-card"
                   target="_blank"
                   href="{{ cardData.resumeUrl }}"
-                  *ngIf="cardData.cardType == 'personal'"
+                  *ngIf="cardData.cardType == 'personal' && cardData.resumeUrl"
                   >My Resume
                 </a>
                 <div
@@ -376,7 +376,10 @@
       class="peronsal-card-section visible-large"
       *ngIf="cardData && cardData.cardType === 'personal'"
     >
-      <div class="perosnal-card-container">
+      <div
+        class="perosnal-card-container"
+        [ngClass]="{ cardPreviewMode: cardActions === false }"
+      >
         <div class="container">
           <div class="row">
             <div class="col-md-10" aTilt>
@@ -396,7 +399,9 @@
                   </div>
 
                   <div
-                    class="user-card-inner-container-row card-view-front"
+                    class="user-card-inner-container-row card-view-front {{
+                      selectedTeam
+                    }} {{ cardData.selectedIplTeam }}"
                     [ngStyle]="{ background: cardData.bgColor }"
                   >
                     <div class="row">
@@ -425,6 +430,7 @@
                           <div class="webiste-blog-container">
                             <div class="user-interestes-container">
                               <a
+                                *ngIf="cardData.resumeUrl"
                                 class="my-cv-button btn btn-md btn-block"
                                 target="_blank"
                                 href="{{ cardData.resumeUrl }}"
@@ -543,7 +549,7 @@
                                 />
                               </a>
                               <a
-                                href="https://wa.me/{{
+                                href="https://wa.me/+91{{
                                   cardData.whatsappNumber
                                 }}"
                                 target="_blank"
@@ -662,7 +668,10 @@
               </div>
             </div>
 
-            <div class="col-md-2">
+            <div
+              class="col-md-2"
+              [ngClass]="{ 'hide-action': cardActions === false }"
+            >
               <div class="card-action-container" *ngIf="user">
                 <div class="action-block">
                   <img
@@ -836,7 +845,7 @@
                                 />
                               </a>
                               <a
-                                href="https://wa.me/{{
+                                href="https://wa.me/+91{{
                                   cardData.whatsappNumber
                                 }}"
                                 target="_blank"
@@ -1136,7 +1145,7 @@
 
     <!-- custom link container starts from here -->
 
-    <div class="container-fluid">
+    <div class="container-fluid" [ngClass]="{ hidden: cardActions === false }">
       <div class="custom-links-container">
         <!-- <div class="down-arrow-image text-center">
           <img

@@ -270,23 +270,14 @@ export class CreateCardComponent implements OnInit {
         // }
       } else if (step === 5) {
         if (this.card.userProfession === 'student') {
-          if (
-            !this.card.userBio ||
-            !this.card.userInstitute ||
-            this.skillsArray.length === 0 ||
-            !this.card.resumeUrl
-          ) {
+          if (!this.card.userBio || !this.card.userInstitute) {
             this.notifier.notify(
               'error',
               'Please fill all the details/upload CV'
             );
             return;
           }
-        } else if (
-          !this.card.userBio ||
-          !this.card.userCompany ||
-          !this.card.resumeUrl
-        ) {
+        } else if (!this.card.userBio || !this.card.userCompany) {
           this.notifier.notify(
             'error',
             'Please fill all the details/upload CV'
@@ -307,11 +298,6 @@ export class CreateCardComponent implements OnInit {
           return;
         }
       } else if (step === 3) {
-        const length = Object.keys(this.card.socialLinks).length;
-        if (length < 4) {
-          this.notifier.notify('error', 'Please fill at least 4 links');
-          return;
-        }
       } else if (step === 4) {
         if (!this.card.businessBio || this.skillsArray.length === 0) {
           this.notifier.notify('error', 'Please fill services/logo');

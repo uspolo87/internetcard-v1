@@ -45,6 +45,7 @@ import { TacComponent } from './tac/tac.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { IplthemeComponent } from './specialEvents/ipltheme/ipltheme.component';
 
 const customNotifierOptions: NotifierOptions = {
   position: {
@@ -105,6 +106,7 @@ const customNotifierOptions: NotifierOptions = {
     TocComponent,
     TacComponent,
     PrivacyComponent,
+    IplthemeComponent,
   ],
   imports: [
     BrowserModule,

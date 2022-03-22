@@ -26,12 +26,23 @@
 
 /* loading spinner ends here */
 
+/* preview mode css starts here */
+
+.hide-action {
+  display: none;
+}
+.perosnal-card-container.cardPreviewMode {
+  max-width: 100%;
+}
+/* preview mode css ends here */
 .cardview-container {
   background: url("../../assets/cardview-bg.svg");
   background-position: initial;
   background-size: cover;
 }
-
+.hidden {
+  display: none;
+}
 /* personal card css starts here */
 
 img.card-likes-icon {
@@ -114,6 +125,10 @@ span.perosnal-links a {
     rgba(112, 77, 170, 1) 95%
   );
   border-radius: 8px;
+}
+
+.mini-card-profile-container .user-bio {
+  word-break: break-all;
 }
 
 .card-peronsal-profile-container.text-center {
@@ -526,7 +541,7 @@ span.mini-intrest-card {
 
 .mini-card-likes-container span.user-likes-count.text-white.text-bold {
   position: absolute;
-  right: 25px;
+  right: 31px;
   top: -12px;
   font-weight: 800;
 }
@@ -764,3 +779,43 @@ h2.scan-text-heading.text-white {
     width: 300px;
   }
 }
+
+/* ipl theme css starts here */
+.card-view-front.user-card-inner-container-row.srh {
+  background: url("../../assets/srh-card-bg.svg") !important;
+}
+
+.card-view-front.user-card-inner-container-row.csk {
+  background: url("../../assets/csk-card-bg.svg") !important;
+}
+
+.card-view-front.user-card-inner-container-row.dc {
+  background: url("../../assets/dc-card-bg.svg") !important;
+}
+
+.card-view-front.user-card-inner-container-row.gt {
+  background: url("../../assets/gt-card-bg.svg") !important;
+}
+.card-view-front.user-card-inner-container-row.lsg {
+  background: url("../../assets/lsg-card-bg.svg") !important;
+}
+
+.card-view-front.user-card-inner-container-row.mi {
+  background: url("../../assets/mi-card-bg.svg") !important;
+}
+
+.card-view-front.user-card-inner-container-row.pk {
+  background: url("../../assets/pbk-card-bg.svg") !important;
+}
+
+.card-view-front.user-card-inner-container-row.rcb {
+  background: url("../../assets/rcb-card-bg.svg") !important;
+}
+.card-view-front.user-card-inner-container-row.rr {
+  background: url("../../assets/rr-card-bg.svg") !important;
+}
+
+.card-view-front.user-card-inner-container-row.kkr {
+  background: url("../../assets/kkr-card-bg.svg") !important;
+}
+/* ipl theme css ends here */

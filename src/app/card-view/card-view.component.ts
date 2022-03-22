@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestoreCollection } from '@angular/fire/firestore';
 import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
@@ -10,6 +10,9 @@ import { Meta } from '@angular/platform-browser';
 
 import { ShareService } from '../share.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
+import { IplthemeComponent } from '../specialEvents/ipltheme/ipltheme.component';
+import { CreateCardComponent } from '../create-card/create-card.component';
 
 // import { QrCodeModule } from 'ng-qrcode';
 
@@ -48,6 +51,10 @@ export class CardViewComponent implements OnInit {
     name: '',
   };
 
+  @Input('cardActions') cardActions!: boolean;
+  @Input('mode') mode!: string;
+  @Input('selectedTeam') selectedTeam!: string;
+
   constructor(
     private shareService: ShareService,
     private dbService: dbService,
@@ -69,6 +76,25 @@ export class CardViewComponent implements OnInit {
       }
     });
     this.notifier = notifierService;
+  }
+
+  updateCard(selectedIplTeam: string) {
+    this.cardData.selectedIplTeam = selectedIplTeam;
+    console.log(this.cardData);
+    this.dbService
+      .createCard(this.cardData, this.user.uid)
+      .then((res) => {
+        this.notifier.notify(
+          'success',
+          'Your Internet Card updated successfully!'
+        );
+        this.router.navigate([`/cardView/${this.user.uid}`]);
+        this.stateLoading = false;
+      })
+      .catch((err) => {
+        this.stateLoading = false;
+        console.log(err);
+      });
   }
 
   openLg(content: any) {

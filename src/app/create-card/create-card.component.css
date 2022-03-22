@@ -599,6 +599,10 @@ img.img-fluid.checkmark-cion {
   width: 27px;
 }
 
+.mini-card-profile-container .user-bio {
+  word-break: break-all;
+}
+
 span.cardType.business {
   background: #303970;
 }
@@ -986,8 +990,8 @@ button.btn.btn-md.bg-green.text-white.visible-large {
   }
   button.resume-upload-btn.btn.btn-md {
     position: absolute;
-    top: 77px;
     font-size: 12px;
+    font-weight: 700;
     padding: 4px 7px;
     right: 35px;
   }

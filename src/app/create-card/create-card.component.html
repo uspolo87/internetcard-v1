@@ -1121,7 +1121,10 @@
                       </p>
 
                       <div class="webiste-blog-container mt-2">
-                        <div class="user-interestes-container">
+                        <div
+                          class="user-interestes-container"
+                          *ngIf="card.resumeUrl"
+                        >
                           <button class="my-cv-button btn btn-md btn-block">
                             My Resume
                           </button>
@@ -1344,9 +1347,9 @@
                         <span class="card-likes-icon"
                           ><i class="fa fa-heart" aria-hidden="true"></i
                         ></span>
-                        <span class="user-likes-count text-white text-bold">
+                        <!-- <span class="user-likes-count text-white text-bold">
                           2
-                        </span>
+                        </span> -->
                       </div>
                     </div>
 
@@ -1429,9 +1432,16 @@
                         />
                       </a>
                     </div>
-                    <!-- <div class="card-bottom-container">
-                      <div class="mini-card-interestes-container">
-                        <p class="intrests-head text-white">Interests:</p>
+                    <div class="card-bottom-container">
+                      <div
+                        class="mini-card-interestes-container"
+                        *ngIf="card.resumeUrl"
+                      >
+                        <button class="my-cv-button btn btn-md btn-block">
+                          My Resume
+                        </button>
+
+                        <!-- <p class="intrests-head text-white">Interests:</p>
                         <div class="intrests-display-container">
                           <span
                             *ngFor="let skill of skillsArray"
@@ -1439,9 +1449,9 @@
                           >
                             {{ skill }}
                           </span>
-                        </div>
+                        </div> -->
                       </div>
-                    </div> -->
+                    </div>
                   </div>
                 </div>
               </div>
@@ -2637,9 +2647,9 @@
                           class="card-likes-icon"
                         />
 
-                        <span class="user-likes-count text-white text-bold">
+                        <!-- <span class="user-likes-count text-white text-bold">
                           2
-                        </span>
+                        </span> -->
                       </div>
                     </div>
 

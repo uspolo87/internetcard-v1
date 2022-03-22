@@ -10,6 +10,7 @@ export class dbService {
   constructor(private firestore: AngularFirestore, private http: HttpClient) {}
 
   createCard(cardObject: object, userId: string) {
+    console.log({ cardObject, userId });
     return this.firestore
       .collection('cards')
       .doc(userId)
