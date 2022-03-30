@@ -1,4 +1,11 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  Input,
+  OnInit,
+  TemplateRef,
+  ViewChild,
+} from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestoreCollection } from '@angular/fire/firestore';
 import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
@@ -55,6 +62,9 @@ export class CardViewComponent implements OnInit {
   @Input('mode') mode!: string;
   @Input('selectedTeam') selectedTeam!: string;
 
+  @ViewChild('iplContent', { static: true })
+  public iplContent!: TemplateRef<any>;
+
   constructor(
     private shareService: ShareService,
     private dbService: dbService,
@@ -78,9 +88,23 @@ export class CardViewComponent implements OnInit {
     this.notifier = notifierService;
   }
 
+  // remove the inline styles for ipl theme
+
+  removeInlineStyles(selectedTeam: string) {
+    if (this.cardData.selectedIplTeam || selectedTeam) {
+      document.querySelector('#personal-card-bg')?.removeAttribute('style');
+      document
+        .querySelector('.mini-card-header.bg-color')
+        ?.removeAttribute('style');
+    }
+    document.querySelector('.mini-card-body')?.removeAttribute('style');
+  }
+
   updateCard(selectedIplTeam: string) {
     this.cardData.selectedIplTeam = selectedIplTeam;
-    console.log(this.cardData);
+    if (selectedIplTeam) {
+      this.cardData.bgColor = '';
+    }
     this.dbService
       .createCard(this.cardData, this.user.uid)
       .then((res) => {
@@ -99,6 +123,10 @@ export class CardViewComponent implements OnInit {
 
   openLg(content: any) {
     this.modalService.open(content, { size: 'xl', centered: true });
+  }
+
+  openIPlModal() {
+    this.modalService.open(this.iplContent, { size: 'xl', centered: true });
   }
 
   updateLinkCount() {
@@ -204,6 +232,18 @@ export class CardViewComponent implements OnInit {
     this.dbService.getCardData(cardId).subscribe((res) => {
       this.cardData = res.data();
       if (this.cardData) {
+        if (this.cardData.selectedIplTeam) {
+          this.selectedTeam = this.cardData.selectedIplTeam;
+          this.removeInlineStyles(this.selectedTeam);
+        }
+        // if (
+        //   this.mode != 'preview' &&
+        //   !this.selectedTeam &&
+        //   window.innerWidth < 767
+        // ) {
+        //   this.openIPlModal();
+        // }
+
         if (this.cardData.likes) {
           let likesObj = this.cardData.likes;
           this.likesLength = Object.keys(likesObj).length;
@@ -307,6 +347,13 @@ export class CardViewComponent implements OnInit {
     };
 
     navigator.share(shareData);
+  }
+
+  redirectToIplTheme() {
+    this.router.navigateByUrl(
+      `/ipl2022/${this.user.uid}?selectedTeam=${this.selectedTeam}`
+    );
+    this.modalService.dismissAll();
   }
 
   ngOnInit(): void {

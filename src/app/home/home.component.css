@@ -1,315 +1,322 @@
-    /* banner block css starts here */
+/* banner block css starts here */
 
-    section.banner-section {
-        padding: 3% 4% 9% 4%;
-        background-image: url("../../assets/banner-bg.svg");
-        background-position: right 135px top 91px;
-        background-repeat: no-repeat;
-    }
+.ipl-banner-section {
+  display: flex;
+  max-width: 90%;
+  margin: 3% auto;
+  cursor: pointer;
+}
 
-    h2.banner-text {
-        font-size: 50px;
-        max-width: 77%;
-        font-weight: 300;
-        margin-top: 40px;
-    }
+section.banner-section {
+  padding: 3% 4% 9% 4%;
+  background-image: url("../../assets/banner-bg.svg");
+  background-position: right 135px top 91px;
+  background-repeat: no-repeat;
+}
 
-    span.text-bold.text-blue {
-        font-weight: 700;
-    }
+h2.banner-text {
+  font-size: 50px;
+  max-width: 77%;
+  font-weight: 300;
+  margin-top: 40px;
+}
 
-    p.banner-sub-text {
-        font-size: 22px;
-        margin: 3% 0;
-        max-width: 75%;
-        font-weight: 500;
-    }
+span.text-bold.text-blue {
+  font-weight: 700;
+}
 
-    button.btn.btn-md.nav-button.bg-green.text-white.banner-button {
-        margin-top: 0%;
-    }
-    /* banner block css ends here */
-    /* first ever internet cards css starts here */
+p.banner-sub-text {
+  font-size: 22px;
+  margin: 3% 0;
+  max-width: 75%;
+  font-weight: 500;
+}
 
-    .primary-heading {
-        font-size: 46px;
-        font-weight: 800;
-    }
+button.btn.btn-md.nav-button.bg-green.text-white.banner-button {
+  margin-top: 0%;
+}
+/* banner block css ends here */
+/* first ever internet cards css starts here */
 
-    .internet-card-image-block {
-        /* background-image: url("../../assets/banner-bg.svg"); */
-        background-repeat: no-repeat;
-        margin: 2%;
-    }
+.primary-heading {
+  font-size: 46px;
+  font-weight: 800;
+}
 
-    img.img-fluid.ecard-both-sides-image {
-        max-width: 77%;
-    }
-    /* first ever internet cards css ends here */
-    /* one tap access cards css starts here */
+.internet-card-image-block {
+  /* background-image: url("../../assets/banner-bg.svg"); */
+  background-repeat: no-repeat;
+  margin: 2%;
+}
 
-    h2.secondary-heading.one-tap-access-section-heading.text-blue {
-        font-size: 44px;
-        font-weight: 600;
-        max-width: 68%;
-    }
+img.img-fluid.ecard-both-sides-image {
+  max-width: 77%;
+}
+/* first ever internet cards css ends here */
+/* one tap access cards css starts here */
 
-    .one-tap-access-content-block {
-        padding: 2% 9%;
-    }
+h2.secondary-heading.one-tap-access-section-heading.text-blue {
+  font-size: 44px;
+  font-weight: 600;
+  max-width: 68%;
+}
 
-    h3.teritary-heading {
-        font-weight: 500;
-        font-size: 25px;
-        margin: 1% 0;
-    }
+.one-tap-access-content-block {
+  padding: 2% 9%;
+}
 
-    .one-tap-access-content-block {
-        padding: 32% 9%;
-    }
+h3.teritary-heading {
+  font-weight: 500;
+  font-size: 25px;
+  margin: 1% 0;
+}
 
-    .one-tap-access-content-block h3.teritary-heading.text-blue {
-        padding-top: 3%;
-    }
+.one-tap-access-content-block {
+  padding: 32% 9%;
+}
 
-    section.one-tap-access-section {
-        margin-top: 4%;
-        padding: 3% 0;
-    }
+.one-tap-access-content-block h3.teritary-heading.text-blue {
+  padding-top: 3%;
+}
 
-    .one-tap-access-section {
-        background: url("../../assets/access-cards-background.png");
-        background-repeat: no-repeat;
-        background-position-x: center;
-        background-position-y: center;
-    }
-    /* one tap access cards css ends here */
-    /* card features css starts here*/
+section.one-tap-access-section {
+  margin-top: 4%;
+  padding: 3% 0;
+}
 
-    .feature-inner-block {
-        background: #f5f5f5;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        padding: 5% 0;
-        border-radius: 26px;
-        box-shadow: 0px 2px 3px 0px #e6e1e1;
-    }
+.one-tap-access-section {
+  background: url("../../assets/access-cards-background.png");
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+}
+/* one tap access cards css ends here */
+/* card features css starts here*/
 
-    img.img-fluid.card-feature-icon {
-        width: 40px;
-        height: 40px;
-    }
+.feature-inner-block {
+  background: #f5f5f5;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 5% 0;
+  border-radius: 26px;
+  box-shadow: 0px 2px 3px 0px #e6e1e1;
+}
 
-    .card-feature-each-block {
-        max-width: 85%;
-        margin: 4% auto;
-    }
+img.img-fluid.card-feature-icon {
+  width: 40px;
+  height: 40px;
+}
 
-    p.card-feature-text {
-        margin-bottom: 0;
-        font-size: 18px;
-        font-weight: 700;
-    }
+.card-feature-each-block {
+  max-width: 85%;
+  margin: 4% auto;
+}
 
-    h2.text-blue.card-features-heading {
-        font-size: 36px;
-        font-weight: 600;
-        margin-left: 4%;
-    }
+p.card-feature-text {
+  margin-bottom: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
 
-    .card-features-block {
-        margin: 3% 2%;
-    }
+h2.text-blue.card-features-heading {
+  font-size: 36px;
+  font-weight: 600;
+  margin-left: 4%;
+}
 
-    section.card-features-section {
-        margin-top: 4%;
-    }
+.card-features-block {
+  margin: 3% 2%;
+}
 
-    .faster-growth-section-content-block {
-        padding-left: 59px;
-        padding-top: 160px;
-    }
+section.card-features-section {
+  margin-top: 4%;
+}
 
-    .many-profile-content {
-        padding-top: 60px;
-    }
+.faster-growth-section-content-block {
+  padding-left: 59px;
+  padding-top: 160px;
+}
 
-    section.many-profile-section {
-        padding: 9% 20px 9% 59px;
-    }
+.many-profile-content {
+  padding-top: 60px;
+}
 
-    section.card-stats.bg-blue {
-        border-radius: 64px;
-        max-width: 93%;
-        margin: auto;
-        margin-bottom: 9%;
-        padding: 21px;
-    }
+section.many-profile-section {
+  padding: 9% 20px 9% 59px;
+}
 
-    .card-stat-inner-container {
-        text-align: center;
-    }
+section.card-stats.bg-blue {
+  border-radius: 64px;
+  max-width: 93%;
+  margin: auto;
+  margin-bottom: 9%;
+  padding: 21px;
+}
 
-    .stats-content-container {
-        margin: 29px 0px;
-    }
+.card-stat-inner-container {
+  text-align: center;
+}
 
-    p.stats-info-text.text-white {
-        font-size: 18px;
-    }
+.stats-content-container {
+  margin: 29px 0px;
+}
 
-    h2.stat-count.text-green {
-        font-size: 48px;
-        font-weight: 800;
-    }
+p.stats-info-text.text-white {
+  font-size: 18px;
+}
 
-    @media only screen and (min-width: 768px) and (max-width:1200px) {
-        h2.banner-text {
-            font-size: 31px;
-            max-width: 83%;
-        }
-        .faster-growth-section-content-block {
-            padding-left: 59px;
-            padding-top: 71px;
-        }
-    }
-    /* card features css ends here*/
+h2.stat-count.text-green {
+  font-size: 48px;
+  font-weight: 800;
+}
 
-    @media only screen and (max-width: 1100px) {
-        section.many-profile-section {
-            padding: 4% 20px 9% 59px;
-        }
-        .primary-heading {
-            font-size: 34px;
-            font-weight: 800;
-        }
-    }
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+  h2.banner-text {
+    font-size: 31px;
+    max-width: 83%;
+  }
+  .faster-growth-section-content-block {
+    padding-left: 59px;
+    padding-top: 71px;
+  }
+}
+/* card features css ends here*/
 
-    @media only screen and (max-width: 767px) {
-        section.card-stats.bg-blue {
-            background: transparent;
-        }
-        .card-stat-inner-container {
-            background: #102754;
-            border-radius: 45px;
-            padding: 8px;
-            margin-bottom: 35px;
-        }
-        h2.banner-text {
-            font-size: 44px;
-        }
-        h2.secondary-heading.one-tap-access-section-heading.text-blue {
-            max-width: 100%;
-        }
-        p.banner-sub-text.text-blue {
-            font-size: 22px;
-            margin-left: 0%;
-        }
-        img.banner-image.img-fluid {
-            max-width: 82%;
-            margin: 32px 0;
-        }
-        section.banner-section {
-            padding: 17% 3% 19% 6%;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-        h2.primary-heading.text-blue,
-        h2.primary-heading.text-green {
-            font-size: 40px;
-        }
-        img.img-fluid.ecard-both-sides-image {
-            max-width: 75%;
-            margin-left: 60px;
-            margin-top: 25px;
-        }
-        .one-tap-access-content-block {
-            padding: 3% 7%;
-            text-align: center;
-        }
-        p.card-feature-text {
-            font-size: 20px;
-        }
-        .feature-inner-block {
-            border-radius: 2px;
-        }
-    }
+@media only screen and (max-width: 1100px) {
+  section.many-profile-section {
+    padding: 4% 20px 9% 59px;
+  }
+  .primary-heading {
+    font-size: 34px;
+    font-weight: 800;
+  }
+}
 
-    @media only screen and (max-width: 576px) {
-        img.img-fluid.stat-icon {
-            width: 100px;
-        }
-        section.many-profile-section {
-            padding: 4% 20px 15% 28px;
-        }
-        section.banner-section {
-            padding: 0% 3% 12% 6%;
-            background: url("../../assets/home-banner-sm-bg.svg");
-            background-repeat: no-repeat;
-            background-position: right 0 bottom 73px;
-        }
-        h2.banner-text {
-            font-size: 35px;
-        }
-        p.banner-sub-text.text-blue {
-            margin: 5% 0;
-            max-width: 87%;
-        }
-        img.banner-image.img-fluid {
-            max-width: 96%;
-            margin: 57px 0 2px 0;
-        }
-        img.img-fluid.ecard-both-sides-image {
-            max-width: 91%;
-            margin-left: 14px;
-            margin-top: 25px;
-        }
-        .internet-card-image-block.text-center {
-            background-position: inherit;
-        }
-        h2.secondary-heading.one-tap-access-section-heading.text-blue {
-            font-size: 22px;
-            font-weight: 600;
-            max-width: 90%;
-        }
-        h3.teritary-heading.text-blue {
-            font-weight: 500;
-            font-size: 16px;
-            padding-top: 1%;
-        }
-        h2.primary-heading.text-blue,
-        h2.primary-heading.text-green {
-            font-size: 24px;
-        }
-        .feature-inner-block {
-            padding: 2% 0;
-        }
-        h2.text-blue.card-features-heading {
-            font-size: 22px;
-            text-align: center;
-        }
-        p.banner-sub-text.text-blue {
-            font-size: 20px;
-            margin-left: 0%;
-        }
-        img.img-fluid.card-feature-icon {
-            width: 30px;
-            height: 30px;
-        }
-        p.card-feature-text {
-            font-size: 16px;
-        }
-        button.btn.btn-md.nav-button.bg-green.text-white.banner-button {
-            margin-top: 0%;
-            padding: 2px 13px;
-        }
-        .many-profile-content.faster-growth-section-content-block {
-            padding-left: 0px;
-        }
-        .faster-growth-section-content-block {
-            padding-bottom: 20px;
-            text-align: center;
-            padding-left: 0
-        }
-    }
+@media only screen and (max-width: 767px) {
+  section.card-stats.bg-blue {
+    background: transparent;
+  }
+  .card-stat-inner-container {
+    background: #102754;
+    border-radius: 45px;
+    padding: 8px;
+    margin-bottom: 35px;
+  }
+  h2.banner-text {
+    font-size: 44px;
+  }
+  h2.secondary-heading.one-tap-access-section-heading.text-blue {
+    max-width: 100%;
+  }
+  p.banner-sub-text.text-blue {
+    font-size: 22px;
+    margin-left: 0%;
+  }
+  img.banner-image.img-fluid {
+    max-width: 82%;
+    margin: 32px 0;
+  }
+  section.banner-section {
+    padding: 17% 3% 19% 6%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  h2.primary-heading.text-blue,
+  h2.primary-heading.text-green {
+    font-size: 40px;
+  }
+  img.img-fluid.ecard-both-sides-image {
+    max-width: 75%;
+    margin-left: 60px;
+    margin-top: 25px;
+  }
+  .one-tap-access-content-block {
+    padding: 3% 7%;
+    text-align: center;
+  }
+  p.card-feature-text {
+    font-size: 20px;
+  }
+  .feature-inner-block {
+    border-radius: 2px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  img.img-fluid.stat-icon {
+    width: 100px;
+  }
+  section.many-profile-section {
+    padding: 4% 20px 15% 28px;
+  }
+  section.banner-section {
+    padding: 0% 3% 12% 6%;
+    background: url("../../assets/home-banner-sm-bg.svg");
+    background-repeat: no-repeat;
+    background-position: right 0 bottom 73px;
+  }
+  h2.banner-text {
+    font-size: 35px;
+  }
+  p.banner-sub-text.text-blue {
+    margin: 5% 0;
+    max-width: 87%;
+  }
+  img.banner-image.img-fluid {
+    max-width: 96%;
+    margin: 57px 0 2px 0;
+  }
+  img.img-fluid.ecard-both-sides-image {
+    max-width: 91%;
+    margin-left: 14px;
+    margin-top: 25px;
+  }
+  .internet-card-image-block.text-center {
+    background-position: inherit;
+  }
+  h2.secondary-heading.one-tap-access-section-heading.text-blue {
+    font-size: 22px;
+    font-weight: 600;
+    max-width: 90%;
+  }
+  h3.teritary-heading.text-blue {
+    font-weight: 500;
+    font-size: 16px;
+    padding-top: 1%;
+  }
+  h2.primary-heading.text-blue,
+  h2.primary-heading.text-green {
+    font-size: 24px;
+  }
+  .feature-inner-block {
+    padding: 2% 0;
+  }
+  h2.text-blue.card-features-heading {
+    font-size: 22px;
+    text-align: center;
+  }
+  p.banner-sub-text.text-blue {
+    font-size: 20px;
+    margin-left: 0%;
+  }
+  img.img-fluid.card-feature-icon {
+    width: 30px;
+    height: 30px;
+  }
+  p.card-feature-text {
+    font-size: 16px;
+  }
+  button.btn.btn-md.nav-button.bg-green.text-white.banner-button {
+    margin-top: 0%;
+    padding: 2px 13px;
+  }
+  .many-profile-content.faster-growth-section-content-block {
+    padding-left: 0px;
+  }
+  .faster-growth-section-content-block {
+    padding-bottom: 20px;
+    text-align: center;
+    padding-left: 0;
+  }
+}

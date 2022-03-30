@@ -658,6 +658,9 @@ h2.scan-text-heading.text-white {
 }
 
 @media only screen and (max-width: 767px) {
+  /* .ipl-banner {
+    display: none;
+  } */
   .feedback-init-container {
     right: 9px;
   }
@@ -699,6 +702,11 @@ h2.scan-text-heading.text-white {
 }
 
 @media only screen and (max-width: 576px) {
+  img.ipl-mini-banner.img-fluid {
+    width: 88%;
+    height: 90px !important;
+    margin-bottom: 10px;
+  }
   .feedback-action-container {
     margin-top: 0px;
   }
@@ -781,41 +789,117 @@ h2.scan-text-heading.text-white {
 }
 
 /* ipl theme css starts here */
+.card-view-front.user-card-inner-container-row.kkr {
+  background: url("../../assets/kkr-card-bg.svg");
+}
+
 .card-view-front.user-card-inner-container-row.srh {
-  background: url("../../assets/srh-card-bg.svg") !important;
+  background: url("../../assets/srh-card-bg.svg");
 }
 
-.card-view-front.user-card-inner-container-row.csk {
-  background: url("../../assets/csk-card-bg.svg") !important;
-}
-
-.card-view-front.user-card-inner-container-row.dc {
-  background: url("../../assets/dc-card-bg.svg") !important;
-}
-
-.card-view-front.user-card-inner-container-row.gt {
-  background: url("../../assets/gt-card-bg.svg") !important;
-}
-.card-view-front.user-card-inner-container-row.lsg {
-  background: url("../../assets/lsg-card-bg.svg") !important;
-}
-
-.card-view-front.user-card-inner-container-row.mi {
-  background: url("../../assets/mi-card-bg.svg") !important;
-}
-
-.card-view-front.user-card-inner-container-row.pk {
-  background: url("../../assets/pbk-card-bg.svg") !important;
+.card-view-front.user-card-inner-container-row.rr {
+  background: url("../../assets/rr-card-bg.svg");
 }
 
 .card-view-front.user-card-inner-container-row.rcb {
-  background: url("../../assets/rcb-card-bg.svg") !important;
-}
-.card-view-front.user-card-inner-container-row.rr {
-  background: url("../../assets/rr-card-bg.svg") !important;
+  background: url("../../assets/rcb-card-bg.svg");
 }
 
-.card-view-front.user-card-inner-container-row.kkr {
-  background: url("../../assets/kkr-card-bg.svg") !important;
+.card-view-front.user-card-inner-container-row.pk {
+  background: url("../../assets/pbk-card-bg.svg");
+}
+
+.card-view-front.user-card-inner-container-row.mi {
+  background: url("../../assets/mi-card-bg.svg");
+}
+.card-view-front.user-card-inner-container-row.lsg {
+  background: url("../../assets/lsg-card-bg.svg");
+}
+
+.card-view-front.user-card-inner-container-row.gt {
+  background: url("../../assets/gt-card-bg.svg");
+}
+
+.card-view-front.user-card-inner-container-row.dc {
+  background: url("../../assets/dc-card-bg.svg");
+}
+
+.card-view-front.user-card-inner-container-row.csk {
+  background: url("../../assets/csk-card-bg.svg");
+}
+
+.mini-card-actions-block.min-card-inner-container.hidden {
+  display: none;
+}
+
+.min-card-inner-container.position-relative.csk {
+  background: url("../../assets/csk-mobile-bg.svg");
+}
+
+.min-card-inner-container.position-relative.gt {
+  background: url("../../assets/gt-mobile-bg.svg");
+}
+
+.min-card-inner-container.position-relative.mi {
+  background: url("../../assets/mi-mobile-bg.svg");
+}
+
+.min-card-inner-container.position-relative.rcb {
+  background: url("../../assets/rcb-mobile-bg.svg");
+}
+
+.min-card-inner-container.position-relative.srh {
+  background: url("../../assets/srh-mobile-bg.svg");
+}
+
+.min-card-inner-container.position-relative.dc {
+  background: url("../../assets/dc-mobile-bg.svg");
+}
+
+.min-card-inner-container.position-relative.lsg {
+  background: url("../../assets/lsg-mobile-bg.svg");
+}
+
+.min-card-inner-container.position-relative.pk {
+  background: url("../../assets/pbk-mobile-bg.svg");
+}
+
+.min-card-inner-container.position-relative.rr {
+  background: url("../../assets/rr-mobile-bg.svg");
+}
+
+.min-card-inner-container.position-relative.kkr {
+  background: url("../../assets/kkr-mobile-bg.svg");
+}
+
+section.mini-internet-card.visible-small.miniCardPreviewMode
+  .mini-card-header.bg-color {
+  background: transparent;
+}
+
+.min-card-inner-container.position-relative {
+  background-position: -21px -1px !important;
+}
+
+img.img-fluid.modal-close-icon.ipl-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.modal-body.ipl-modal {
+  max-width: 69%;
+  margin: auto;
+}
+
+.ipl-banner {
+  text-align: center;
+}
+
+img.ipl-mini-banner.img-fluid {
+  height: 144px;
+}
+
+.mini-card-body.transparent {
+  background: transparent;
 }
 /* ipl theme css ends here */

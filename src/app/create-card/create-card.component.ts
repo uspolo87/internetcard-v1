@@ -122,6 +122,7 @@ export class CreateCardComponent implements OnInit {
   setCardbg(color: any) {
     //this.cardBgColor = color;
     this.card.bgColor = color;
+    this.card.selectedIplTeam = '';
   }
 
   addSkill($event: Event, skillSearch: string) {

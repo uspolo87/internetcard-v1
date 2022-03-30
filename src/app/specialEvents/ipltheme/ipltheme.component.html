@@ -1,16 +1,8 @@
 <div class="ipl-theme-cotainer">
-  <div class="card-preview-container">
-    <app-card-view
-      [cardActions]="actionStatus"
-      [mode]="mode"
-      [selectedTeam]="selectedTeam"
-      (updateCard)="updateCard()"
-    ></app-card-view>
-  </div>
-
   <div class="preview-action-container">
     <div class="ipl-icon-container">
       <img
+        [ngClass]="{ selected: selectedTeam == 'csk' }"
         src="assets/csk-icon.png"
         alt="Csk Image"
         class="img-fluid ipl-logo-icon"
@@ -86,6 +78,14 @@
         (click)="setCardBg('kkr')"
       />
     </div>
+  </div>
+  <div class="card-preview-container">
+    <app-card-view
+      [cardActions]="actionStatus"
+      [mode]="mode"
+      [selectedTeam]="selectedTeam"
+      (updateCard)="updateCard()"
+    ></app-card-view>
   </div>
 </div>
 

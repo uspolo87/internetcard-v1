@@ -8,9 +8,30 @@
 
 <!-- perosnal card section starts here -->
 <div class="cardview-container">
+  <div
+    class="ipl-banner"
+    [ngClass]="{ hidden: cardActions === false }"
+    *ngIf="cardData.cardType === 'personal'"
+  >
+    <img
+      src="assets/ipl-home-banner.png"
+      alt="ipl 2022 banner"
+      class="ipl-mini-banner img-fluid"
+    />
+    <button
+      class="btn btn-md bg-green text-white ml-3"
+      (click)="redirectToIplTheme()"
+    >
+      Try IPL theme
+    </button>
+  </div>
   <div *ngIf="!showSearchUI">
     <!-- mini card starts here -->
-    <section class="mini-internet-card visible-small" *ngIf="cardData">
+    <section
+      class="mini-internet-card visible-small"
+      [ngClass]="{ miniCardPreviewMode: selectedTeam }"
+      *ngIf="cardData"
+    >
       <div
         class="card-container"
         [ngClass]="{
@@ -19,7 +40,9 @@
       >
         <div class="card-view-front">
           <div
-            class="min-card-inner-container position-relative"
+            class="min-card-inner-container position-relative {{
+              selectedTeam
+            }}"
             *ngIf="cardData"
           >
             <span
@@ -118,7 +141,6 @@
                   </div>
                 </div>
               </div>
-
               <div class="mini-card-body user-data">
                 <span
                   class="follow-text"
@@ -289,7 +311,8 @@
       <div
         class="mini-card-actions-block min-card-inner-container"
         [ngClass]="{
-          'mini-business-action': cardData.cardType === 'business'
+          'mini-business-action': cardData.cardType === 'business',
+          hidden: cardActions === false
         }"
       >
         <div class="mini-action-block">
@@ -401,8 +424,9 @@
                   <div
                     class="user-card-inner-container-row card-view-front {{
                       selectedTeam
-                    }} {{ cardData.selectedIplTeam }}"
+                    }}"
                     [ngStyle]="{ background: cardData.bgColor }"
+                    id="personal-card-bg"
                   >
                     <div class="row">
                       <div class="col-md-4">
@@ -1234,7 +1258,7 @@
 </p>
 <!-- feedabck modal starts here -->
 <ng-template #content let-modal>
-  <div class="modal-header">
+  <div class="modal-header bg-white">
     <h4 class="modal-title">Feedback</h4>
 
     <button
@@ -1250,7 +1274,7 @@
       />
     </button>
   </div>
-  <div class="modal-body">
+  <div class="modal-body bg-white">
     <div class="feedback-conatainer">
       <div class="d-flex text-center">
         <div class="feedback-action-container">
@@ -1319,7 +1343,7 @@
       </div>
     </div>
   </div>
-  <div class="modal-footer">
+  <div class="modal-footer bg-white">
     <button
       type="button"
       class="btn btn-light"
@@ -1330,6 +1354,24 @@
   </div>
 </ng-template>
 
+<div class="ipl-modal-head">
+  <ng-template #iplContent let-modal>
+    <img
+      src="assets/modal-close.png"
+      alt="Modal close icon"
+      class="img-fluid modal-close-icon ipl-close"
+      (click)="modal.dismiss('Cross click')"
+    />
+    <div class="modal-body ipl-modal">
+      <img
+        src="assets/mobile-ipl-theme-banner.png"
+        alt="ipl theme 2022 banner"
+        class="img-fluid ipl-mobile-banner"
+        (click)="redirectToIplTheme()"
+      />
+    </div>
+  </ng-template>
+</div>
 <!-- feedabck modal ends here -->
 
 <div *ngIf="!cardData" class="no-card-container">

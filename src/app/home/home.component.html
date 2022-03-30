@@ -1,260 +1,324 @@
 <div class="stateLoading" *ngIf="stateLoading">
-    <div class="blur">
-        <img src="../.././assets/loader.svg" alt="site main loader" />
-    </div>
+  <div class="blur">
+    <img src="../.././assets/loader.svg" alt="site main loader" />
+  </div>
 </div>
 
 <!-- banner block starts here -->
 
-<section class="banner-section" animateOnScroll animationName="fadeIn">
-    <div class="container-fluid">
-        <div class="banner-bg">
-            <div class="row">
-                <div class="col-md-7">
-                    <h2 class="banner-text">
-                        Manage your
-                        <span class="text-bold text-blue">social media</span> links
-                    </h2>
-                    <p class="banner-sub-text text-blue">
-                        <span class="text-green">Internet card </span> lets you to mange and share all the business and personal social media links at one place.
-                    </p>
+<div class="ipl-banner-section">
+  <img
+    (click)="redirectToIplTheme()"
+    src="assets/ipl-home-banner.png"
+    alt="Tata ipl 2020 banner"
+    class="img-fluid ipl-home-banner"
+  />
+</div>
 
-                    <button class="
-              btn btn-md
-              nav-button
-              bg-green
-              text-white
-              banner-button
-              hvr-grow
-            " *ngIf="!cardCreated" (click)="createCard()">
+<section class="banner-section" animateOnScroll animationName="fadeIn">
+  <div class="container-fluid">
+    <div class="banner-bg">
+      <div class="row">
+        <div class="col-md-7">
+          <h2 class="banner-text">
+            Manage your
+            <span class="text-bold text-blue">social media</span> links
+          </h2>
+          <p class="banner-sub-text text-blue">
+            <span class="text-green">Internet card </span> lets you to mange and
+            share all the business and personal social media links at one place.
+          </p>
+
+          <button
+            class="btn btn-md nav-button bg-green text-white banner-button hvr-grow"
+            *ngIf="!cardCreated"
+            (click)="createCard()"
+          >
             Get your card
           </button>
 
-                    <button class="
-              btn btn-md
-              nav-button
-              bg-green
-              text-white
-              banner-button
-              hvr-grow
-            " *ngIf="cardCreated" (click)="goToCard()">
+          <button
+            class="btn btn-md nav-button bg-green text-white banner-button hvr-grow"
+            *ngIf="cardCreated"
+            (click)="goToCard()"
+          >
             View your card
           </button>
-                </div>
-                <div class="col-md-5">
-                    <div class="banner-image-block">
-                        <img src="../.././assets/ecard-banner-image.svg" alt="ecard banner image" class="banner-image img-fluid" />
-                    </div>
-                </div>
-            </div>
         </div>
+        <div class="col-md-5">
+          <div class="banner-image-block">
+            <img
+              src="../.././assets/ecard-banner-image.svg"
+              alt="ecard banner image"
+              class="banner-image img-fluid"
+            />
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 <!-- banner block ends here -->
 
-<section class="faster-growth-section" animationName="animated slideDown" offset="120">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-7">
-                <div class="faster-growth-section-content-block">
-                    <h2 class="primary-heading faster-growth-section-heading text-blue">
-                        <span class="text-green">10X</span> Faster Growth
-                    </h2>
-                    <h3 class="teritary-heading text-blue faster-growth-section-content">Fasten your social media growth 10X Faster with internetcard</h3>
-                </div>
-            </div>
-
-            <div class="col-md-5">
-                <img src="assets/faster-growth-internetcard.svg" alt="ecards growth type" class="img-fluid ecard-both-sides-image" />
-            </div>
+<section
+  class="faster-growth-section"
+  animationName="animated slideDown"
+  offset="120"
+>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-7">
+        <div class="faster-growth-section-content-block">
+          <h2 class="primary-heading faster-growth-section-heading text-blue">
+            <span class="text-green">10X</span> Faster Growth
+          </h2>
+          <h3 class="teritary-heading text-blue faster-growth-section-content">
+            Fasten your social media growth 10X Faster with internetcard
+          </h3>
         </div>
+      </div>
+
+      <div class="col-md-5">
+        <img
+          src="assets/faster-growth-internetcard.svg"
+          alt="ecards growth type"
+          class="img-fluid ecard-both-sides-image"
+        />
+      </div>
     </div>
+  </div>
 </section>
 
-
 <section class="many-profile-section">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-5 visible-large">
-                <img src="assets/many-profiles-card.svg" alt="ecards many profile" class="img-fluid ecard-both-sides-image" />
-            </div>
-            <div class="col-md-7">
-                <div class="many-profile-content faster-growth-section-content-block">
-                    <h2 class="primary-heading faster-growth-section-heading text-blue">
-                        Many <span class="text-green">Profiles</span>
-                    </h2>
-                    <h3 class="teritary-heading text-blue faster-growth-section-content">Fasten your social media growth 10X Faster with internetcard</h3>
-                </div>
-            </div>
-            <div class="col-md-5 visible-small">
-                <img src="assets/many-profiles-card.svg" alt="ecards many profile" class="img-fluid ecard-both-sides-image" />
-            </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-5 visible-large">
+        <img
+          src="assets/many-profiles-card.svg"
+          alt="ecards many profile"
+          class="img-fluid ecard-both-sides-image"
+        />
+      </div>
+      <div class="col-md-7">
+        <div class="many-profile-content faster-growth-section-content-block">
+          <h2 class="primary-heading faster-growth-section-heading text-blue">
+            Many <span class="text-green">Profiles</span>
+          </h2>
+          <h3 class="teritary-heading text-blue faster-growth-section-content">
+            Fasten your social media growth 10X Faster with internetcard
+          </h3>
         </div>
+      </div>
+      <div class="col-md-5 visible-small">
+        <img
+          src="assets/many-profiles-card.svg"
+          alt="ecards many profile"
+          class="img-fluid ecard-both-sides-image"
+        />
+      </div>
     </div>
+  </div>
 </section>
 
 <section class="card-stats bg-blue">
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card-stat-inner-container">
-                    <div class="stat-img-container">
-                        <img src="assets/registered-cards.svg" class="img-fluid stat-icon" alt="Interent card stats Image">
-                    </div>
-                    <div class="stats-content-container">
-                        <p class="stats-info-text text-white">
-                            Registered Cards
-                        </p>
-                        <h2 class="stat-count text-green">750+</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card-stat-inner-container">
-                    <div class="stat-img-container">
-                        <img src="assets/shared-cards.svg" class="img-fluid stat-icon" alt="Interent card stats Image">
-                    </div>
-                    <div class="stats-content-container">
-                        <p class="stats-info-text text-white">
-                            Shared Cards
-                        </p>
-                        <h2 class="stat-count text-green">1500+</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card-stat-inner-container">
-                    <div class="stat-img-container">
-                        <img src="assets/saved-cards-icon.svg" class="img-fluid stat-icon" alt="Interent card stats Image">
-                    </div>
-                    <div class="stats-content-container">
-                        <p class="stats-info-text text-white">
-                            Saved Cards
-                        </p>
-                        <h2 class="stat-count text-green">500+</h2>
-                    </div>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card-stat-inner-container">
+          <div class="stat-img-container">
+            <img
+              src="assets/registered-cards.svg"
+              class="img-fluid stat-icon"
+              alt="Interent card stats Image"
+            />
+          </div>
+          <div class="stats-content-container">
+            <p class="stats-info-text text-white">Registered Cards</p>
+            <h2 class="stat-count text-green">750+</h2>
+          </div>
         </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card-stat-inner-container">
+          <div class="stat-img-container">
+            <img
+              src="assets/shared-cards.svg"
+              class="img-fluid stat-icon"
+              alt="Interent card stats Image"
+            />
+          </div>
+          <div class="stats-content-container">
+            <p class="stats-info-text text-white">Shared Cards</p>
+            <h2 class="stat-count text-green">1500+</h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card-stat-inner-container">
+          <div class="stat-img-container">
+            <img
+              src="assets/saved-cards-icon.svg"
+              class="img-fluid stat-icon"
+              alt="Interent card stats Image"
+            />
+          </div>
+          <div class="stats-content-container">
+            <p class="stats-info-text text-white">Saved Cards</p>
+            <h2 class="stat-count text-green">500+</h2>
+          </div>
+        </div>
+      </div>
     </div>
-
-
+  </div>
 </section>
 
 <!-- first ever internet cards section starts here -->
 
 <section class="first-internet-card">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="primary-heading-block text-center">
-                    <h2 class="primary-heading text-blue">First ever</h2>
-                    <h2 class="primary-heading text-green">INTERNET CARD</h2>
-                </div>
-
-                <div class="internet-card-image-block text-center">
-                    <img src="assets/ecards-duo.svg" alt="ecards types" class="img-fluid ecard-both-sides-image" />
-                </div>
-            </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="primary-heading-block text-center">
+          <h2 class="primary-heading text-blue">First ever</h2>
+          <h2 class="primary-heading text-green">INTERNET CARD</h2>
         </div>
+
+        <div class="internet-card-image-block text-center">
+          <img
+            src="assets/ecards-duo.svg"
+            alt="ecards types"
+            class="img-fluid ecard-both-sides-image"
+          />
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 <!-- first ever internet cards section ends here -->
 
 <!-- one tap access section starts here -->
 
 <section class="one-tap-access-section">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="one-tap-access-content-block">
-                    <h2 class="secondary-heading one-tap-access-section-heading text-blue">
-                        One tap access to card
-                    </h2>
-                    <h3 class="teritary-heading text-blue">Redefining visting cards</h3>
-                </div>
-            </div>
-
-            <div class="col-md-6">
-                <img src="assets/ecard-qr-scanner.svg" alt="ecards types" class="img-fluid ecard-both-sides-image" />
-            </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="one-tap-access-content-block">
+          <h2
+            class="secondary-heading one-tap-access-section-heading text-blue"
+          >
+            One tap access to card
+          </h2>
+          <h3 class="teritary-heading text-blue">Redefining visting cards</h3>
         </div>
+      </div>
+
+      <div class="col-md-6">
+        <img
+          src="assets/ecard-qr-scanner.svg"
+          alt="ecards types"
+          class="img-fluid ecard-both-sides-image"
+        />
+      </div>
     </div>
+  </div>
 </section>
 <!-- one tap access section ends here -->
 
 <!-- card features section starts here-->
 
 <section class="card-features-section">
-    <div class="container-fluid">
-        <h2 class="text-blue card-features-heading">
-            Create.Share. <span class="text-green">Advance</span>
-        </h2>
+  <div class="container-fluid">
+    <h2 class="text-blue card-features-heading">
+      Create.Share. <span class="text-green">Advance</span>
+    </h2>
 
-        <div class="card-features-block">
-            <div class="row">
-                <div class="col-md-4 hvr-icon-up col-sm-6">
-                    <div class="card-feature-each-block">
-                        <div class="feature-inner-block">
-                            <img src="assets/manage-your-ecard.svg" alt="Manage your e-card" class="img-fluid card-feature-icon hvr-icon" />
+    <div class="card-features-block">
+      <div class="row">
+        <div class="col-md-4 hvr-icon-up col-sm-6">
+          <div class="card-feature-each-block">
+            <div class="feature-inner-block">
+              <img
+                src="assets/manage-your-ecard.svg"
+                alt="Manage your e-card"
+                class="img-fluid card-feature-icon hvr-icon"
+              />
 
-                            <p class="card-feature-text">Manage your card</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 hvr-icon-up col-sm-6">
-                    <div class="card-feature-each-block">
-                        <div class="feature-inner-block">
-                            <img src="assets/Easilyshareable-icon.svg" alt="share your e-card icon" class="img-fluid card-feature-icon hvr-icon" />
-
-                            <p class="card-feature-text">Easily Sharable</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 hvr-icon-up col-sm-6">
-                    <div class="card-feature-each-block">
-                        <div class="feature-inner-block">
-                            <img src="assets/Multiplethemes-icon.svg" alt="Multiplethemes-icon" class="img-fluid card-feature-icon hvr-icon" />
-
-                            <p class="card-feature-text">Multiple Themes</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 hvr-icon-up col-sm-6">
-                    <div class="card-feature-each-block">
-                        <div class="feature-inner-block">
-                            <img src="assets/Savecard-icon.svg" alt="Manage your e-card icon" class="img-fluid card-feature-icon hvr-icon" />
-
-                            <p class="card-feature-text">Save Cards</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 hvr-icon-up col-sm-6">
-                    <div class="card-feature-each-block">
-                        <div class="feature-inner-block">
-                            <img src="assets/Pocketfriendlyui-icon.svg" alt="Pocketfriendlyui-icon" class="img-fluid card-feature-icon hvr-icon" />
-
-                            <p class="card-feature-text">Pocket Friendly UI</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 hvr-icon-up col-sm-6">
-                    <div class="card-feature-each-block">
-                        <div class="feature-inner-block">
-                            <img src="assets/QRCodescanner-icon.svg" alt="Qr code scanner icon" class="img-fluid card-feature-icon hvr-icon" />
-
-                            <p class="card-feature-text">QR Code Scanner</p>
-                        </div>
-                    </div>
-                </div>
+              <p class="card-feature-text">Manage your card</p>
             </div>
+          </div>
         </div>
+
+        <div class="col-md-4 hvr-icon-up col-sm-6">
+          <div class="card-feature-each-block">
+            <div class="feature-inner-block">
+              <img
+                src="assets/Easilyshareable-icon.svg"
+                alt="share your e-card icon"
+                class="img-fluid card-feature-icon hvr-icon"
+              />
+
+              <p class="card-feature-text">Easily Sharable</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 hvr-icon-up col-sm-6">
+          <div class="card-feature-each-block">
+            <div class="feature-inner-block">
+              <img
+                src="assets/Multiplethemes-icon.svg"
+                alt="Multiplethemes-icon"
+                class="img-fluid card-feature-icon hvr-icon"
+              />
+
+              <p class="card-feature-text">Multiple Themes</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 hvr-icon-up col-sm-6">
+          <div class="card-feature-each-block">
+            <div class="feature-inner-block">
+              <img
+                src="assets/Savecard-icon.svg"
+                alt="Manage your e-card icon"
+                class="img-fluid card-feature-icon hvr-icon"
+              />
+
+              <p class="card-feature-text">Save Cards</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 hvr-icon-up col-sm-6">
+          <div class="card-feature-each-block">
+            <div class="feature-inner-block">
+              <img
+                src="assets/Pocketfriendlyui-icon.svg"
+                alt="Pocketfriendlyui-icon"
+                class="img-fluid card-feature-icon hvr-icon"
+              />
+
+              <p class="card-feature-text">Pocket Friendly UI</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 hvr-icon-up col-sm-6">
+          <div class="card-feature-each-block">
+            <div class="feature-inner-block">
+              <img
+                src="assets/QRCodescanner-icon.svg"
+                alt="Qr code scanner icon"
+                class="img-fluid card-feature-icon hvr-icon"
+              />
+
+              <p class="card-feature-text">QR Code Scanner</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 <!-- card features section starts here-->

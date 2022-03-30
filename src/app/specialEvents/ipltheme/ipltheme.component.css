@@ -1,20 +1,19 @@
 .ipl-theme-cotainer {
-  display: flex;
-  margin-top: 120px;
+  padding-top: 60px;
 }
 
 .preview-action-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin-top: 5px;
-  position: absolute;
-  right: 140px;
+  justify-content: center;
 }
 
 img.img-fluid.ipl-logo-icon {
   width: 80px;
   height: auto;
   cursor: pointer;
+  margin-right: 20px;
 }
 
 .card-preview-container {
@@ -36,7 +35,7 @@ button.btn.btn-info.btn-lg.bg-green.text-white:hover {
 
 .update-card-container {
   margin-top: 30px;
-  margin-left: 420px;
+  text-align: center;
 }
 
 /* img.img-fluid.ipl-logo-icon:hover {
@@ -44,3 +43,35 @@ button.btn.btn-info.btn-lg.bg-green.text-white:hover {
   border-radius: 49px;
   box-shadow: 0px 2px 13px 5px #22c98b;
 } */
+
+@media screen and (max-width: 767px) {
+  .ipl-theme-cotainer {
+    padding-top: 10px;
+  }
+  .card-preview-container {
+    margin-left: 10px;
+  }
+  .preview-action-container {
+    flex-direction: row;
+    margin-top: 5px;
+    top: 5px;
+    left: -12px;
+    right: 0;
+    max-width: 84%;
+    margin: 0 38px;
+  }
+  img.img-fluid.ipl-logo-icon {
+    width: 52px;
+    height: auto;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  .update-card-container {
+    margin-left: 0;
+    text-align: center;
+    margin-top: 10px;
+  }
+  button.btn.btn-info.btn-lg.bg-green.text-white {
+    font-size: 18px;
+  }
+}
