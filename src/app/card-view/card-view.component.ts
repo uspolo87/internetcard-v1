@@ -231,6 +231,7 @@ export class CardViewComponent implements OnInit {
   fetchCardDetails(cardId: string) {
     this.dbService.getCardData(cardId).subscribe((res) => {
       this.cardData = res.data();
+      console.log(this.cardData);
       if (this.cardData) {
         if (this.cardData.selectedIplTeam) {
           this.selectedTeam = this.cardData.selectedIplTeam;

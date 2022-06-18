@@ -1,19 +1,23 @@
 <notifier-container></notifier-container>
 
-
 <!-- footer starts here -->
 <footer class="footer" [hidden]="hideFooter">
-    <div class="footer-inner-container">
-        <h3 class="footer-headind text-white">Get in touch</h3>
-        <div class="footer-main-content">
-            <form action="" class="form" #queryForm="ngForm" (ngSubmit)="saveUserQuery(queryForm)">
-                <div class="row">
-                    <div class="col-md-5">
-                        <h2 class="footer-main-heading">We'd love to hear from you</h2>
-                    </div>
-                    <div class="col-md-3 pr-0 pl-0 col-sm-6">
-                        <div class="form-group">
-                            <label for="user-name">
+  <div class="footer-inner-container">
+    <h3 class="footer-headind text-white">Get in touch</h3>
+    <div class="footer-main-content">
+      <form
+        action=""
+        class="form"
+        #queryForm="ngForm"
+        (ngSubmit)="saveUserQuery(queryForm)"
+      >
+        <div class="row">
+          <div class="col-md-5">
+            <h2 class="footer-main-heading">We'd love to hear from you</h2>
+          </div>
+          <div class="col-md-3 pr-0 pl-0 col-sm-6">
+            <div class="form-group">
+              <label for="user-name">
                 <input
                   type="text"
                   name="email"
@@ -23,10 +27,10 @@
                   placeholder="your mail here"
                 />
               </label>
-                        </div>
+            </div>
 
-                        <div class="form-group">
-                            <label for="mobile-number">
+            <div class="form-group">
+              <label for="mobile-number">
                 <input
                   type="text"
                   name="contactNumber"
@@ -36,39 +40,48 @@
                   placeholder="Mobile no"
                 />
               </label>
-                        </div>
-                    </div>
-                    <div class="col-md-3 pl-0 pr-0 col-sm-6">
-                        <div class="form-group footer-message-box">
-                            <textarea name="message" id="message" ngModel cols="30" rows="4" class="form-control" placeholder="your message here"></textarea>
+            </div>
+          </div>
+          <div class="col-md-3 pl-0 pr-0 col-sm-6">
+            <div class="form-group footer-message-box">
+              <textarea
+                name="message"
+                id="message"
+                ngModel
+                cols="30"
+                rows="4"
+                class="form-control"
+                placeholder="your message here"
+              ></textarea>
 
-                            <div class="button-block">
-                                <button class="
-                    btn btn-md
-                    get-in-touch-form-dubmit-button
-                    text-green
-                    hvr-bounce-to-right
-                  " type="submit">
+              <div class="button-block">
+                <button
+                  class="btn btn-md get-in-touch-form-dubmit-button text-green hvr-bounce-to-right"
+                  type="submit"
+                >
                   Send
                 </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-
-        <div class="social-block">
-            <div class="copyrights-block">
-                <p class="text-white">
-                    &copy; 2021
-                    <span class="text-green hvr-wobble-horizontal">ecard</span> All rights reserved.
-                </p>
+              </div>
             </div>
-            <div class="site-privacy-container">
-                <a routerLink="/terms" class="footer-privacy-links text-green">Terms of use
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="social-block">
+      <div class="copyrights-block">
+        <p class="text-white">
+          &copy; 2022
+          <span class="text-green hvr-wobble-horizontal">ecard</span> All rights
+          reserved.
+        </p>
+      </div>
+      <div class="site-privacy-container">
+        <a routerLink="/terms" class="footer-privacy-links text-green"
+          >Terms of use
         </a>
-                <a routerLink="/privacy" class="footer-privacy-links text-green">Privacy Policy</a
+        <a routerLink="/privacy" class="footer-privacy-links text-green"
+          >Privacy Policy</a
         >
       </div>
       <div class="social-icons-block">
@@ -83,9 +96,9 @@
                 class="img-fluid footer-social-icon"
               />
             </a>
-                </span>
+          </span>
 
-                <span class="footer-icon">
+          <span class="footer-icon">
             <a href="https://www.instagram.com/internetcardin/" target="_blank">
               <img
                 src="../.././assets/instagram.svg"
@@ -95,7 +108,7 @@
             </a>
           </span>
 
-                <span class="footer-icon">
+          <span class="footer-icon">
             <a
               href="https://www.linkedin.com/company/internetcard"
               target="_blank"
@@ -108,7 +121,7 @@
             </a>
           </span>
 
-                <span class="footer-icon">
+          <span class="footer-icon">
             <a href="https://twitter.com/InternetcardIN" target="_blank">
               <img
                 src="../.././assets/Twitter-icon.png"
@@ -117,9 +130,9 @@
               />
             </a>
           </span>
-            </div>
         </div>
+      </div>
     </div>
-    </div>
+  </div>
 </footer>
 <!-- footer ends here -->
